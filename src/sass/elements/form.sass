@@ -1,0 +1,498 @@
+// Name:            Form
+// Description:     Styles for forms
+//
+// Component:       `.sk-form-*`
+//                  `.sk-input`
+//                  `.sk-select`
+//                  `.sk-textarea`
+//                  `.sk-radio`
+//                  `.sk-checkbox`
+//                  `.sk-legend`
+//                  `.sk-fieldset`
+//
+// Sub-objects:     `.sk-form-custom`
+//                  `.sk-form-stacked`
+//                  `.sk-form-horizontal`
+//                  `.sk-form-label`
+//                  `.sk-form-controls`
+//                  `.sk-form-icon`
+//                  `.sk-form-icon-flip`
+//
+// Modifiers:       `.sk-form-small`
+//                  `.sk-form-large`
+//                  `.sk-form-danger`
+//                  `.sk-form-success`
+//                  `.sk-form-blank`
+//                  `.sk-form-width-xsmall`
+//                  `.sk-form-width-small`
+//                  `.sk-form-width-medium`
+//                  `.sk-form-width-large`
+//                  `.sk-form-controls-text`
+//
+// ========================================================================
+
+.sk-input,
+.sk-select,
+.sk-textarea,
+.sk-radio,
+.sk-checkbox
+  box-sizing: border-box
+  margin: 0
+  border-radius: $global-border-radius
+  font: inherit
+
+.sk-input
+  overflow: visible
+
+.sk-select
+  text-transform: none
+
+/*
+ * 1. Change font properties to `inherit` in all browsers
+ * 2. Don't inherit the `font-weight` and use `bold` instead.
+ * NOTE: Both declarations don't work in Chrome, Safari and Opera.
+ */
+
+.sk-select optgroup
+  font: inherit
+  font-weight: bold
+
+// Remove the default vertical scrollbar in IE 10+.
+.sk-textarea
+  overflow: auto
+
+// Remove the inner padding and cancel buttons in Chrome on OS X and Safari on OS X.
+.sk-input[type="search"]::-webkit-search-cancel-button,
+.sk-input[type="search"]::-webkit-search-decoration
+  -webkit-appearance: none
+
+// Correct the cursor style of increment and decrement buttons in Chrome.
+.sk-input[type="number"]::-webkit-inner-spin-button,
+.sk-input[type="number"]::-webkit-outer-spin-button
+  height: auto
+
+// Removes placeholder transparency in Firefox.
+.sk-input::-moz-placeholder,
+.sk-textarea::-moz-placeholder
+  opacity: 1
+
+// Improves consistency of cursor style for clickable elements
+.sk-radio:not(:disabled),
+.sk-checkbox:not(:disabled)
+  cursor: pointer
+
+.sk-radio:not(:disabled),
+.sk-checkbox:not(:disabled)
+  cursor: pointer
+
+.sk-fieldset
+  border: none
+  margin: 0
+  padding: 0
+
+/* Input, select and textarea
+ * Allowed: `text`, `password`, `datetime`, `datetime-local`, `date`,  `month`,
+            `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
+ * Disallowed: `range`, `radio`, `checkbox`, `file`, `submit`, `reset` and `image`
+ ========================================================================== */
+
+// Remove default style in iOS.
+.sk-input,
+.sk-textarea
+  -webkit-appearance: none
+
+/*
+ * 1. Prevent content overflow if a fixed width is used
+ * 2. Take the full width
+ * 3. Reset default
+ * 4. Style
+ */
+
+.sk-input,
+.sk-select,
+.sk-textarea
+  max-width: 100%
+  width: 100%
+  border: 0 none
+  padding: 0 $form-padding-horizontal
+  background: $form-background
+  color: $form-color
+
+/*
+ * Single-line
+ * 1. Allow any element to look like an `input` or `select` element
+ * 2. Make sure line-height is not larger than height
+ *    Also needed to center the text vertically
+ */
+
+.sk-input,
+.sk-select:not([multiple]):not([size])
+  height: $form-height
+  vertical-align: middle
+  display: inline-block
+
+.sk-input:not(input)
+.sk-select:not(select)
+  line-height: $form-line-height
+
+
+// Multi-line
+.sk-select[multiple],
+.sk-select[size],
+.sk-textarea
+  padding-top: $form-padding-vertical
+  padding-bottom: $form-padding-vertical
+  vertical-align: top
+
+// Focus
+.sk-input:focus,
+.sk-select:focus,
+.sk-textarea:focus
+  outline: none
+  background: $form-background
+  color: $form-color
+
+
+// Disabled
+.sk-input:disabled,
+.sk-select:disabled,
+.sk-textarea:disabled
+  background: $form-background
+  color: $form-color
+
+// Placeholder
+.sk-input::-ms-input-placeholder
+  color: $form-color !important
+
+.sk-input::placeholder
+  color: $form-color !important
+
+.sk-textarea::-ms-input-placeholder
+  color: $form-color !important
+
+.sk-textarea::placeholder
+  color: $form-color !important
+
+// Style modifier (`input`, `select` and `textarea`)
+/*
+ * Small
+ */
+.sk-form-small
+  font-size: $form-small-font-size
+
+.sk-form-small:not(textarea):not([multiple]):not([size])
+  height: $form-small-height
+  padding-left: $form-small-padding-horizontal
+  padding-right: $form-small-padding-horizontal
+
+.sk-form-small:not(select):not(input):not(textarea)
+  line-height: $form-small-line-height
+
+.sk-form-large
+  font-size: $form-large-font-size
+
+.sk-form-large:not(textarea):not([multiple]):not([size])
+  height: $form-large-height
+  padding-left: $form-large-padding-horizontal
+  padding-right: $form-large-padding-horizontal
+
+.sk-form-large:not(select):not(input):not(textarea)
+  line-height: $form-large-line-height
+
+/*
+ * Error
+ */
+.sk-form-danger,
+.sk-form-danger:focus
+  color: $danger !important
+
+/*
+ * Success
+ */
+.sk-form-success,
+.sk-form-success:focus
+  color: $success !important
+
+/*
+ * Blank
+ */
+
+.sk-form-blank
+  background: none
+
+/*
+ * Fixed widths
+ * Different widths for mini sized `input` and `select` elements
+ */
+
+input.sk-form-width-xsmall
+  width: $form-width-xsmall
+
+select.sk-form-width-xsmall
+  width: ($form-width-xsmall + 25px)
+
+.sk-form-width-small
+  width: $form-width-small
+
+.sk-form-width-medium
+  width: $form-width-medium
+
+.sk-form-width-large
+  width: $form-width-large
+
+/* Select
+ ========================================================================== */
+
+/*
+ * 1. Remove default style. Also works in Firefox
+ * 2. Style
+ * 3. Remove default style in IE 10/11
+ * 4. Set `color` for options in the select dropdown, because the inherited `color` might be too light.
+ */
+.select:not([multiple]):not([size])
+  -webkit-appearance: none
+  -moz-appearance: none
+  padding-right: $form-select-padding-right
+  +svg-fill($internal-form-select-image, "#000", $form-color)
+  background-repeat: no-repeat
+  background-position: 100% 50%
+
+
+.select:not([multiple]):not([size])::-ms-expand
+  display: none
+
+.select:not([multiple]):not([size]) option
+  color: $form-select-option-color
+
+.select:not([multiple]):not([size]):disabled
+  +svg-fill($internal-form-select-image, "#000", $form-color)
+
+
+/* Radio and checkbox
+ * Note: Does not work in IE11
+ ========================================================================== */
+
+/*
+ * 1. Style
+ * 2. Make box more robust so it clips the child element
+ * 3. Vertical alignment
+ * 4. Remove default style
+ * 5. Fix black background on iOS
+ * 6. Center icons
+ */
+.radio,
+.checkbox
+  display: inline-block
+  height: $form-radio-size
+  width: $form-radio-size
+  overflow: hidden
+  margin-top: $form-radio-margin-top
+  vertical-align: middle
+  -webkit-appearance: none
+  -moz-appearance: none
+  background-color: $form-background
+  background-repeat: no-repeat
+  background-position: 50% 50%
+
+.radio
+  border-radius: 50%
+
+.radio:focus,
+.checkbox:focus
+  outline: none
+
+/*
+ * Checked
+ */
+
+.radio:checked,
+.checkbox:checked,
+.checkbox:indeterminate
+  background-color: $form-background
+
+/* Focus */
+.radio:checked:focus,
+.checkbox:checked:focus,
+.checkbox:indeterminate:focus
+  background-color: $form-background
+
+/*
+ * Icons
+ */
+
+.radio:checked
+  @include svg-fill($internal-form-radio-image, "#000", $primary)
+
+.checkbox:checked
+  @include svg-fill($internal-form-radio-image, "#000", $primary)
+
+.checkbox:indeterminate
+  @include svg-fill($internal-form-radio-image, "#000", $primary)
+
+/*
+ * Disabled
+ */
+
+.radio:disabled,
+.checkbox:disabled
+  @include svg-fill($internal-form-radio-image, "#000", $grey)
+.radio:disabled:checked
+  @include svg-fill($internal-form-radio-image, "#000", $grey)
+.checkbox:disabled:checked
+  @include svg-fill($internal-form-radio-image, "#000", $grey)
+.checkbox:disabled:indeterminate
+  @include svg-fill($internal-form-radio-image, "#000", $grey)
+
+
+/* Legend
+ ========================================================================== */
+
+/*
+ * Legend
+ * 1. Behave like block element
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 4. Style
+ */
+
+.legend
+  width: 100%
+  color: inherit
+  padding: 0
+  font-size: $form-legend-font-size
+  line-height: $form-legend-line-height
+
+/* Custom controls
+ ========================================================================== */
+
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Behave like most inline-block elements
+ */
+
+.form-custom
+  display: inline-block
+  position: relative
+  max-width: 100%
+  vertical-align: middle
+
+/*
+ * 1. Position and resize the form control to always cover its container
+ * 2. Required for Firefox for positioning to the left
+ * 3. Required for Webkit to make `height` work
+ * 4. Hide controle and show cursor
+ * 5. Needed for the cursor
+ * 6. Clip height caused by 5. Needed for Webkit only
+ */
+
+.form-custom select,
+.form-custom input[type="file"]
+  /* 1 */
+  position: absolute
+  top: 0
+  z-index: 1
+  width: 100%
+  height: 100%
+  /* 2 */
+  left: 0
+  /* 3 */
+  -webkit-appearance: none
+  /* 4 */
+  opacity: 0
+  cursor: pointer
+
+.form-custom input[type="file"]
+  /* 5 */
+  font-size: 500px
+  /* 6 */
+  overflow: hidden
+
+/* Layout
+ ========================================================================== */
+
+/*
+ * Stacked
+ */
+
+.form-stacked .form-label
+  display: block
+  margin-bottom: $form-stacked-margin-bottom
+
+/*
+ * Horizontal
+ */
+
+/* Tablet portrait and smaller */
+@media (max-width: $breakpoint-small-max)
+  .form-horizontal .form-label
+    display: block
+    margin-bottom: $form-stacked-margin-bottom
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium)
+  .form-horizontal .form-label
+    width: $form-horizontal-label-width
+    margin-top: $form-horizontal-label-margin-top
+    float: left
+
+  .form-horizontal .form-controls
+    margin-left: $form-horizontal-controls-margin-left
+
+  /* Better vertical alignment if controls are checkboxes and radio buttons with text */
+  .form-horizontal .form-controls-text
+    padding-top: $form-horizontal-controls-text-padding-top
+
+/* Icons
+ ========================================================================== */
+
+/*
+ * 1. Set position
+ * 2. Set width
+ * 3. Center icon vertically and horizontally
+ * 4. Style
+ */
+
+.form-icon
+  /* 1 */
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  /* 2 */
+  width: $form-icon-width
+  /* 3 */
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  color: $form-icon-color
+
+.form-icon:hover
+  color: $form-icon-color
+
+/*
+ * Make `input` element clickable through icon, e.g. if it's a `span`
+ */
+
+.form-icon:not(a):not(button):not(input)
+  pointer-events: none
+
+/*
+ * Input padding
+ */
+
+.form-icon:not(.form-icon-flip) ~ .input
+  padding-left: $form-icon-width !important
+
+/*
+ * Position modifier
+ */
+
+.form-icon-flip
+  right: 0
+  left: auto
+
+.form-icon-flip ~ .input
+  padding-right: $form-icon-width !important
+

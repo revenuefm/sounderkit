@@ -1,0 +1,28 @@
+// Name:            Card Top list component
+// Description:     Top list component for displaying top episodes in a card
+//
+// Component:       `.sk-card-top-list*`
+//
+// ========================================================================
+
+.sk-card-top-list
+  background-color: $grey-900
+  .sk-card-title
+    color: $grey-300
+  .sk-top-episode-list
+    .sk-top-episode-item
+      height: $global-gutter * 2.2
+      border-bottom: 1px solid rgba($inverted-global-border-color, .08)
+    .sk-item-name
+      font-size: $global-small-font-size
+      color: $inverted-link-color
+    .sk-item-position
+      font-size: $global-small-font-size
+      color: $grey-300
+    .sk-item-actions
+      cursor: pointer
+      color: $grey-300
+
+.sk-top-episode-item:last-child
+  border-bottom: none
+  opacity: 0.5

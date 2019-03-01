@@ -1,0 +1,145 @@
+// Name:            Tile
+// Description:     Component to create tiled boxes
+//
+// Component:       `sk-tile`
+//
+// Modifiers:       `sk-tile-xsmall`
+//                  `sk-tile-small`
+//                  `sk-tile-large`
+//                  `sk-tile-xlarge`
+//                  `sk-tile-default`
+//                  `sk-tile-muted`
+//                  `sk-tile-primary`
+//                  `sk-tile-secondary`
+//
+// States:          `sk-preserve-color`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Tile
+ ========================================================================== */
+
+.sk-tile
+  position: relative
+  box-sizing: border-box
+  padding-left: $tile-padding-horizontal
+  padding-right: $tile-padding-horizontal
+  padding-top: $tile-padding-vertical
+  padding-bottom: $tile-padding-vertical
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small)
+  .sk-tile
+    padding-left: $tile-padding-horizontal-s
+    padding-right: $tile-padding-horizontal-s
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) 
+  .sk-tile
+    padding-left: $tile-padding-horizontal-m
+    padding-right: $tile-padding-horizontal-m
+    padding-top: $tile-padding-vertical-m
+    padding-bottom: $tile-padding-vertical-m
+
+/*
+ * Micro clearfix
+ */
+
+.sk-tile::before,
+.sk-tile::after 
+  content: ""
+  display: table
+
+.sk-tile::after
+  clear: both
+  
+/*
+ * Remove margin from the last-child
+ */
+
+.sk-tile > :last-child
+  margin-bottom: 0
+
+/* Size modifiers
+ ========================================================================== */
+
+/*
+ * XSmall
+ */
+
+.sk-tile-xsmall
+  padding-top: $tile-xsmall-padding-vertical
+  padding-bottom: $tile-xsmall-padding-vertical
+
+/*
+ * Small
+ */
+
+.sk-tile-small
+  padding-top: $tile-small-padding-vertical
+  padding-bottom: $tile-small-padding-vertical
+/*
+ * Large
+ */
+
+.sk-tile-large
+  padding-top: $tile-large-padding-vertical
+  padding-bottom: $tile-large-padding-vertical
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium) 
+  .sk-tile-large
+    padding-top: $tile-large-padding-vertical-m
+    padding-bottom: $tile-large-padding-vertical-m
+
+
+/*
+ * XLarge
+ */
+
+.sk-tile-xlarge
+  padding-top: $tile-xlarge-padding-vertical
+  padding-bottom: $tile-xlarge-padding-vertical
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium)
+  .sk-tile-xlarge
+    padding-top: $tile-xlarge-padding-vertical-m
+    padding-bottom: $tile-xlarge-padding-vertical-m
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Default
+ */
+
+.sk-tile-default
+  background: $tile-default-background
+/*
+ * Muted
+ */
+
+.sk-tile-muted
+  background: $tile-muted-background
+
+/*
+ * Primary
+ */
+
+.sk-tile-primary
+  background: $tile-primary-background
+/*
+ * Secondary
+ */
+
+.sk-tile-secondary
+  background: $tile-secondary-background
+  
+/*
+ * Tertiary
+ */
+.sk-tile-tertiary
+  background: $tile-tertiary-background

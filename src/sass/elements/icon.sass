@@ -1,0 +1,75 @@
+.sk-icon
+  margin: 0
+  border: none
+  border-radius: 0
+  overflow: visible
+  font: inherit
+  color: inherit
+  text-transform: none
+  padding: 0
+  background-color: transparent
+  display: inline-block
+  fill: currentcolor
+  line-height: 0
+
+button.sk-icon:not(:disabled)
+  cursor: pointer
+
+.sk-icon::-moz-focus-inner
+  border: 0
+  padding: 0
+
+.sk-icon:not(.uk-preserve) [fill*='#']:not(.preserve)
+  fill: currentcolor
+
+.sk-icon:not(.uk-preserve) [stroke*='#']:not(.preserve)
+  stroke: currentcolor
+
+.sk-icon > *
+  transform: translate(0,0)
+
+.sk-icon-button
+  box-sizing: border-box
+  width: $icon-button-size
+  height: $icon-button-size
+  border-radius: $global-border-radius
+  vertical-align: middle
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  background-color: $black
+  color: findColorInvert($black)
+
+.sk-icon-button:hover,
+.sk-icon-button:focus
+  outline: none
+  background-color: lighten($black, 5%)
+  color: findColorInvert($black)
+
+.sk-icon-button.sk-icon-button-transparent
+  background: none
+  color: $white
+  &:hover
+    background: none
+
+.sk-icon-button.sk-icon-button-overlay
+  background: rgba($black, 0.7)
+
+
+/*
+ * Link
+ */
+
+.sk-icon-link
+  color: $link-color
+
+.sk-icon-link:hover,
+.sk-icon-link:focus
+  color: $link-color
+  outline: none
+
+/* OnClick + Active */
+.sk-icon-link:active,
+.sk-active > .sk-icon-link
+  color: $link-color
+

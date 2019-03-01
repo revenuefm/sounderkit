@@ -1,0 +1,150 @@
+// Name:            App layout
+// Description:     Two column app root
+//
+// ========================================================================
+
+html
+  overflow-y: scroll
+
+body
+  overflow: hidden
+
+.sk-sidebar-left
+  position: fixed
+  top: 0
+  bottom: 0
+  box-sizing: border-box
+  width: $side-navigation-width-l
+  overflow: auto
+  background: $side-navigation-background
+
+
+@media (min-width: $breakpoint-medium )
+  .sk-sidebar-left+.sk-main
+    padding-left: $side-navigation-width-l
+
+
+@media (min-width: $breakpoint-large )
+  .sk-sidebar-left
+    width: $side-navigation-width-xl
+  .sk-sidebar-left+.sk-main
+    padding-left: $side-navigation-width-xl
+
+@media( max-width: $breakpoint-small-max )
+  .sk-visible-m.sk-sidebar-show
+    display: block !important
+    z-index: 1100
+
+//body,
+//html
+//  display: flex
+//  flex: 1 0 auto
+//  width: 100%
+//  height: 100%
+//  max-height: 100%
+//  min-height: 100%
+//  margin: 0
+//  padding: 0
+//  overflow: hidden
+//
+//
+//body, .sk-app-layout-body
+//  display: flex
+//  flex: 1 0 auto
+//  width: 100%
+//  height: 100%
+//  min-width: 100%
+//  min-height: 100%
+//  margin: 0
+//  padding: 0
+//  overflow: hidden
+//  // app, nuxt.., custom class
+//  #app, #__nuxt, .sk-app-wrapper
+//    position: relative
+//    display: flex
+//    flex: 1 1 auto
+//    height: 100%
+//    width: 100%
+//    min-width: 0
+//    #__layout, .sk-app-layout
+//      display: flex
+//      flex: 1 1 auto
+//      width: 100%
+//      height: 100%
+//      #main, .sk-app-main
+//        position: relative
+//        display: flex
+//        flex: 1 1 auto
+//        flex-direction: column
+//        width: 100%
+//        height: 100%
+//        z-index: 1
+//        min-width: 0
+//        .root-container
+//          position: relative
+//          display: flex
+//          flex: 1 1 0%
+//          width: 100%
+//          min-height: 0
+//          min-width: 0
+//          .sk-app-container
+//            position: relative
+//            display: flex
+//            flex: 1 1 0%
+//            flex-direction: column
+//            min-width: 0
+//            overflow: auto
+//
+///*
+// * 1. Box sizing has to be `content-box` so the max-width is always the same and
+// *    unaffected by the padding on different breakpoints. It's important for the size modifiers.
+// */
+//
+//.sk-app-row
+//  /* 1 */
+//  width: 100%
+//  max-width: 100%
+//  margin-left: auto
+//  margin-right: auto
+//  padding-left: $container-padding-horizontal
+//  padding-right: $container-padding-horizontal
+//
+//.sk-app-row-no-padding
+//  padding-left: 0 !important
+//  padding-right: 0 !important
+//
+///* Phone landscape and bigger */
+//@media (min-width: $breakpoint-small)
+//  .sk-app-row
+//    padding-left: $container-padding-horizontal-s
+//    padding-right: $container-padding-horizontal-s
+//
+///* Tablet landscape and bigger */
+//@media (min-width: $breakpoint-medium)
+//  .sk-app-row
+//    padding-left: $container-padding-horizontal
+//    padding-right: $container-padding-horizontal
+//
+///*
+// * Micro clearfix
+// */
+//.sk-app-row::before,
+//.sk-app-row::after
+//  content: ""
+//  display: table
+//
+//.sk-app-row::after
+//  clear: both
+//
+///*
+// * Remove margin from the last-child
+// */
+//.sk-app-row > :last-child
+//  margin-bottom: 0
+//
+///*
+// * Remove padding from nested containers
+// */
+//.sk-app-row .sk-app-row
+//  padding-left: 0
+//  padding-right: 0

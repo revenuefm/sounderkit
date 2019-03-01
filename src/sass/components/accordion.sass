@@ -1,0 +1,80 @@
+// Name:            Accordion
+// Description:     Component to create accordions
+//
+// Component:       `sk-accordion`
+//
+// Sub-objects:     `sk-accordion-title`
+//                  `sk-accordion-content`
+//
+// States:          `sk-open`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Accordion
+ ========================================================================== */
+
+.sk-accordion
+  padding: 0
+  list-style: none
+
+/* Item
+ ========================================================================== */
+
+.sk-accordion > :nth-child(n+2)
+  margin-top: $accordion-item-margin-top
+
+
+/* Title
+ ========================================================================== */
+
+.sk-accordion-title
+  display: block
+  font-size: $accordion-title-font-size
+  line-height: $accordion-title-line-height
+  color: $accordion-title-color
+  overflow: hidden
+  &::before
+    content: ""
+    width: ($accordion-title-line-height * 1em)
+    height: ($accordion-title-line-height * 1em)
+    margin-left: $accordion-icon-margin-left
+    float: right
+    @include svg-fill($internal-accordion-close-image, "#000", $accordion-icon-color)
+    background-repeat: no-repeat
+    background-position: 50% 50%
+
+  .sk-open > &::before
+    @include svg-fill($internal-accordion-open-image, "#000", $accordion-icon-color)
+
+/* Hover + Focus */
+.sk-accordion-title:hover,
+.sk-accordion-title:focus
+  color: $accordion-title-hover-color
+  text-decoration: none
+  outline: none
+
+
+/* Content
+ ========================================================================== */
+
+.sk-accordion-content
+  margin-top: $accordion-content-margin-top
+
+/*
+ * Micro clearfix
+ */
+
+.sk-accordion-content::before,
+.sk-accordion-content::after
+  content: ""
+  display: table
+
+.sk-accordion-content::after
+  clear: both
+/*
+ * Remove margin from the last-child
+ */
+
+.sk-accordion-content > :last-child 
+  margin-bottom: 0

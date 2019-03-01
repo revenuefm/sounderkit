@@ -1,0 +1,113 @@
+// Name:            Dropdown
+// Description:     Component to create dropdown menus
+//
+// Component:       `sk-dropdown`
+//
+// Adopted:         `sk-dropdown-nav`
+//
+// Modifiers:       `sk-dropdown-top-*`
+//                  `sk-dropdown-bottom-*`
+//                  `sk-dropdown-left-*`
+//                  `sk-dropdown-right-*`
+//                  `sk-dropdown-stack`
+//                  `sk-dropdown-grid`
+//
+// States:          `sk-active`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Dropdown
+ ========================================================================== */
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Set a default width
+ * 4. Style
+ */
+
+.sk-dropdown
+  /* 1 */
+  display: none
+  /* 2 */
+  position: absolute
+  z-index: $dropdown-z-index
+  /* 3 */
+  box-sizing: border-box
+  min-width: $dropdown-min-width
+  /* 4 */
+  padding: $dropdown-padding
+  background: $dropdown-background
+  color: $dropdown-color
+  box-shadow: $dropdown-box-shadow
+
+/* Show */
+.sk-dropdown.sk-open
+  display: block
+
+/* Nav
+ * Adopts `sk-nav`
+ ========================================================================== */
+
+.sk-dropdown-nav
+  white-space: nowrap
+  font-size: $dropdown-nav-font-size
+
+/*
+ * Items
+ */
+
+.sk-dropdown-nav > li > a
+  color: $dropdown-nav-item-color
+
+/* Hover + Focus + Active */
+.sk-dropdown-nav > li > a:hover,
+.sk-dropdown-nav > li > a:focus,
+.sk-dropdown-nav > li.sk-active > a
+  color: $dropdown-nav-item-hover-color
+
+/*
+ * Header
+ */
+
+.sk-dropdown-nav .sk-nav-header
+  color: $dropdown-nav-header-color
+/*
+ * Divider
+ */
+
+.sk-dropdown-nav .sk-nav-divider
+  border-top: $dropdown-nav-divider-border-width solid $dropdown-nav-divider-border
+
+/*
+ * Sublists
+ */
+
+.sk-dropdown-nav .sk-nav-sub a
+  color: $dropdown-nav-sublist-item-color
+
+.sk-dropdown-nav .sk-nav-sub a:hover,
+.sk-dropdown-nav .sk-nav-sub a:focus,
+.sk-dropdown-nav .sk-nav-sub li.sk-active > a
+  color: $dropdown-nav-sublist-item-hover-color
+
+/* Direction / Alignment modifiers
+ ========================================================================== */
+
+/* Direction */
+[class*='sk-dropdown-top']
+  margin-top: (-$dropdown-margin)
+[class*='sk-dropdown-bottom']
+  margin-top: $dropdown-margin
+[class*='sk-dropdown-left']
+  margin-left: (-$dropdown-margin)
+[class*='sk-dropdown-right']
+  margin-left: $dropdown-margin
+
+
+/* Grid modifiers
+ ========================================================================== */
+
+.sk-dropdown-stack .sk-dropdown-grid > *
+  width: 100% !important

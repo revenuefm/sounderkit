@@ -1,0 +1,29 @@
+// Name:            SVG
+// Description:     Component to style SVGs
+//
+// Component:       `.sk-svg`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: SVG
+ ========================================================================== */
+
+/*
+ * 1.sk- Fill all SVG elements with the current text color if no `fill` attribute is set
+ * 2.sk- Set the fill and stroke color of all SVG elements to the current text color
+ */
+
+/* 1 */
+.sk-svg,
+/* 2 */
+.sk-svg:not(.sk-preserve) [fill*='#']:not(.sk-preserve)
+  fill: currentcolor
+.sk-svg:not(.sk-preserve) [stroke*='#']:not(.sk-preserve)
+  stroke: currentcolor
+
+/*
+ * Fix Firefox blurry SVG rendering: https://bugzilla.sk-mozilla.org/show_bug.cgi?id=1046835
+ */
+.sk-svg
+  transform: translate(0,0)

@@ -1,0 +1,45 @@
+// Name:            Height
+// Description:     Utilities for heights
+//
+// Component:       `height-*`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Height
+ ========================================================================== */
+
+[class*='sk-height']
+  box-sizing: border-box
+
+/*
+ * Only works if parent element has a height set
+ */
+.sk-height-1-1
+  height: 100%
+
+.sk-height-viewport
+  min-height: 100vh
+
+/*
+ * Pixel
+ * Useful for `overflow: auto`
+ */
+.sk-height-small
+  height: $height-small-height
+
+.sk-height-medium
+  height: $height-medium-height
+
+.sk-height-large
+  height: $height-large-height
+
+.sk-height-max-small
+  max-height: $height-small-height
+
+.sk-height-max-medium
+  max-height: $height-medium-height
+
+.sk-height-max-large
+  max-height: $height-large-height
+

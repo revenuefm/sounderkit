@@ -1,0 +1,345 @@
+// Name:            Animation
+// Description:     Utilities for keyframe animations
+//
+// Component:       `.sk-animation-*`
+//
+// Modifiers:       `.sk-animation-reverse`
+//                  `.sk-animation-fast`
+//                  `.sk-animation-fade`
+//                  `.sk-animation-scale-up`
+//                  `.sk-animation-scale-down`
+//                  `.sk-animation-slide-top-*`
+//                  `.sk-animation-slide-bottom-*`
+//                  `.sk-animation-slide-left-*`
+//                  `.sk-animation-slide-right-*`
+//                  `.sk-animation-kenburns`
+//                  `.sk-animation-shake`
+//
+// Sub-objects:     `.sk-animation-toggle`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Animation
+ ========================================================================== */
+
+[class*='sk-animation-']
+  animation-duration: $animation-duration
+  animation-timing-function: ease-out
+  animation-fill-mode: both
+
+/* Direction modifier
+ ========================================================================== */
+.sk-animation-reverse
+  animation-direction: reverse
+  animation-timing-function: ease-in
+
+/* Toggle (Hover + Focus)
+ ========================================================================== */
+
+/*
+ * The toggle is triggered on touch devices using `:focus` and tabindex
+ */
+.sk-animation-toggle:not(:hover):not(:focus) [class*='sk-animation-']
+  animation-name: none
+
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+.sk-animation-toggle
+  -webkit-tap-highlight-color: transparent
+
+/*
+ * Remove outline for `tabindex`
+ */
+
+.sk-animation-toggle:focus
+  outline: none
+
+/* Animations
+ ========================================================================== */
+
+/*
+ * Fade
+ */
+
+.sk-animation-fade
+  animation-name: fade
+  animation-duration: $animation-fade-duration
+  animation-timing-function: linear
+
+/*
+ * Scale
+ */
+
+.sk-animation-scale-up
+  animation-name: fade-scale-02
+.sk-animation-scale-down
+  animation-name: fade-scale-18
+
+/*
+ * Slide
+ * Slide have many versions, a general one, small and medium
+ */
+
+.sk-animation-slide-top
+  animation-name: fade-top
+.sk-animation-slide-bottom
+  animation-name: fade-bottom
+.sk-animation-slide-left
+  animation-name: fade-left
+.sk-animation-slide-right
+  animation-name: fade-right
+
+$slide-animation-list: small medium
+
+@each $size in $slide-animation-list
+  .sk-animation-slide-top-#{$size}
+    animation-name: fade-top-#{$size}
+  .sk-animation-slide-bottom-#{$size}
+    animation-name: fade-bottom-#{$size}
+  .sk-animation-slide-left-#{$size}
+    animation-name: fade-left-#{$size}
+  .sk-animation-slide-right-#{$size}
+    animation-name: fade-right-#{$size}
+
+
+/*
+ * KenBurns
+ */
+
+.sk-animation-kenburns
+  animation-name: scale-kenburns
+  animation-duration: $animation-kenburns-duration
+
+/*
+ * Shake
+ */
+
+.sk-animation-shake
+  animation-name: shake
+
+
+/* Duration modifier
+ ========================================================================== */
+
+.sk-animation-fast
+  animation-duration: $animation-fast-duration
+
+/* Keyframes used by animation classes
+ ========================================================================== */
+
+/*
+ * Fade
+ */
+@keyframes fade
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+/*
+ * Slide Top
+ */
+
+@keyframes fade-top
+  0%
+    opacity: 0
+    transform: translateY(-100%)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+/*
+ * Slide Bottom
+ */
+
+@keyframes fade-bottom
+  0%
+    opacity: 0
+    transform: translateY(100%)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+/*
+ * Slide Left
+ */
+
+@keyframes fade-left
+  0%
+    opacity: 0
+    transform: translateX(-100%)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+/*
+ * Slide Right
+ */
+
+@keyframes fade-right
+  0%
+    opacity: 0
+    transform: translateX(100%)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+/*
+ * Slide Top Small
+ */
+
+@keyframes fade-top-small
+  0%
+    opacity: 0
+    transform: translateY(-$animation-slide-small-translate)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+/*
+ * Slide Bottom Small
+ */
+
+@keyframes fade-bottom-small
+  0%
+    opacity: 0
+    transform: translateY($animation-slide-small-translate)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+/*
+ * Slide Left Small
+ */
+
+@keyframes fade-left-small
+  0%
+    opacity: 0
+    transform: translateX(-$animation-slide-small-translate)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+/*
+ * Slide Right Small
+ */
+
+@keyframes fade-right-small
+  0%
+    opacity: 0
+    transform: translateX($animation-slide-small-translate)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+/*
+ * Slide Top Medium
+ */
+
+@keyframes fade-top-medium
+  0%
+    opacity: 0
+    transform: translateY(-$animation-slide-medium-translate)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+/*
+ * Slide Bottom Medium
+ */
+
+@keyframes fade-bottom-medium
+  0%
+    opacity: 0
+    transform: translateY($animation-slide-medium-translate)
+  100%
+    opacity: 1
+    transform: translateY(0)
+
+
+
+/*
+ * Slide Left Medium
+ */
+
+@keyframes fade-left-medium
+  0%
+    opacity: 0
+    transform: translateX(-$animation-slide-medium-translate)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+
+/*
+ * Slide Right Medium
+ */
+
+@keyframes fade-right-medium
+  0%
+    opacity: 0
+    transform: translateX($animation-slide-medium-translate)
+  100%
+    opacity: 1
+    transform: translateX(0)
+
+/*
+ * Scale Up
+ */
+
+@keyframes fade-scale-02
+  0%
+    opacity: 0
+    transform: scale(0.2)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+/*
+ * Scale Down
+ */
+@keyframes fade-scale-18
+  0%
+    opacity: 0
+    transform: scale(1.8)
+  100%
+    opacity: 1
+    transform: scale(1)
+
+/*
+ * KenBurns
+ */
+
+@keyframes scale-kenburns
+  0%
+    transform: scale(1)
+  100%
+    transform: scale(1.2)
+
+/*
+ * Shake
+ */
+
+@keyframes shake
+  0%, 100%
+    transform: translateX(0)
+  10%
+    transform: translateX(-9px)
+  20%
+    transform: translateX(8px)
+  30%
+    transform: translateX(-7px)
+  40%
+    transform: translateX(6px)
+  50%
+    transform: translateX(-5px)
+  60%
+    transform: translateX(4px)
+  70%
+    transform: translateX(-3px)
+  80%
+    transform: translateX(2px)
+  90%
+    transform: translateX(-1px)

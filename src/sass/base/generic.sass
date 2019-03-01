@@ -1,0 +1,303 @@
+html
+  font-family: $base-body-font-family
+  font-size: $base-body-font-size
+  font-weight: $base-body-font-weight
+  line-height: $base-body-line-height
+  -webkit-text-size-adjust: 100%
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+
+body
+  margin: 0
+  color: $paragraph-text
+  background-color: $background-color
+
+/// Remove gaps in links underline in iOS 8+ and Safari 8+.
+/// Remove the outline on focused links when they are also active or hovered
+a
+  -webkit-text-decoration-skip: objects
+  text-decoration: none
+  cursor: pointer
+  color: $link-color
+  &.active, &:hover
+    color: darken($link-color, 5%)
+    text-decoration: none
+    outline: none
+
+/// Text-level semantics
+abbr[title]
+  text-decoration: underline
+  -webkit-text-decoration-style: dotted
+
+/// Add the correct font weight in Chrome, Edge, and Safari.
+b,
+strong
+  font-weight: $base-strong-font-weight
+
+body :not(pre) > code,
+body :not(pre) > kbd,
+body :not(pre) > samp
+  font-family: $base-code-font-family
+  font-size: $base-code-font-size
+  white-space: nowrap
+  color: $danger
+
+ins
+  text-decoration: none
+  background-color: $mark-background
+  color: $mark-color
+
+mark
+  background-color: $mark-background
+  color: $mark-color
+
+q
+ font-style: $base-quote-font-style
+
+small
+  font-size: 80% // correct font size in all browsers
+
+/// Prevents `sub` and `sup` affecting `line-height` in all browsers.
+sub,
+sup
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+
+sup
+  top: -0.5em
+sub
+  bottom: -0.25
+
+/// Embedded content
+/// ==========================================================================
+
+/// Remove the gap between embedded content and the bottom of their containers.
+audio,
+canvas,
+iframe,
+img,
+svg,
+video
+  vertical-align: middle
+
+/*
+ * 1. Add responsiveness.
+ * 2. Auto-scale the height. Only needed if `height` attribute is present.
+ * 3. Corrects responsive `max-width` behavior if padding and border are used.
+ * 4. Exclude SVGs for IE11 because they don't preserve their aspect ratio.
+ */
+
+canvas,
+img,
+video
+ max-width: 100%
+ height: auto
+ box-sizing: border-box
+
+@supports (display: block)
+  svg
+    max-width: 100%
+    height: auto
+    box-sizing: border-box
+
+/// Hide the overflow in IE
+svg:not(:root)
+  overflow: hidden
+
+
+/// Hide `alt` text for lazy load images
+/// Selector for background while loading img[data-src*='.jpg'][src*='data:image'] { background: grey; }
+img:not([src])
+  visibility: hidden
+
+/// Iframe - Remove border in all browsers
+iframe
+  border: 0
+
+/// Block elements
+/// ==========================================================================
+p,
+ul,
+ol,
+dl,
+pre,
+address,
+fieldset,
+figure
+  margin: 0 0 $base-margin-vertical 0
+
+// Add margin if adjacent element
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + pre,
+* + address,
+* + fieldset,
+* + figure
+  margin-top: $base-margin-vertical
+
+
+/// Block elements
+/// ==========================================================================
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6
+  margin: 0 0 $base-margin-vertical 0
+  font-family: $base-heading-font-family
+  font-weight: $base-heading-font-weight
+  color: $base-heading-color
+  text-transform: $base-heading-text-transform
+
+// Add margin if adjacent element
+* + h1, * + .h1,
+* + h2, * + .h2,
+* + h3, * + .h3,
+* + h4, * + .h4,
+* + h5, * + .h5,
+* + h6, * + .h6
+  margin-top: $base-heading-margin-top
+
+/// Sizes
+h1, .h1
+  font-size: $base-h1-font-size
+  line-height: $base-h1-line-height
+
+h2, .h2
+  font-size: $base-h2-font-size
+  line-height: $base-h2-line-height
+
+h3, .h3
+  font-size: $base-h3-font-size
+  line-height: $base-h3-line-height
+
+h4, .h4
+  font-size: $base-h4-font-size
+  line-height: $base-h4-line-height
+
+h5, .h5
+  font-size: $base-h5-font-size
+  line-height: $base-h5-line-height
+
+h6, .h6
+  font-size: $base-h6-font-size
+  line-height: $base-h6-line-height
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium)
+  h1, .h1
+    font-size: $base-h1-font-size-m
+  h2, .h2
+    font-size: $base-h2-font-size-m
+
+
+/// Lists
+/// ==========================================================================
+ul,
+ol
+  padding-left: $base-list-padding-left
+
+ul > li > ul,
+ul > li > ol,
+ol > li > ol,
+ol > li > ul
+  margin: 0
+
+/// Lists
+/// ==========================================================================
+dt
+  font-weight: bold
+dd
+  margin-left: 0
+
+/// Horizontal rules
+/// ==========================================================================
+hr, .hr
+  box-sizing: content-box
+  height: 0
+  overflow: visible
+  text-align: inherit
+  margin: 0 0 $base-hr-margin-vertical 0
+  border: 0
+  border-width: $base-hr-border-width
+  border-style: solid
+  border-color: $global-border-color
+
+/// Add margin if adjacent element
+* + hr,
+* + .hr
+  margin-top: $base-hr-margin-vertical
+
+/// Address
+/// ==========================================================================
+address
+  font-style: normal
+
+
+/// Blockquotes
+/// ==========================================================================
+
+blockquote
+  margin: 0 0 $base-blockquote-margin-vertical 0
+  font-size: $base-blockquote-font-size
+  line-height: $base-blockquote-line-height
+  font-style: $base-blockquote-font-style
+  color: $base-blockquote-color
+
+* + blockquote
+  margin-top: $base-blockquote-margin-vertical
+
+blockquote p:last-of-type
+  margin-bottom: 0
+
+blockquote footer
+  margin-top:  $base-blockquote-footer-margin-top
+  font-size: $base-blockquote-footer-font-size
+  line-height: $base-blockquote-footer-line-height
+  color: $base-blockquote-footer-color
+  &::before
+    content: "— "
+
+/// PRE
+/// ==========================================================================
+
+pre
+  font: $base-pre-font-size unquote("/") $base-pre-line-height $base-pre-font-family
+  color: $paragraph-text
+  -moz-tab-size: 4
+  tab-size: 4
+  overflow: auto
+  padding: $base-pre-padding
+  border: $base-pre-border-width solid $base-pre-border
+  border-radius: $base-pre-border-radius
+  background: $base-pre-background
+  code
+    font-family: $base-pre-font-family
+    padding: $base-code-padding-vertical $base-code-padding-horizontal
+    background: $base-code-background
+
+
+//  Selection pseudo-element
+::selection
+  text-shadow: none
+  color: findColorInvert($primary)
+  background-color: $primary
+
+/// HTML 5 elements
+/// ==========================================================================
+details,
+main
+  display: block
+
+summary
+  display: list-item
+
+template
+  display: none
+
+

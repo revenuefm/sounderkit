@@ -1,0 +1,43 @@
+// Name:            Overlay
+// Description:     Component to create content areas overlaying an image
+//
+// Component:       `sk-overlay`
+//
+// Adopted:         `sk-overlay-icon`
+//
+// Modifier:        `sk-overlay-default`
+//                  `sk-overlay-primary`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Overlay
+ ========================================================================== */
+
+.sk-overlay
+  padding: $overlay-padding-vertical $overlay-padding-horizontal
+
+/*
+ * Remove margin from the last-child
+ */
+
+.sk-overlay > :last-child
+  margin-bottom: 0
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Default
+ */
+
+.sk-overlay-default
+  background: $overlay-default-background
+
+/*
+ * Primary
+ */
+
+.sk-overlay-primary
+  background: $overlay-primary-background

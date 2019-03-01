@@ -1,0 +1,68 @@
+// Name:            Article
+// Description:     Component to create articles
+//
+// Component:       `sk-article`
+//
+// Sub-objects:     `sk-article-title`
+//                  `sk-article-meta`
+//
+// ========================================================================
+
+
+/* ========================================================================
+   Component: Article
+ ========================================================================== */
+
+/*
+ * Micro clearfix
+ */
+
+.sk-article::before,
+.sk-article::after
+  content: ""
+  display: table
+
+.sk-article::after
+  clear: both
+
+/*
+ * Remove margin from the last-child
+ */
+
+.sk-article > :last-child
+  margin-bottom: 0
+
+
+
+/* Adjacent sibling
+ ========================================================================== */
+
+.sk-article + .sk-article
+  margin-top: $article-margin-top
+
+
+/* Title
+ ========================================================================== */
+
+.sk-article-title
+  font-size: $article-title-font-size
+  line-height: $article-title-line-height
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium)
+  .sk-article-title
+    font-size: $article-title-font-size-m
+
+
+/* Meta
+ ========================================================================== */
+
+.sk-article-meta
+  font-size: $article-meta-font-size
+  line-height: $article-meta-line-height
+  color: $article-meta-color
+  a
+    color: $article-meta-link-color
+    &:hover
+      color: $article-meta-link-hover-color
+      text-decoration: none

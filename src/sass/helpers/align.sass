@@ -1,0 +1,89 @@
+// Name:            Align
+// Description:     Utilities to align embedded content
+//
+// Component:       `.sk-align-left-*`
+//                  `.sk-align-right-*`
+//                  `.sk-align-center`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Align
+ ========================================================================== */
+
+[class*='sk-align']
+  display: block
+  margin-bottom: $align-margin-vertical
+
+* + [class*='sk-align']
+  margin-top: $align-margin-vertical
+
+/*
+ * Center
+ */
+
+.sk-align-center
+  margin-left: auto
+  margin-right: auto
+
+/*
+ * Left/Right
+ */
+
+.sk-align-left
+  margin-top: 0
+  margin-right: $align-margin-horizontal
+  float: left
+
+.sk-align-right
+  margin-top: 0
+  margin-left: $align-margin-horizontal
+  float: right
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small)
+  .sk-align-left-s
+    margin-top: 0
+    margin-right: $align-margin-horizontal
+    float: left
+
+  .sk-align-right-s
+    margin-top: 0
+    margin-left: $align-margin-horizontal
+    float: right
+
+/* Tablet and bigger */
+@media (min-width: $breakpoint-medium)
+  .sk-align-left-m
+    margin-top: 0
+    margin-right: $align-margin-horizontal
+    float: left
+
+  .sk-align-right-m
+    margin-top: 0
+    margin-left: $align-margin-horizontal
+    float: right
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large)
+  .sk-align-left-l
+    margin-top: 0
+    margin-right: $align-margin-horizontal
+    float: left
+
+  .sk-align-right-l
+    margin-top: 0
+    margin-left: $align-margin-horizontal
+    float: right
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge)
+  .sk-align-left-xl
+    margin-top: 0
+    margin-right: $align-margin-horizontal
+    float: left
+
+  .sk-align-right-xl
+    margin-top: 0
+    margin-left: $align-margin-horizontal
+    float: right

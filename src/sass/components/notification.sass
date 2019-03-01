@@ -1,0 +1,130 @@
+// Name:            Notification
+// Description:     Component to create notification messages
+//
+// Component:       `sk-notification`
+//
+// Sub-objects:     `sk-notification-message`
+//
+// Adopted:         `sk-notification-close`
+//
+// Modifiers:       `sk-notification-top-center`
+//                  `sk-notification-top-right`
+//                  `sk-notification-bottom-left`
+//                  `sk-notification-bottom-center`
+//                  `sk-notification-bottom-right`
+//                  `sk-notification-message-primary`
+//                  `sk-notification-message-success`
+//                  `sk-notification-message-warning`
+//                  `sk-notification-message-danger`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Notification
+ ========================================================================== */
+
+/*
+ * 1. Set position
+ * 2. Dimensions
+ */
+
+.sk-notification
+  /* 1 */
+  position: fixed
+  top: $notification-position
+  left: $notification-position
+  z-index: $notification-z-index
+  /* 2 */
+  box-sizing: border-box
+  width: $notification-width
+
+
+/* Position modifiers
+ ========================================================================== */
+
+.sk-notification-top-right,
+.sk-notification-bottom-right
+  left: auto
+  right: $notification-position
+
+.sk-notification-top-center,
+.sk-notification-bottom-center
+  left: 50%
+  margin-left: ($notification-width / -2)
+
+.sk-notification-bottom-left,
+.sk-notification-bottom-right,
+.sk-notification-bottom-center
+  top: auto
+  bottom: $notification-position
+
+
+/* Responsiveness
+ ========================================================================== */
+
+/* Phones portrait and smaller */
+@media (max-width: $breakpoint-xsmall-max)
+  .sk-notification
+    left: $notification-position
+    right: $notification-position
+    width: auto
+    margin: 0
+
+/* Message
+ ========================================================================== */
+
+.sk-notification-message
+  position: relative
+  padding: $notification-message-padding
+  background: $notification-message-background
+  color: $notification-message-color
+  font-size: $notification-message-font-size
+  line-height: $notification-message-line-height
+  cursor: pointer
+
+* + .sk-notification-message
+  margin-top: $notification-message-margin-top
+
+
+/* Close
+ * Adopts `sk-close`
+ ========================================================================== */
+
+.sk-notification-close
+  display: none
+  position: absolute
+  top: $notification-close-top
+  right: $notification-close-right
+
+.sk-notification-message:hover .sk-notification-close
+  display: block
+
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Primary
+ */
+
+.sk-notification-message-primary
+  color: $notification-message-primary-color
+/*
+ * Success
+ */
+
+.sk-notification-message-success
+  color: $notification-message-success-color
+/*
+ * Warning
+ */
+
+.sk-notification-message-warning
+  color: $notification-message-warning-color
+
+/*
+ * Danger
+ */
+
+.sk-notification-message-danger
+  color: $notification-message-danger-color

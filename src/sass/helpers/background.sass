@@ -1,0 +1,123 @@
+// Name:            Background
+// Description:     Utilities for backgrounds
+//
+// Component:       `.sk-background-*`
+//
+// ========================================================================
+
+/* Color
+ ========================================================================== */
+.sk-background-primary
+  background-color: $primary !important
+
+.sk-background-secondary
+  background-color: $secondary !important
+
+.sk-background-tertiary
+  background-color: $tertiary !important
+
+.sk-background-danger
+  background-color: $danger !important
+
+.sk-background-success
+  background-color: $success !important
+
+.sk-background-blue
+  background-color: $blue !important
+
+.sk-background-teal
+  background-color: $teal !important
+
+.sk-background-white
+  background-color: $white !important
+/* Size
+ ========================================================================== */
+
+.sk-background-cover,
+.sk-background-contain
+  background-position: 50% 50%
+  background-repeat: no-repeat
+
+.sk-background-cover
+  background-size: cover
+
+.sk-background-contain
+  background-size: contain
+
+/* Position
+ ========================================================================== */
+.sk-background-top-left
+  background-position: 0 0
+.sk-background-top-center
+  background-position: 50% 0
+.sk-background-top-right
+  background-position: 100% 0
+.sk-background-center-left
+  background-position: 0 50%
+.sk-background-center-center
+  background-position: 50% 50%
+.sk-background-center-right
+  background-position: 100% 50%
+.sk-background-bottom-left
+  background-position: 0 100%
+.sk-background-bottom-center
+  background-position: 50% 100%
+.sk-background-bottom-right
+  background-position: 100% 100%
+
+/* Repeat
+ ========================================================================== */
+.sk-background-norepeat
+  background-repeat: no-repeat
+
+/* Attachment
+ ========================================================================== */
+
+/*
+ * 1. Fix bug introduced in Chrome 67: the background image is not visible if any element on the page uses `translate3d`
+ */
+.sk-background-fixed
+  background-attachment: fixed
+  backface-visibility: hidden
+
+/*
+ * Exclude touch devices because `fixed` doesn't work on iOS and Android
+ */
+@media (pointer: coarse)
+  .sk-background-fixed
+    background-attachment: scroll
+
+
+/* Blend modes
+ ========================================================================== */
+
+.sk-background-blend-multiply
+  background-blend-mode: multiply
+.sk-background-blend-screen
+  background-blend-mode: screen
+.sk-background-blend-overlay
+  background-blend-mode: overlay
+.sk-background-blend-darken
+  background-blend-mode: darken
+.sk-background-blend-lighten
+  background-blend-mode: lighten
+.sk-background-blend-color-dodge
+  background-blend-mode: color-dodge
+.sk-background-blend-color-burn
+  background-blend-mode: color-burn
+.sk-background-blend-hard-light
+  background-blend-mode: hard-light
+.sk-background-blend-soft-light
+  background-blend-mode: soft-light
+.sk-background-blend-difference
+  background-blend-mode: difference
+.sk-background-blend-exclusion
+  background-blend-mode: exclusion
+.sk-background-blend-hue
+  background-blend-mode: hue
+.sk-background-blend-saturation
+  background-blend-mode: saturation
+.sk-background-blend-color
+  background-blend-mode: color
+.sk-background-blend-luminosity
+  background-blend-mode: luminosity

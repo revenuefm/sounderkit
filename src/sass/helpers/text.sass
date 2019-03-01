@@ -1,0 +1,212 @@
+// Name:            Text
+// Description:     Helpers for text
+//
+// Component:       `.sk-text-*`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Text
+ ========================================================================== */
+
+/* Style modifiers
+ ========================================================================== */
+
+.sk-text-lead
+  font-size: $text-lead-font-size
+  line-height: $text-lead-line-height
+
+
+.sk-text-meta
+  font-size: $text-meta-font-size
+  line-height: $text-meta-line-height
+
+/* Size modifiers
+ ========================================================================== */
+.sk-text-xxsmall
+  font-size: $text-xxsmall-font-size
+  line-height: $text-xxsmall-line-height
+
+.sk-text-xsmall
+  font-size: $text-xsmall-font-size
+  line-height: $text-xsmall-line-height
+
+.sk-text-small
+  font-size: $text-small-font-size
+  line-height: $text-small-line-height
+
+.sk-text-large
+  font-size: $text-large-font-size
+  line-height: $text-large-line-height
+
+.sk-text-xlarge
+  font-size: $text-xlarge-font-size
+  line-height: $text-xlarge-line-height
+
+.sk-text-xxlarge
+  font-size: $text-xxlarge-font-size
+  line-height: $text-xxlarge-line-height
+
+/* Weight modifier
+ ========================================================================== */
+.sk-text-bold
+  font-weight: $text-bold-font-weight
+
+.sk-text-light
+  font-weight: 300
+
+
+/* Transform modifier
+ ========================================================================== */
+.sk-text-uppercase
+  text-transform: uppercase !important
+
+.sk-text-lowercase
+  text-transform: lowercase !important
+
+.sk-text-capitalize
+  text-transform: capitalize !important
+
+/* Color modifiers
+ ========================================================================== */
+.sk-text-grey-lighter
+  color: $grey-300
+
+.sk-text-grey-light
+  color: $grey-400
+
+.sk-text-grey
+  color: $grey
+
+.sk-text-primary
+  color: $primary
+
+.sk-text-success
+  color: $success
+
+.sk-text-danger
+  color: $danger
+
+.sk-text-warning
+  color: $warning
+
+.sk-text-secondary
+  color: $secondary
+
+.sk-text-tertiary
+  color: $tertiary
+
+.sk-text-blue
+  color: $blue
+
+.sk-text-teal
+  color: $teal
+
+.sk-text-white
+  color: $white
+
+/* Alignment modifiers
+ ========================================================================== */
+
+.sk-text-left
+  text-align: left !important
+
+.sk-text-right
+  text-align: right !important
+
+.sk-text-center
+  text-align: center !important
+
+.sk-text-justify
+  text-align: justify !important
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small)
+  .sk-text-left-s
+    text-align: left !important
+  .sk-text-right-s
+    text-align: right !important
+  .sk-text-center-s
+    text-align: center !important
+
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium)
+  .sk-text-left-m
+    text-align: left !important
+  .sk-text-right-m
+    text-align: right !important
+  .sk-text-center-m
+    text-align: center !important
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large)
+  .sk-text-left-l
+    text-align: left !important
+  .sk-text-right-l
+    text-align: right !important
+  .sk-text-center-l
+    text-align: center !important
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge)
+  .sk-text-left-xl
+    text-align: left !important
+  .sk-text-right-xl
+    text-align: right !important
+  .sk-text-center-xl
+    text-align: center !important
+
+/*
+ * Vertical
+ */
+.sk-text-top
+  vertical-align: top !important
+
+.sk-text-middle
+  vertical-align: middle !important
+
+.sk-text-bottom
+  vertical-align: bottom !important
+
+.sk-text-baseline
+  vertical-align: baseline !important
+
+/* Wrap modifiers
+ ========================================================================== */
+
+.sk-text-nowrap
+  white-space: nowrap
+
+/*
+ * 1. Make sure a max-width is set after which truncation can occur
+ * 2. Prevent text from wrapping onto multiple lines, and truncate with an ellipsis
+ * 3. Fix for table cells
+ */
+
+.sk-text-truncate
+  max-width: 100%
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+th.sk-text-truncate,
+td.sk-text-truncate
+  max-width: 0
+
+/*
+ * 1. Wrap long words onto the next line and break them if they are too long to fit
+ * 2. Legacy `word-wrap` as fallback for `overflow-wrap`
+ * 3. Fix `overflow-wrap` which doesn't work with table cells in Chrome, Opera, IE11 and Edge
+ *    Must use `break-all` to support IE11 and Edge
+ * Note: Not using `hyphens: auto;` because it hyphenates text even if not needed
+ */
+.sk-text-break
+  overflow-wrap: break-word
+  word-wrap: break-word
+
+th.sk-text-break,
+td.sk-text-break
+  word-break: break-all
+
+

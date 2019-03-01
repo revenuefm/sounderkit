@@ -1,0 +1,126 @@
+// Name:            Container
+// Description:     Component to align and center your site and grid content
+//
+// Component:       `.sk-container`
+//
+// Modifier:        `.sk-container-small`
+//                  `.sk-container-large`
+//                  `.sk-container-expand`
+//                  `.sk-container-expand-left`
+//                  `.sk-container-expand-right`
+//                  `.sk-container-item-padding-remove-left`
+//                  `.sk-container-item-padding-remove-right`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Container
+ ========================================================================== */
+
+/*
+ * 1. Box sizing has to be `content-box` so the max-width is always the same and
+ *    unaffected by the padding on different breakpoints. It's important for the size modifiers.
+ */
+
+.sk-container
+  /* 1 */
+  box-sizing: content-box
+  max-width: $container-max-width
+  margin-left: auto
+  margin-right: auto
+  padding-left: $container-padding-horizontal
+  padding-right: $container-padding-horizontal
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small)
+  .sk-container
+    padding-left: $container-padding-horizontal-s
+    padding-right: $container-padding-horizontal-s
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium)
+  .sk-container
+    padding-left: $container-padding-horizontal
+    padding-right: $container-padding-horizontal
+
+/*
+ * Micro clearfix
+ */
+.sk-container::before,
+.sk-container::after
+  content: ""
+  display: table
+
+.sk-container::after
+  clear: both
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-container > :last-child
+  margin-bottom: 0
+
+/*
+ * Remove padding from nested containers
+ */
+.sk-container .sk-container
+  padding-left: 0
+  padding-right: 0
+
+/* Size modifier
+ ========================================================================== */
+
+.sk-container-xsmall
+  max-width: $container-xsmall-max-width
+
+.sk-container-small
+  max-width: $container-small-max-width
+
+.sk-container-large
+  max-width: $container-large-max-width
+
+.sk-container-expand
+  max-width: none
+
+.sk-container-out
+  max-width: none
+  width: 110%
+
+/* Expand modifier
+ ========================================================================== */
+ /*
+ * Expand one side only
+ */
+.sk-container-expand-left
+  margin-left: 0
+
+.sk-container-expand-right
+  margin-right: 0
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small)
+  .sk-container-expand-left.sk-container-xsmall,
+  .sk-container-expand-right.sk-container-xsmall
+    max-width: unquote('calc(50% + (#{$container-xsmall-max-width} / 2) - #{$container-padding-horizontal-s})')
+
+  .sk-container-expand-left.sk-container-small,
+  .sk-container-expand-right.sk-container-small
+    max-width: unquote('calc(50% + (#{$container-small-max-width} / 2) - #{$container-padding-horizontal-s})')
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium)
+  .sk-container-expand-left,
+  .sk-container-expand-right
+    max-width: unquote('calc(50% + (#{$container-max-width} / 2) - #{$container-padding-horizontal-m})')
+
+  .sk-container-expand-left.sk-container-xsmall,
+  .sk-container-expand-right.sk-container-xsmall
+    max-width: unquote('calc(50% + (#{$container-xsmall-max-width} / 2) - #{$container-padding-horizontal-m})')
+
+  .sk-container-expand-left.sk-container-small,
+  .sk-container-expand-right.sk-container-small
+    max-width: unquote('calc(50% + (#{$container-small-max-width} / 2) - #{$container-padding-horizontal-m})')
+
+  .sk-container-expand-left.sk-container-large,
+  .sk-container-expand-right.sk-container-large
+    max-width: unquote('calc(50% + (#{$container-large-max-width} / 2) - #{$container-padding-horizontal-m})')

@@ -1,0 +1,359 @@
+// Name:            Utility
+// Description:     Utilities collection
+//
+// States:          `.disabled`
+//                  `.drag`
+//                  `.dragover`
+//                  `.preserve`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Utility
+ ========================================================================== */
+
+/* Clearfix
+ ========================================================================== */
+
+/* 1 */
+.sk-clearfix::before
+  content: ""
+  display: table-cell
+
+/* 2 */
+.sk-clearfix::after
+  content: ""
+  display: table
+  clear: both
+
+/* Float
+ ========================================================================== */
+.sk-float-left
+  float: left
+
+.sk-float-right
+  float: right
+
+[class*='sk-float-']
+  max-width: 100%
+
+/* Overfow
+ ========================================================================== */
+.sk-overflow-hidden
+  overflow: hidden
+
+/*
+ * Enable scrollbars if content is clipped
+ * Note: Firefox ignores `padding-bottom` for the scrollable overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
+ */
+.sk-overflow-auto
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+
+.sk-overflow-auto > :last-child
+  margin-bottom: 0
+
+/* Resize
+ ========================================================================== */
+
+.sk-resize
+  resize: both
+
+.sk-resize-vertical
+  resize: vertical
+
+.sk-resize-horizontal
+  resize: horizontal
+
+
+/* Display
+ ========================================================================== */
+
+.sk-display-block
+  display: block !important
+
+.sk-display-inline
+  display: inline !important
+
+.sk-display-inline-block
+  display: inline-block !important
+
+/* Inline
+ ========================================================================== */
+
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Behave like most inline-block elements
+ * 5. Force hardware acceleration without creating a new stacking context
+ *    to fix 1px glitch when combined with overlays and transitions in Webkit
+ * 6. Clip child elements
+ */
+
+[class*='sk-inline']
+  display: inline-block
+  position: relative
+  max-width: 100%
+  vertical-align: middle
+  -webkit-backface-visibility: hidden
+
+.sk-inline-clip
+  overflow: hidden
+
+/* Responsive objects
+ ========================================================================== */
+
+/*
+ * Preserve original dimensions
+ * Because `img, `video`, `canvas` and  `audio` are already responsive by default, see Base component
+ */
+
+.sk-preserve-width,
+.sk-preserve-width canvas,
+.sk-preserve-width img,
+.sk-preserve-width svg,
+.sk-preserve-width video,
+.sk-preserve-width audio
+  max-width: none
+
+/*
+ * Responsiveness
+ * Corrects `max-width` and `max-height` behavior if padding and border are used
+ */
+
+.sk-responsive-width,
+.sk-responsive-height
+  box-sizing: border-box
+
+/*
+ * 1. Set a maximum width. `important` needed to override `preserve-width img`
+ * 2. Auto scale the height. Only needed if `height` attribute is present
+ */
+
+.sk-responsive-width
+  max-width: 100% !important
+  height: auto
+
+/*
+ * 1. Set a maximum height. Only works if the parent element has a fixed height
+ * 2. Auto scale the width. Only needed if `width` attribute is present
+ * 3. Reset max-width, which `img, `video`, `canvas` and  `audio` already have by default
+ */
+.sk-responsive-height
+  max-height: 100%
+  width: auto
+  max-width: none
+
+/* Border
+ ========================================================================== */
+.sk-border-circle
+  border-radius: 50%
+
+.sk-border-pill
+  border-radius: 500px
+
+.sk-border-rounded
+  border-radius: $global-border-radius
+
+.sk-border-rounded-large
+  border-radius: $global-border-radius-large
+
+.sk-border-rounded-small
+  border-radius: $global-border-radius-small
+
+/*
+ * Fix `overflow: hidden` to be ignored with border-radius and CSS transforms in Webkit
+ */
+
+.sk-inline-clip[class*='sk-border-']
+  -webkit-transform: translateZ(0)
+
+/* Box-shadow
+ ========================================================================== */
+
+.sk-box-shadow-small
+  box-shadow: $global-small-box-shadow
+
+.sk-box-shadow-medium
+  box-shadow: $global-medium-box-shadow
+
+.sk-box-shadow-large
+  box-shadow: $global-large-box-shadow
+
+.sk-box-shadow-xlarge
+  box-shadow: $global-xlarge-box-shadow
+
+/*
+ * Hover
+ */
+[class*='sk-box-shadow-hover']
+  transition: box-shadow $box-shadow-duration ease-in-out
+
+.sk-box-shadow-hover-small:hover
+  box-shadow: $global-small-box-shadow
+
+.sk-box-shadow-hover-medium:hover
+  box-shadow: $global-medium-box-shadow
+
+.sk-box-shadow-hover-large:hover
+  box-shadow: $global-large-box-shadow
+
+.sk-box-shadow-hover-xlarge:hover
+  box-shadow: $global-xlarge-box-shadow
+
+/* Box-shadow bottom
+ ========================================================================== */
+
+/*
+ * 1. Set position.
+ * 2. Set style
+ * 3. Blur doesn't work on pseudo elements with negative `z-index` in Edge.
+ *    Solved by using `before` and add position context to child elements.
+ */
+
+@supports (filter: blur(0))
+  .sk-box-shadow-bottom
+    display: inline-block
+    position: relative
+    max-width: 100%
+    vertical-align: middle
+
+  .sk-box-shadow-bottom::before
+    content: ''
+      /* 1 */
+    position: absolute
+    bottom: (-$box-shadow-bottom-height)
+    left: 0
+    right: 0
+      /* 2 */
+    height: $box-shadow-bottom-height
+    border-radius: $box-shadow-bottom-border-radius
+    background: $box-shadow-bottom-background
+    filter: blur($box-shadow-bottom-blur)
+
+  .sk-box-shadow-bottom > *
+    position: relative
+
+/* Drop cap
+ ========================================================================== */
+
+/*
+ * 1. Firefox doesn't apply `::first-letter` if the first letter is inside child elements
+ *    https://bugzilla.mozilla.org/show_bug.cgi?id=214004
+ * 2. In Firefox, a floating `::first-letter` doesn't have a line box and there for no `line-height`
+ *    https://bugzilla.mozilla.org/show_bug.cgi?id=317933
+ * 3. Caused by 1.: Edge creates two nested `::first-letter` containers, one for each selector
+ *    This doubles the `font-size` exponential when using the `em` unit.
+ */
+
+.sk-dropcap::first-letter,
+.sk-dropcap > p:first-of-type::first-letter
+  display: block
+  margin-right: $dropcap-margin-right
+  float: left
+  font-size: $dropcap-font-size
+  line-height: 1
+
+@-moz-document url-prefix()
+  .sk-dropcap::first-letter,
+  .sk-dropcap > p:first-of-type::first-letter
+    margin-top: 1.1%
+
+@supports (-ms-ime-align: auto)
+  .sk-dropcap > p:first-of-type::first-letter
+    font-size: 1em
+
+/* Disabled State
+ ========================================================================== */
+
+.sk-disabled
+  pointer-events: none
+
+/* Drag State
+ ========================================================================== */
+
+/*
+ * 1. Needed if moving over elements with have their own cursor on hover, e.g. links or buttons
+ * 2. Fix dragging over iframes
+ */
+
+.sk-drag,
+.sk-drag *
+  cursor: move
+
+.sk-drag iframe
+  pointer-events: none
+
+
+/* Dragover State
+ ========================================================================== */
+
+/*
+ * Create a box-shadow when dragging a file over the upload area
+ */
+
+.sk-dragover
+  box-shadow: $dragover-box-shadow
+
+/* Blend modes
+ ========================================================================== */
+
+.sk-blend-multiply
+  mix-blend-mode: multiply
+.sk-blend-screen
+  mix-blend-mode: screen
+.sk-blend-overlay
+  mix-blend-mode: overlay
+.sk-blend-darken
+  mix-blend-mode: darken
+.sk-blend-lighten
+  mix-blend-mode: lighten
+.sk-blend-color-dodge
+  mix-blend-mode: color-dodge
+.sk-blend-color-burn
+  mix-blend-mode: color-burn
+.sk-blend-hard-light
+  mix-blend-mode: hard-light
+.sk-blend-soft-light
+  mix-blend-mode: soft-light
+.sk-blend-difference
+  mix-blend-mode: difference
+.sk-blend-exclusion
+  mix-blend-mode: exclusion
+.sk-blend-hue
+  mix-blend-mode: hue
+.sk-blend-saturation
+  mix-blend-mode: saturation
+.sk-blend-color
+  mix-blend-mode: color
+.sk-blend-luminosity
+  mix-blend-mode: luminosity
+
+
+/* Transform
+ * ========================================================================== */
+
+.sk-transform-center
+  transform: translate(-50%, -50%)
+
+/* Transform Origin
+ * ========================================================================== */
+
+.sk-transform-origin-top-left
+  transform-origin: 0 0
+.sk-transform-origin-top-center
+  transform-origin: 50% 0
+.sk-transform-origin-top-right
+  transform-origin: 100% 0
+.sk-transform-origin-center-left
+  transform-origin: 0 50%
+.sk-transform-origin-center-right
+  transform-origin: 100% 50%
+.sk-transform-origin-bottom-left
+  transform-origin: 0 100%
+.sk-transform-origin-bottom-center
+  transform-origin: 50% 100%
+.sk-transform-origin-bottom-right
+  transform-origin: 100% 100%
+

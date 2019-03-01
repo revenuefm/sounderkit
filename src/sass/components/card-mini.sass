@@ -1,0 +1,22 @@
+.sk-card-mini
+  background: $white
+  border-radius: $global-border-radius
+  transition: $card-transition
+  &:hover
+    transform: scale(1.05)
+  @extend .sk-margin-small-bottom
+  .sk-card-body
+    padding: $card-padding * 0.7
+    img
+      border-radius: $global-border-radius
+      @extend .sk-margin-small-right
+      @extend .sk-margin-small-left
+    .sk-card-body-title
+      font-size: $global-font-size
+      font-weight: 600
+      margin: 0
+      padding: 0
+    .sk-card-body-subtitle
+      font-size: $global-small-font-size
+      margin: 0
+      padding: 0

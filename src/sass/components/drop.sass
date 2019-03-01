@@ -1,0 +1,61 @@
+// Name:            Drop
+// Description:     Component to position any element next to any other element.
+//
+// Component:       `sk-drop`
+//
+// Modifiers:       `sk-drop-top-*`
+//                  `sk-drop-bottom-*`
+//                  `sk-drop-left-*`
+//                  `sk-drop-right-*`
+//                  `sk-drop-stack`
+//                  `sk-drop-grid`
+//
+// States:          `sk-open`
+//
+// Uses:            Animation
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Drop
+ ========================================================================== */
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Set a default width
+ */
+
+.sk-drop
+  /* 1 */
+  display: none
+  /* 2 */
+  position: absolute
+  z-index: $drop-z-index
+  /* 3 */
+  box-sizing: border-box
+  width: $drop-width
+
+/* Show */
+.sk-drop.sk-open
+  display: block
+
+/* Direction / Alignment modifiers
+ ========================================================================== */
+
+/* Direction */
+[class*='sk-drop-top']
+  margin-top: (-$drop-margin)
+[class*='sk-drop-bottom']
+  margin-top: $drop-margin
+[class*='sk-drop-left']
+  margin-left: (-$drop-margin)
+[class*='sk-drop-right']
+  margin-left: $drop-margin
+
+
+/* Grid modifiers
+ ========================================================================== */
+
+.sk-drop-stack .sk-drop-grid > *
+  width: 100% !important

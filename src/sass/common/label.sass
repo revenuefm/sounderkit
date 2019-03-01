@@ -1,0 +1,51 @@
+// Name:            Label
+// Description:     Component to indicate important notes
+//
+// Component:       `sk-label`
+//
+// Modifiers:       `sk-label-success`
+//                  `sk-label-warning`
+//                  `sk-label-danger`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Label
+ ========================================================================== */
+
+.sk-label
+  display: inline-block
+  padding: $label-padding-vertical $label-padding-horizontal
+  background: $label-background
+  line-height: $label-line-height
+  font-size: $label-font-size
+  color: findColorInvert($label-background)
+  vertical-align: middle
+  white-space: nowrap
+
+/* Color modifiers
+ ========================================================================== */
+
+/*
+ * Success
+ */
+
+.sk-label-success
+  background-color: $label-success-background
+  color: findColorInvert($label-success-background)
+
+/*
+ * Warning
+ */
+
+.sk-label-warning
+  background-color: $label-warning-background
+  color: findColorInvert($label-warning-background)
+
+/*
+ * Danger
+ */
+
+.sk-label-danger
+  background-color: $label-danger-background
+  color: findColorInvert($label-danger-background)

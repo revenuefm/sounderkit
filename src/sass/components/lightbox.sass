@@ -1,0 +1,176 @@
+// Name:            Lightbox
+// Description:     Component to create an lightbox image gallery
+//
+// Component:       `sk-lightbox`
+//
+// Sub-objects:     `sk-lightbox-page`
+//                  `sk-lightbox-items`
+//                  `sk-lightbox-toolbar`
+//                  `sk-lightbox-toolbar-icon`
+//                  `sk-lightbox-button`
+//                  `sk-lightbox-caption`
+//                  `sk-lightbox-iframe`
+//
+// States:          `sk-open`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Lightbox
+ ========================================================================== */
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Allow scrolling for the modal dialog
+ * 4. Horizontal padding
+ * 5. Mask the background page
+ * 6. Fade-in transition
+ */
+
+.sk-lightbox
+  /* 1 */
+  display: none
+  /* 2 */
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: $lightbox-z-index
+  /* 5 */
+  background: $lightbox-background
+  /* 6 */
+  opacity: 0
+  transition: opacity 0.15s linear
+
+
+/*
+ * Open
+ * 1. Center child
+ * 2. Fade-in
+ */
+
+.sk-lightbox.sk-open
+  display: block
+  /* 2 */
+  opacity: 1
+
+
+/* Page
+ ========================================================================== */
+
+/*
+ * Prevent scrollbars
+ */
+
+.sk-lightbox-page
+  overflow: hidden
+
+
+/* Item
+ ========================================================================== */
+
+/*
+ * 1. Center child within the viewport
+ * 2. Not visible by default
+ * 3. Color needed for spinner icon
+ * 4. Optimize animation
+ * 5. Responsiveness
+ *    Using `vh` for `max-height` to fix image proportions after resize in Safari and Opera
+ *    Using `vh` and `vw` to make responsive image work in IE11
+ */
+
+.sk-lightbox-items > *
+  /* 1 */
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  /* 2 */
+  display: none
+  justify-content: center
+  align-items: center
+  /* 3 */
+  color: $lightbox-item-color
+  /* 4 */
+  will-change: transform, opacity
+
+/* 5 */
+.sk-lightbox-items > * > *
+  max-width: $lightbox-item-max-width
+  max-height: $lightbox-item-max-height
+
+.sk-lightbox-items > * > :not(iframe)
+  width: auto
+  height: auto
+
+.sk-lightbox-items > .sk-active
+  display: flex
+
+/* Toolbar
+ ========================================================================== */
+
+.sk-lightbox-toolbar
+  padding: $lightbox-toolbar-padding-vertical $lightbox-toolbar-padding-horizontal
+  background: $lightbox-toolbar-background
+  color: $lightbox-toolbar-color
+
+.sk-lightbox-toolbar > *
+  color: $lightbox-toolbar-color
+
+
+/* Toolbar Icon (Close)
+ ========================================================================== */
+
+.sk-lightbox-toolbar-icon
+  padding: $lightbox-toolbar-icon-padding
+  color: $lightbox-toolbar-icon-color
+
+/*
+ * Hover
+ */
+
+.sk-lightbox-toolbar-icon:hover
+  color: $lightbox-toolbar-icon-hover-color
+
+
+/* Button (Slidenav)
+ ========================================================================== */
+
+/*
+ * 1. Center icon vertically and horizontally
+ */
+
+.sk-lightbox-button
+  box-sizing: border-box
+  width: $lightbox-button-size
+  height: $lightbox-button-size
+  background: $lightbox-button-background
+  color: $lightbox-button-color
+  /* 1 */
+  display: inline-flex
+  justify-content: center
+  align-items: center
+
+/*
+ * Hover
+ */
+
+.sk-lightbox-button:hover
+  color: $lightbox-button-hover-color
+
+
+/* Caption
+ ========================================================================== */
+
+.sk-lightbox-caption
+
+
+/* Iframe
+ ========================================================================== */
+
+.sk-lightbox-iframe
+  width: 80%
+  height: 80%

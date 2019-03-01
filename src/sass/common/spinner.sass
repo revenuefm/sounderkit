@@ -1,0 +1,44 @@
+// Name:            Spinner
+// Description:     Component to create a loading spinner
+//
+// Component:       `sk-spinner`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Spinner
+ ========================================================================== */
+
+/* SVG
+ ========================================================================== */
+.sk-spinner > *
+  animation: sk-spinner-rotate $spinner-duration linear infinite
+
+@keyframes sk-spinner-rotate
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(270deg)
+
+/*
+ * Circle
+ */
+
+.sk-spinner > * > *
+  stroke-dasharray: $spinner-circumference
+  stroke-dashoffset: 0
+  transform-origin: center
+  animation: sk-spinner-dash $spinner-duration ease-in-out infinite
+  stroke-width: $spinner-stroke-width
+  stroke-linecap: round
+
+@keyframes sk-spinner-dash
+  0%
+    stroke-dashoffset: $spinner-circumference
+  50%
+    stroke-dashoffset: $spinner-circumference/4
+    transform: rotate(135deg)
+  100%
+    stroke-dashoffset: $spinner-circumference
+    transform: rotate(450deg)
+

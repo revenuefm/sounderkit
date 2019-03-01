@@ -1,0 +1,180 @@
+
+// Name:            Flex
+// Description:     Helpers for layouts based on flexbox
+//
+// Component:       `.flex-*`
+//
+// ========================================================================
+
+.sk-flex
+  display: flex
+
+.sk-flex-inline
+  display: inline-flex
+
+/*
+ * Remove pseudo elements created by micro clearfix as precaution
+ */
+.sk-flex::before,
+.sk-flex::after,
+.sk-flex-inline::before,
+.sk-flex-inline::after
+  display: none
+
+
+/* Alignment
+ ========================================================================== */
+
+/*
+ * Align items along the main axis of the current line of the flex container
+ * Row: Horizontal
+ */
+.sk-flex-left
+  justify-content: flex-start
+
+.sk-flex-right
+  justify-content: flex-end
+
+.sk-flex-center
+  justify-content: center
+
+.sk-flex-between
+  justify-content: space-between
+
+.sk-flex-around
+  justify-content: space-around
+
+/*
+ * Align items in the cross axis of the current line of the flex container
+ * Row: Vertical
+ */
+
+.sk-flex-stretch
+  align-items: stretch
+
+.sk-flex-top
+  align-items: flex-start
+
+.sk-flex-middle
+  align-items: center
+
+.sk-flex-bottom
+  align-items: flex-end
+
+/* Direction
+ ========================================================================== */
+
+.sk-flex-row
+  flex-direction: row
+
+.sk-flex-row-reverse
+  flex-direction: row-reverse
+
+.sk-flex-column
+  flex-direction: column
+
+.sk-flex-column-reverse
+  flex-direction: column-reverse
+
+
+/* Wrap
+ ========================================================================== */
+
+.sk-flex-nowrap
+  flex-wrap: nowrap
+
+.sk-flex-wrap
+  flex-wrap: wrap
+
+.sk-flex-wrap-reverse
+  flex-wrap: wrap-reverse
+
+/*
+ * Aligns items within the flex container when there is extra space in the cross-axis
+ * Only works if there is more than one line of flex items
+ */
+
+.sk-flex-wrap-stretch
+  align-content: stretch
+
+.sk-flex-wrap-top
+  align-content: flex-start
+
+.sk-flex-wrap-middle
+  align-content: center
+
+.sk-flex-wrap-bottom
+  align-content: flex-end
+
+.sk-flex-wrap-between
+  align-content: space-between
+
+.sk-flex-wrap-around
+  align-content: space-around
+
+/* Item ordering
+ ========================================================================== */
+
+.sk-flex-first
+  order: -1
+
+.sk-flex-last
+  order: 99
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small)
+  .sk-flex-first-s
+    order: -1
+  .sk-flex-last-s
+    order: 99
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium)
+  .sk-flex-first-m
+    order: -1
+  .sk-flex-last-m
+    order: 99
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large)
+  .sk-flex-first-l
+    order: -1
+  .sk-flex-last-l
+    order: 99
+
+/* Large screen and bigger */
+@media (min-width: $breakpoint-xlarge)
+  .sk-flex-first-xl
+    order: -1
+  .sk-flex-last-xl
+    order: 99
+
+/* Item dimensions
+ ========================================================================== */
+
+/*
+ * Initial: 0 1 auto
+ * Content dimensions, but shrinks
+ */
+
+/*
+ * No Flex: 0 0 auto
+ * Content dimensions
+ */
+.sk-flex-none
+  flex: none
+
+/*
+ * Relative Flex: 1 1 auto
+ * Space is allocated considering content
+ */
+
+.sk-flex-auto
+  flex: auto
+
+/*
+ * Absolute Flex: 1 1 0%
+ * Space is allocated solely based on flex
+ */
+.sk-flex-1
+  flex: 1

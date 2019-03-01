@@ -1,0 +1,48 @@
+// Name:            Box Repeater
+// Description:     A component for displaying list etc etc..
+//
+// Component:       `.sk-box-repeater*`
+//
+// ========================================================================
+
+
+/* ========================================================================
+   Component: Box repeater
+ ========================================================================== */
+
+
+.sk-box-repeater
+  position: relative
+  box-sizing: border-box
+  border-radius: $global-border-radius
+  padding: $global-gutter * 0.7
+
+
+.sk-box-repeater-row
+  @extend .sk-flex
+  @extend .sk-flex-row
+  @extend .sk-flex-middle
+
+
+/* Style modifiers
+ ========================================================================== */
+.sk-box-repeater-default
+  background: $white
+  color: $global-color
+  @extend .sk-margin-small-bottom
+
+.sk-box-repeater-border
+  background: transparent
+  border-radius: 0
+  border-bottom: 1px solid $global-border-color
+  &.sk-dark
+    border-bottom: 1px solid rgba($inverted-global-border-color, .08)
+    color: $grey-300
+
+.sk-box-repeater-border:last-child
+  border-bottom: none
+
+
+
+
+

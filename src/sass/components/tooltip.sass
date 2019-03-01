@@ -1,0 +1,62 @@
+// Name:            Tooltip
+// Description:     Component to create tooltips
+//
+// Component:       `sk-tooltip`
+//
+// Modifiers        `sk-tooltip-top`
+//                  `sk-tooltip-top-left`
+//                  `sk-tooltip-top-right`
+//                  `sk-tooltip-bottom`
+//                  `sk-tooltip-bottom-left`
+//                  `sk-tooltip-bottom-right`
+//                  `sk-tooltip-left`
+//                  `sk-tooltip-right`
+//
+// States:          `sk-active`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Tooltip
+ ========================================================================== */
+
+/*
+ * 1. Hide by default
+ * 2. Position
+ * 3. Dimensions
+ * 4. Style
+ */
+
+.sk-tooltip
+  /* 1 */
+  display: none
+  /* 2 */
+  position: absolute
+  z-index: $tooltip-z-index
+  /* 3 */
+  box-sizing: border-box
+  max-width: $tooltip-max-width
+  padding: $tooltip-padding-vertical $tooltip-padding-horizontal
+  /* 4 */
+  background: $tooltip-background
+  border-radius: $tooltip-border-radius
+  color: $tooltip-color
+  font-size: $tooltip-font-size
+
+/* Show */
+.sk-tooltip.sk-active
+  display: block
+
+
+/* Direction / Alignment modifiers
+ ========================================================================== */
+
+/* Direction */
+[class*='sk-tooltip-top']
+  margin-top: (-$tooltip-margin)
+[class*='sk-tooltip-bottom']
+  margin-top: $tooltip-margin
+[class*='sk-tooltip-left']
+  margin-left: (-$tooltip-margin)
+[class*='sk-tooltip-right']
+  margin-left: $tooltip-margin

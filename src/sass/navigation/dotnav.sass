@@ -1,0 +1,101 @@
+// Name:            Dotnav
+// Description:     Component to create dot navigations
+//
+// Component:       `sk-dotnav`
+//
+// Modifier:        `sk-dotnav-vertical`
+//
+// States:          `sk-active`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Dotnav
+ ========================================================================== */
+
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Reset list
+ * 3. Gutter
+ */
+
+.sk-dotnav 
+  display: flex
+  /* 1 */
+  flex-wrap: wrap
+  /* 2 */
+  margin: 0
+  padding: 0
+  list-style: none
+  /* 3 */
+  margin-left: (-$dotnav-margin-horizontal)
+
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Gutter
+ */
+
+.sk-dotnav > * 
+  /* 1 */
+  flex: none
+  /* 2 */
+  padding-left: $dotnav-margin-horizontal
+
+
+/* Items
+ ========================================================================== */
+
+/*
+ * Items
+ * 1. Hide text if present
+ */
+
+.sk-dotnav > * > * 
+  display: block
+  box-sizing: border-box
+  width: $dotnav-item-width
+  height: $dotnav-item-height
+  border-radius: $dotnav-item-border-radius
+  background: $dotnav-item-background
+  /* 1 */
+  text-indent: 100%
+  overflow: hidden
+  white-space: nowrap
+  border: $dotnav-item-border-width solid $dotnav-item-border
+  transition: 0.2s ease-in-out
+  transition-property: background-color, border-color
+
+/* Hover + Focus */
+.sk-dotnav > * > :hover,
+.sk-dotnav > * > :focus
+  background-color: $dotnav-item-hover-background
+  outline: none
+
+/* OnClick */
+.sk-dotnav > * > :active 
+  background-color: $dotnav-item-onclick-background
+
+/* Active */
+.sk-dotnav > .sk-active > * 
+  background-color: $dotnav-item-active-background
+
+
+/* Modifier: 'sk-dotnav-vertical'
+ ========================================================================== */
+
+/*
+ * 1. Change direction
+ * 2. Gutter
+ */
+
+.sk-dotnav-vertical 
+  /* 1 */
+  flex-direction: column
+  /* 2 */
+  margin-left: 0
+  margin-top: (-$dotnav-margin-vertical)
+
+/* 2 */
+.sk-dotnav-vertical > *
+  padding-left: 0
+  padding-top: $dotnav-margin-vertical

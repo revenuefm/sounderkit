@@ -1,0 +1,363 @@
+// Name:            Button
+// Description:     Styles for buttons
+//
+// Component:       `.sk-button`
+//
+// Sub-objects:     `.sk-button-group`
+//
+// Modifiers:       `.sk-button-default`
+//                  `.sk-button-primary`
+//                  `.sk-button-secondary`
+//                  `.sk-button-danger`
+//                  `.sk-button-text`
+//                  `.sk-button-link`
+//                  `.sk-button-small`
+//                  `.sk-button-large`
+//
+// States:          `.active`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Button
+ ========================================================================== */
+
+/*
+ * 1. Remove margins in Chrome, Safari and Opera.
+ * 2. Remove borders for `button`.
+ * 3. Address `overflow` set to `hidden` in IE.
+ * 4. Correct `font` properties and `color` not being inherited for `button`.
+ * 5. Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 6. Style
+ * 7. `line-height` is used to create a height because it also centers the text vertically for `a` elements.
+ *    Better would be to use height and flexbox to center the text vertically but flexbox doesn't work in Firefox on `button` elements.
+ * 8. Align text if button has a width
+ * 9. Required for `a`.
+ */
+
+.sk-button
+  /* 1 */
+  margin: 0
+  /* 2 */
+  border: none
+  border-radius: $global-border-radius
+  /* 3 */
+  overflow: visible
+  /* 4 */
+  font: inherit
+  font-weight: bold
+  color: $grey
+  /* 5 */
+  text-transform: uppercase
+  /* 6 */
+  display: inline-block
+  box-sizing: border-box
+  padding: 0 $button-padding-horizontal
+  vertical-align: middle
+  font-size: $button-font-size
+  letter-spacing: 0.175em
+  /* 7 */
+  line-height: $button-line-height
+  /* 8 */
+  text-align: center
+  /* 9 */
+  text-decoration: none
+  background-color: $grey-100
+
+.sk-button:not(sk-button-square)
+  .sk-icon
+    position: relative
+    top: -0.19em
+
+.sk-button:not(:disabled)
+  cursor: pointer
+
+.sk-button-extended
+  padding: 0 $button-padding-horizontal*1.5
+.sk-button-extended-l
+  padding: 0 $button-padding-horizontal*2.5
+/*
+ * Remove the inner border and padding in Firefox.
+ */
+.sk-button::-moz-focus-inner
+  border: 0
+  padding: 0
+
+/* Hover */
+.sk-button:hover
+  /* 9 */
+  text-decoration: none
+
+/* Focus */
+.sk-button:focus
+  outline: none
+
+.sk-button-square
+  width: 3rem
+  padding: 0
+  text-align: center
+/* OnClick + Active */
+//.sk-button:active
+//.sk-button.active
+
+/* Style modifiers
+ ========================================================================== */
+.sk-button-default
+  background-color: $grey-100
+  color: $grey
+
+/* Hover + Focus */
+.sk-button-default:hover,
+.sk-button-default:focus
+  background-color: darken($grey-100, 5%)
+  color: $grey
+
+/* OnClick + Active */
+.sk-button-default:active,
+.sk-button-default.active
+  background-color: darken($grey-100, 5%)
+  color: $grey
+
+/*
+ * Primary
+ */
+
+.sk-button-primary
+  background-color: $primary
+  color: findColorInvert($primary)
+  &.sk-button-outline
+    background: none
+    color: $primary
+    border: 2px solid $primary
+  &.sk-button-invert
+    background: $white
+    color: $primary
+
+
+/* Hover + Focus */
+.sk-button-primary:hover,
+.sk-button-primary:focus
+  background-color: darken($primary, 5%)
+  color: findColorInvert($primary)
+  &.sk-button-outline
+    background: none
+    color: $primary
+    border: 2px solid $primary
+  &.sk-button-invert
+    background: $white
+    color: $primary
+
+/* OnClick + Active */
+.sk-button-primary:active,
+.sk-button-primary.active
+  background-color: darken($primary, 5%)
+  color: findColorInvert($primary)
+  &.sk-button-outline
+    background: none
+    color: $primary
+    border: 2px solid $primary
+  &.sk-button-invert
+    background: $white
+    color: $primary
+
+
+
+/*
+ * Secondary
+ */
+
+.sk-button-secondary
+  background-color: $secondary
+  color: findColorInvert($secondary)
+  &.sk-button-outline
+    background: none
+    color: $secondary
+    border: 2px solid $secondary
+  &.sk-button-invert
+    background: $white
+    color: $secondary
+
+
+
+
+/* Hover + Focus */
+.sk-button-secondary:hover,
+.sk-button-secondary:focus
+  background-color: darken($secondary, 5%)
+  color: findColorInvert($secondary)
+  &.sk-button-outline
+    background: none
+    color: $secondary
+    border: 2px solid $secondary
+  &.sk-button-invert
+    background: $white
+    color: $secondary
+
+/* OnClick + Active */
+.sk-button-secondary:active,
+.sk-button-secondary.active
+  background-color: darken($secondary, 5%)
+  color: findColorInvert($secondary)
+  &.sk-button-outline
+    background: none
+    color: $secondary
+    border: 2px solid $secondary
+  &.sk-button-invert
+    background: $white
+    color: $secondary
+
+/*
+  * Tertiary
+  */
+
+.sk-button-tertiary
+  background-color: $tertiary
+  color: black
+  &.sk-button-outline
+    background: none
+    color: findColorInvert($tertiary)
+    border: 2px solid $tertiary
+
+
+/* Hover + Focus */
+.sk-button-tertiary:hover,
+.sk-button-tertiary:focus
+  background-color: darken($tertiary, 5%)
+  color: black
+  &.sk-button-outline
+    background: none
+    color: findColorInvert($tertiary)
+    border: 2px solid $tertiary
+
+/* OnClick + Active */
+.sk-button-tertiary:active,
+.sk-button-tertiary.active
+  background-color: darken($tertiary, 5%)
+  color: black
+  &.sk-button-outline
+    background: none
+    color: black
+    border: 2px solid $tertiary
+
+/*
+  * Dark
+  */
+
+.sk-button-black
+  background-color: $black
+  color: findColorInvert($black)
+  &.sk-button-invert
+    background: $white
+    color: $black
+
+
+/* Hover + Focus */
+.sk-button-black:hover,
+.sk-button-black:focus,
+.sk-button-black:active,
+.sk-button-black.active
+  background-color: darken($black, 5%)
+  color: findColorInvert($black)
+  &.sk-button-invert
+    background: $white
+    color: $black
+
+
+.sk-button-black-transparent
+  background-color: rgba($black, 0.5)
+  color: findColorInvert($black)
+
+.sk-button-black-transparent:hover,
+.sk-button-black-transparent:focus,
+.sk-button-black-transparent:active,
+.sk-button-black-transparent.active
+  background-color: rgba($black, 0.7)
+  color: findColorInvert($black)
+
+
+/*
+ * Blue
+  */
+
+/* Hover + Focus */
+.sk-button-blue:hover,
+.sk-button-blue:focus,
+.sk-button-blue:active,
+.sk-button-blue.active
+  background-color: darken($blue, 5%)
+  color: findColorInvert($blue)
+  &.sk-button-outline
+    background: none
+    color: $blue
+    border: 2px solid $blue
+  &.sk-button-invert
+    background: $white
+    color: $blue
+
+
+/*
+ * Teal
+  */
+
+/* Hover + Focus */
+.sk-button-teal:hover,
+.sk-button-teal:focus,
+.sk-button-teal:active,
+.sk-button-teal.active
+  background-color: darken($teal, 5%)
+  color: findColorInvert($teal)
+  &.sk-button-outline
+    background: none
+    color: $teal
+    border: 2px solid $teal
+  &.sk-button-invert
+    background: $white
+    color: $teal
+
+
+/*
+ * Disabled
+ * The same for all style modifiers
+ */
+.sk-button-default:disabled,
+.sk-button-primary:disabled,
+.sk-button-secondary:disabled,
+.sk-button-tertiary:disabled
+  background-color: lighten($grey-100, 5%)
+  color: $grey-200
+
+.sk-button-transparent
+  background-color: transparent !important
+  color: $white
+
+
+/* Size modifiers
+ ========================================================================== */
+.sk-button-small
+  padding: 0 $button-small-padding-horizontal
+  line-height: $button-small-line-height
+  font-size: $button-small-font-size
+
+.sk-button-large
+  padding: 0 $button-large-padding-horizontal
+  line-height: $button-large-line-height
+  font-size: $button-large-font-size
+
+/* Text modifiers
+ ========================================================================== */
+
+/*
+ * Text
+ * 1. Reset
+ * 2. Style
+ */
+
+.sk-button-group
+  /* 1 */
+  display: inline-flex
+  /* 2 */
+  vertical-align: middle
+  /* 3 */
+  position: relative
+
+

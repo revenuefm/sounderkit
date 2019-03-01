@@ -1,0 +1,32 @@
+.sk-mosaic
+  align-items: stretch
+  display: block
+  flex-basis: 0
+  flex-grow: 1
+  flex-shrink: 1
+  min-height: min-content
+  // Modifiers
+  &.is-ancestor
+    margin-left: -$global-gutter/2
+    margin-right: -$global-gutter/2
+    margin-top: -$global-gutter/2
+    &:last-child
+      margin-bottom: -$global-gutter/2
+    &:not(:last-child)
+      margin-bottom: $global-gutter/2
+  &.is-child
+    margin: 0
+  &.is-parent
+    padding: $global-gutter/2
+  &.is-vertical
+    flex-direction: column
+    & > .tile.is-child:not(:last-child)
+      margin-bottom: $global-gutter !important
+  // Responsiveness
+  @media(min-width: $breakpoint-large)
+    &:not(.is-child)
+      display: flex
+    @for $i from 1 through 12
+      &.is-#{$i}
+        flex: none
+        width: ($i / 12) * 100%

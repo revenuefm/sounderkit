@@ -1,0 +1,87 @@
+// Name:            Iconnav
+// Description:     Component to create icon navigations
+//
+// Component:       `sk-iconnav`
+//
+// Modifier:        `sk-iconnav-vertical`
+//
+// States:          `sk-active`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Iconnav
+ ========================================================================== */
+
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Reset list
+ * 3. Gutter
+ */
+
+.sk-iconnav
+  display: flex
+  /* 1 */
+  flex-wrap: wrap
+  /* 2 */
+  margin: 0
+  padding: 0
+  list-style: none
+  /* 3 */
+  margin-left: (-$iconnav-margin-horizontal)
+
+/*
+ * Space is allocated based on content dimensions, but shrinks: 0 1 auto
+ * 1. Gutter
+ */
+
+.sk-iconnav > *
+  /* 1 */
+  padding-left: $iconnav-margin-horizontal
+
+/* Items
+ ========================================================================== */
+
+/*
+ * Items must target `a` elements to exclude other elements (e.g. dropdowns)
+ * 1. Prevent gap if child element is `inline-block`, e.g. an icon
+ * 2. Style
+ */
+
+.sk-iconnav > * > a
+  /* 1 */
+  display: block
+  /* 2 */
+  color: $iconnav-item-color
+  
+  
+/* Hover + Focus */
+.sk-iconnav > * > a:hover,
+.sk-iconnav > * > a:focus
+  color: $iconnav-item-hover-color
+  outline: none
+
+/* Active */
+.sk-iconnav > .sk-active > a
+  color: $iconnav-item-active-color
+
+
+/* Modifier: 'sk-iconnav-vertical'
+ ========================================================================== */
+
+/*
+ * 1. Change direction
+ * 2. Gutter
+ */
+
+.sk-iconnav-vertical 
+  /* 1 */
+  flex-direction: column
+  /* 2 */
+  margin-left: 0
+  margin-top: (-$iconnav-margin-vertical)
+
+/* 2 */
+.sk-iconnav-vertical > *
+  padding-left: 0
+  padding-top: $iconnav-margin-vertical

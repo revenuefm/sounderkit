@@ -1,0 +1,164 @@
+// Name:            Transition
+// Description:     Utilities for transitions
+//
+// Component:       `sk-transition-*`
+//
+// Modifiers:       `sk-transition-fade`
+//                  `sk-transition-scale-up`
+//                  `sk-transition-scale-down`
+//                  `sk-transition-slide-top-*`
+//                  `sk-transition-slide-bottom-*`
+//                  `sk-transition-slide-left-*`
+//                  `sk-transition-slide-right-*`
+//                  `sk-transition-stroke`
+//                  `sk-transition-opaque`
+//                  `sk-transition-slow`
+//
+// Sub-objects:     `sk-transition-toggle`,
+//                  `sk-transition-active`
+//
+// States:          `sk-active`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Transition
+ ========================================================================== */
+
+
+/* Toggle (Hover + Focus)
+ ========================================================================== */
+
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+
+.sk-transition-toggle
+  /* 1 */
+  -webkit-tap-highlight-color: transparent
+
+/*
+ * Remove outline for `tabindex`
+ */
+
+.sk-transition-toggle:focus
+  outline: none
+
+
+/* Transitions
+ ========================================================================== */
+
+/*
+ * The toggle is triggered on touch devices by two methods:
+ * 1. Using `:focus` and tabindex
+ * 2. Using `:hover` and a `touchstart` event listener registered on the document
+ *    (Doesn't work on Surface touch devices)
+ *
+ * Note: Transitions don't work with `sk-postion-center-*` classes because they also use `transform`,
+ *       therefore it's recommended to use an extra `div` for the transition.
+ */
+
+.sk-transition-fade,
+[class*='sk-transition-scale'],
+[class*='sk-transition-slide'],
+.sk-transition-stroke
+  transition: $transition-duration ease-out
+  transition-property: opacity, transform, filter, stroke-dashoffset
+  opacity: 0
+
+/*
+ * Fade
+ */
+
+.sk-transition-toggle:hover .sk-transition-fade,
+.sk-transition-toggle:focus .sk-transition-fade,
+.sk-transition-active.sk-active .sk-transition-fade
+  opacity: 1
+/*
+ * Scale
+ * Note: Using `scale3d` for better image rendering
+ */
+
+.sk-transition-scale-up
+  transform: scale3d(1,1,1)
+.sk-transition-scale-down
+  transform: scale3d($transition-scale,$transition-scale,1)
+
+/* Show */
+.sk-transition-toggle:hover .sk-transition-scale-up,
+.sk-transition-toggle:focus .sk-transition-scale-up,
+.sk-transition-active.sk-active .sk-transition-scale-up
+  opacity: 1
+  transform: scale3d($transition-scale,$transition-scale,1)
+
+.sk-transition-toggle:hover .sk-transition-scale-down,
+.sk-transition-toggle:focus .sk-transition-scale-down,
+.sk-transition-active.sk-active .sk-transition-scale-down
+  opacity: 1
+  transform: scale3d(1,1,1)
+
+/*
+ * Slide
+ */
+
+.sk-transition-slide-top
+  transform: translateY(-100%)
+.sk-transition-slide-bottom
+  transform: translateY(100%)
+.sk-transition-slide-left
+  transform: translateX(-100%)
+.sk-transition-slide-right
+  transform: translateX(100%)
+
+.sk-transition-slide-top-small
+  transform: translateY(-$transition-slide-small-translate)
+.sk-transition-slide-bottom-small
+  transform: translateY($transition-slide-small-translate)
+.sk-transition-slide-left-small
+  transform: translateX(-$transition-slide-small-translate)
+.sk-transition-slide-right-small
+  transform: translateX($transition-slide-small-translate)
+
+.sk-transition-slide-top-medium
+  transform: translateY(-$transition-slide-medium-translate)
+.sk-transition-slide-bottom-medium
+  transform: translateY($transition-slide-medium-translate)
+.sk-transition-slide-left-medium
+  transform: translateX(-$transition-slide-medium-translate)
+.sk-transition-slide-right-medium
+  transform: translateX($transition-slide-medium-translate)
+
+/* Show */
+.sk-transition-toggle:hover [class*='sk-transition-slide'],
+.sk-transition-toggle:focus [class*='sk-transition-slide'],
+.sk-transition-active.sk-active [class*='sk-transition-slide'] 
+  opacity: 1
+  transform: translate(0,0)
+
+/*
+ * Stroke
+ */
+
+.sk-transition-stroke
+  transition-duration: 3s
+
+/* Show */
+.sk-transition-stroke:hover,
+.sk-transition-stroke:focus,
+.sk-transition-stroke.sk-transition-active 
+  opacity: 1
+  stroke-dashoffset: 0 !important
+
+
+/* Opacity modifier
+ ========================================================================== */
+
+.sk-transition-opaque
+  opacity: 1
+
+
+/* Duration modifiers
+ ========================================================================== */
+
+.sk-transition-slow
+  transition-duration: $transition-slow-duration

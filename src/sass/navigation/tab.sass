@@ -1,0 +1,118 @@
+// Name:            Tab
+// Description:     Component to create a tabbed navigation
+//
+// Component:       `sk-tab`
+//
+// Modifiers:       `sk-tab-bottom`
+//                  `sk-tab-left`
+//                  `sk-tab-right`
+//
+// States:          `sk-active`
+//                  `sk-disabled`
+//
+// ========================================================================
+
+
+/* ========================================================================
+   Component: Tab
+ ========================================================================== */
+
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Gutter
+ * 3. Reset list
+ */
+
+.sk-tab
+  display: flex
+  /* 1 */
+  flex-wrap: wrap
+  /* 2 */
+  margin-left: (-$tab-margin-horizontal)
+  /* 3 */
+  padding: 0
+  list-style: none
+
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Gutter
+ * 3. Create position context for dropdowns
+ */
+
+.sk-tab > * 
+  /* 1 */
+  flex: none
+  /* 2 */
+  padding-left: $tab-margin-horizontal
+  /* 3 */
+  position: relative
+
+/* Items
+ ========================================================================== */
+
+/*
+ * Items must target `a` elements to exclude other elements (e.g. dropdowns)
+ * 1. Center text if a width is set
+ * 2. Style
+ */
+
+.sk-tab > * > a
+  /* 1 */
+  display: block
+  text-align: center
+  /* 2 */
+  padding: $tab-item-padding-vertical $tab-item-padding-horizontal
+  color: $tab-item-color
+  
+  
+/* Hover + Focus */
+.sk-tab > * > a:hover,
+.sk-tab > * > a:focus 
+  color: $tab-item-hover-color
+  text-decoration: $tab-item-hover-text-decoration
+
+/* Active */
+.sk-tab > .sk-active > a
+  color: $tab-item-active-color
+
+/* Disabled */
+.sk-tab > .sk-disabled > a
+  color: $tab-item-disabled-color
+
+
+/* Position modifier
+ ========================================================================== */
+
+/*
+ * Bottom
+ */
+
+.sk-tab-bottom 
+
+.sk-tab-bottom > * > a 
+
+/*
+ * Left + Right
+ * 1. Reset Gutter
+ */
+
+.sk-tab-left,
+.sk-tab-right 
+  flex-direction: column
+  /* 1 */
+  margin-left: 0
+
+/* 1 */
+.sk-tab-left > *,
+.sk-tab-right > * 
+  padding-left: 0
+
+.sk-tab-left
+
+.sk-tab-right
+
+.sk-tab-left > * > a 
+  text-align: left
+
+.sk-tab-right > * > a 
+  text-align: left

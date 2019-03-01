@@ -1,0 +1,185 @@
+// Name:            Grid
+// Description:     Component to create responsive, fluid and nestable grids
+//
+// Component:       `.sk-grid`
+//
+// Modifiers:       `.sk-grid-small`
+//                  `.sk-grid-medium`
+//                  `.sk-grid-large`
+//                  `.sk-grid-collapse`
+//                  `.sk-grid-divider`
+//                  `.sk-grid-match`
+//                  `.sk-grid-stack`
+//                  `.sk-grid-margin`
+//                  `.sk-grid-margin-small`
+//                  `.sk-grid-margin-medium`
+//                  `.sk-grid-margin-large`
+//                  `.sk-grid-margin-collapse`
+//
+// Sub-modifier:    `.sk-grid-item-match`
+//
+// States:          `.first-column`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Grid
+ ========================================================================== */
+
+/*
+ * 1. Allow cells to wrap into the next line
+ * 2. Reset list
+ */
+
+.sk-grid
+  display: flex
+  /* 1 */
+  flex-wrap: wrap
+  /* 2 */
+  margin: 0
+  padding: 0
+  list-style: none
+
+/*
+ * Grid cell
+ * Note: Space is allocated solely based on content dimensions, but shrinks: 0 1 auto
+ * Reset margin for e.g. paragraphs
+ */
+.sk-grid > *
+  margin: 0
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-grid > * > :last-child
+  margin-bottom: 0
+
+/* Gutter
+ ========================================================================== */
+/*
+ * Default
+ */
+
+/* Horizontal */
+.sk-grid
+  margin-left: (-$grid-gutter-horizontal)
+.sk-grid > *
+  padding-left: $grid-gutter-horizontal
+
+/* Vertical */
+.sk-grid + .sk-grid,
+.sk-grid > .sk-grid-margin,
+* + .sk-grid-margin
+  margin-top: $grid-gutter-vertical
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large)
+  /* Horizontal */
+  .sk-grid
+    margin-left: (-$grid-gutter-horizontal)
+  .sk-grid > *
+    padding-left: $grid-gutter-horizontal
+
+  /* Vertical */
+  .sk-grid + .sk-grid,
+  .sk-grid > .sk-grid-margin,
+  * + .sk-grid-margin
+    margin-top: $grid-gutter-vertical
+
+/*
+ * Small
+ */
+/* Horizontal */
+.sk-grid-small
+  margin-left: (-$grid-small-gutter-horizontal)
+.sk-grid-small > *
+  padding-left: $grid-small-gutter-horizontal
+
+/* Vertical */
+.sk-grid + .sk-grid-small,
+.sk-grid-small > .sk-grid-margin,
+* + .sk-grid-margin-small
+  margin-top: $grid-small-gutter-vertical
+
+/*
+ * Medium
+ */
+/* Horizontal */
+.sk-grid-medium
+  margin-left: (-$grid-medium-gutter-horizontal)
+.sk-grid-medium > *
+  padding-left: $grid-medium-gutter-horizontal
+
+/* Vertical */
+.sk-grid + .sk-grid-medium,
+.sk-grid-medium > .sk-grid-margin,
+* + .sk-grid-margin-medium
+  margin-top: $grid-medium-gutter-vertical
+
+/*
+ * Large
+ */
+.sk-grid-large
+  margin-left: (-$grid-large-gutter-horizontal)
+.sk-grid-large > *
+  padding-left: $grid-large-gutter-horizontal
+
+/* Vertical */
+.sk-grid + .sk-grid-large,
+.sk-grid-large > .sk-grid-margin,
+* + .sk-grid-margin-large
+  margin-top: $grid-large-gutter-vertical
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large)
+  /* Horizontal */
+  .sk-grid-large
+    margin-left: (-$grid-large-gutter-horizontal-l)
+  .sk-grid-large > *
+    padding-left: $grid-large-gutter-horizontal-l
+
+  /* Vertical */
+  .sk-grid + .sk-grid-large,
+  .sk-grid-large > .sk-grid-margin,
+  * + .sk-grid-margin-large
+    margin-top: $grid-large-gutter-vertical-l
+
+/*
+ * Collapse
+ */
+/* Horizontal */
+.sk-grid-collapse
+    margin-left: 0
+.sk-grid-collapse > *
+  padding-left: 0
+
+/* Vertical */
+.sk-grid + .sk-grid-collapse,
+.sk-grid-collapse > .sk-grid-margin
+  margin-top: 0
+
+/* Match child of a grid cell
+ ========================================================================== */
+
+/*
+ * Behave like a block element
+ * 1. Wrap into the next line
+ * 2. Take the full width, at least 100%. Only if no class from the Width component is set.
+ * 3. Expand width even if larger than 100%, e.g. because of negative margin (Needed for nested grids)
+ */
+.sk-grid-match > *,
+.sk-grid-item-match
+  display: flex
+  /* 1 */
+  flex-wrap: wrap
+
+.sk-grid-match > * > :not([class*='sk-width']),
+.sk-grid-item-match > :not([class*='sk-width'])
+  /* 2 */
+  box-sizing: border-box
+  width: 100%
+  /* 3 */
+  flex: auto
+
+
+

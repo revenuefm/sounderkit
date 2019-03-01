@@ -1,0 +1,266 @@
+// Name:            Card
+// Description:     Component to create boxed content containers
+//
+// Component:       `sk-card`
+//
+// Sub-objects:     `sk-card-body`
+//                  `sk-card-header`
+//                  `sk-card-footer`
+//                  `sk-card-media-*`
+//                  `sk-card-title`
+//                  `sk-card-badge`
+//
+// Modifiers:       `sk-card-hover`
+//                  `sk-card-default`
+//                  `sk-card-primary`
+//                  `sk-card-secondary`
+//                  `sk-card-small`
+//                  `sk-card-large`
+//
+// Uses:            `sk-grid-stack`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Card
+ ========================================================================== */
+
+.sk-card
+  position: relative
+  box-sizing: border-box
+  border-radius: $card-border-radius
+  overflow: hidden
+  transition: box-shadow 0.1s ease-in-out
+
+/* Sections
+ ========================================================================== */
+
+.sk-card-body
+  padding: $card-body-padding-vertical $card-body-padding-horizontal
+
+.sk-card-header
+  padding: $card-header-padding-vertical $card-header-padding-horizontal
+
+.sk-card-footer
+  padding: $card-footer-padding-vertical $card-footer-padding-horizontal
+
+/*
+ * Micro clearfix
+ */
+
+.sk-card-body::before,
+.sk-card-body::after,
+.sk-card-header::before,
+.sk-card-header::after,
+.sk-card-footer::before,
+.sk-card-footer::after
+  content: ""
+  display: table
+
+.sk-card-body::after,
+.sk-card-header::after,
+.sk-card-footer::after
+  clear: both
+
+/*
+ * Remove margin from the last-child
+ */
+
+.sk-card-body > :last-child,
+.sk-card-header > :last-child,
+.sk-card-footer > :last-child
+  margin-bottom: 0
+
+/* Title
+ ========================================================================== */
+
+.sk-card-title
+  font-size: $card-title-font-size
+  line-height: $card-title-line-height
+  text-transform: uppercase
+  letter-spacing: .175em
+
+
+/* Badge
+ ========================================================================== */
+
+.sk-card-badge
+  margin: 0
+  /* 2 */
+  border: none
+  border-radius: $global-border-radius
+  /* 3 */
+  overflow: visible
+  /* 4 */
+  font: inherit
+  font-weight: bold
+  color: findColorInvert($black)
+  /* 5 */
+  text-transform: uppercase
+  /* 6 */
+  display: inline-block
+  box-sizing: border-box
+  z-index: 1
+  vertical-align: middle
+  font-size: $button-small-font-size
+  letter-spacing: 0.175em
+  position: absolute
+  top: $card-badge-top
+  left: $card-badge-left
+  /* 7 */
+  line-height: $button-small-line-height
+  /* 8 */
+  text-align: center
+  /* 9 */
+  text-decoration: none
+  padding: 0 $button-small-padding-horizontal
+  background: $black
+
+/*
+ * Remove margin from adjacent element
+ */
+
+.sk-card-badge:first-child + *
+  margin-top: 0
+
+/* Hover modifier
+ ========================================================================== */
+
+.sk-card-hover:not(.sk-card-default):not(.sk-card-primary):not(.sk-card-secondary):not(.sk-card-tertiary):not(.sk-card-blue):not(.sk-card-dark):hover
+  background: $card-hover-background
+  box-shadow: $card-hover-box-shadow
+
+/* Style modifiers
+ ========================================================================== */
+
+/*
+ * Default
+ * Note: Header and Footer are only implemented for the default style
+ */
+
+.sk-card-default
+  background: $card-default-background
+  color: $card-default-color
+
+.sk-card-default .sk-card-title
+  color: $card-default-title-color
+
+.sk-card-default.sk-card-hover:hover
+  background-color: $card-default-hover-background
+
+.sk-card-default .sk-card-header
+
+.sk-card-default .sk-card-footer
+
+
+/*
+ * Primary
+ */
+
+.sk-card-primary
+  background: $card-primary-background
+  color: $card-primary-color
+
+.sk-card-primary .sk-card-title
+  color: $card-primary-title-color
+
+.sk-card-primary.sk-card-hover:hover
+  background-color: $card-primary-hover-background
+
+
+/*
+ * Secondary
+ */
+
+.sk-card-secondary
+  background: $card-secondary-background
+  color: $card-secondary-color
+
+.sk-card-secondary .sk-card-title
+  color: $card-secondary-title-color
+
+.sk-card-secondary.sk-card-hover:hover
+  background-color: $card-secondary-hover-background
+
+
+
+/*
+ * Tertiary
+ */
+
+.sk-card-tertiary
+  background: $card-tertiary-background
+  color: $card-tertiary-color
+
+.sk-card-tertiary .sk-card-title
+  color: $card-tertiary-title-color
+
+.sk-card-tertiary.sk-card-hover:hover
+  background-color: $card-tertiary-hover-background
+
+/*
+ * Blue
+ */
+
+.sk-card-blue
+  background: $card-blue-background
+  color: $card-blue-color
+
+.sk-card-blue .sk-card-title
+  color: $card-blue-title-color
+
+.sk-card-blue.sk-card-hover:hover
+  background-color: $card-blue-hover-background
+
+
+
+/*
+ * Dark
+ */
+.sk-card-dark
+  background: $card-dark-background
+  color: $card-dark-color
+
+.sk-card-dark .sk-card-title
+  color: $card-dark-title-color
+
+.sk-card-dark.sk-card-hover:hover
+  background-color: $card-dark-hover-background
+
+
+
+/* Color profiles
+ =================================t========================================= */
+
+.sk-card-subtle-profile
+  color: $grey-200 !important
+  .sk-card-title
+    color: $grey-200 !important
+
+
+/* Media
+ =================================t========================================= */
+.sk-card-media
+  max-height: 260px
+  img
+    min-width: 100%
+    height: 100%
+    object-fit: cover
+
+
+/* Card Absolute positioned body
+ =================================t========================================= */
+.sk-card-body-absolute
+  position: absolute
+  width: 100%
+  box-sizing: border-box
+  padding: $card-body-padding-vertical $card-body-padding-horizontal
+  left: 0
+  bottom: 0
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 40%,rgba(0,0,0,0.4) 80%,rgba(0,0,0,0.7) 100%)
+  &.sk-light
+    color: $white !important
+  &.sk-card-subtle
+    color: $grey-200 !important
+  &.sk-no-background-mask
+    background: transparent

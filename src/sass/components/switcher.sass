@@ -1,0 +1,39 @@
+// Name:            Switcher
+// Description:     Component to navigate through different content panes
+//
+// Component:       `sk-switcher`
+//
+// States:          `sk-active`
+//
+// ========================================================================
+
+
+/* ========================================================================
+   Component: Switcher
+ ========================================================================== */
+
+/*
+ * Reset list
+ */
+
+.sk-switcher
+  margin: 0
+  padding: 0
+  list-style: none
+
+/* Items
+ ========================================================================== */
+
+/*
+ * Hide not active items
+ */
+
+.sk-switcher > :not(.sk-active)
+  display: none
+
+/*
+ * Remove margin from the last-child
+ */
+
+.sk-switcher > * > :last-child
+  margin-bottom: 0

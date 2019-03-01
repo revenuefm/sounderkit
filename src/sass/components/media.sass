@@ -1,0 +1,36 @@
+// Name:            Media
+// Description:     A infamous media object
+//
+// Component:       `.sk-media*`
+//
+// ========================================================================
+
+.sk-media
+  align-items: flex-start
+  display: flex
+  text-align: left
+  .sk-media
+    display: flex
+    .sk-media
+      & + .sk-media
+  & + .sk-media
+    margin-top: 1rem
+    padding-top: 1rem
+
+.sk-media-left,
+.sk-media-right
+  flex-basis: auto
+  flex-grow: 0
+  flex-shrink: 0
+
+.sk-media-left
+  margin-right: 1rem
+
+.sk-media-right
+  margin-left: 1rem
+
+.sk-media-content
+  flex-basis: auto
+  flex-grow: 1
+  flex-shrink: 1
+  text-align: left

@@ -1,0 +1,34 @@
+// Name:            Horizontal Wrapper
+// Description:     Component to allow container to be expanded from layout a but
+//
+// Component:       `.sk-horizontal-wrapper`
+//
+// ========================================================================
+
+.sk-horizontal-wrapper
+  min-width: 100%
+  display: flex
+  overflow-x: auto
+  position: relative
+  &::-webkit-scrollbar
+    display: none
+  .sk-container-expand
+    width: 100%
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small)
+  .sk-horizontal-wrapper
+    width: 100%
+  .sk-horizontal-wrapper .sk-container-expand
+    width: 100%
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-large)
+  .sk-horizontal-wrapper .sk-container-expand
+    width: auto
+    min-width: 140%
+
+@media (min-width: $breakpoint-xlarge)
+  .sk-horizontal-wrapper .sk-container-expand
+    width: auto
+    min-width: 110%

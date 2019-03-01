@@ -1,0 +1,65 @@
+// Name:            Breadcrumb
+// Description:     Component to create a breadcrumb navigation
+//
+// Component:       `sk-breadcrumb`
+//
+// States:          `sk-disabled`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Breadcrumb
+ ========================================================================== */
+
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Reset list
+ */
+
+.sk-breadcrumb
+  display: flex
+  /* 1 */
+  flex-wrap: wrap
+  /* 2 */
+  padding: 0
+  list-style: none
+
+/*
+ * Space is allocated solely based on content dimensions: 0 0 auto
+ */
+
+.sk-breadcrumb > * 
+  flex: none
+
+
+/* Items
+ ========================================================================== */
+
+.sk-breadcrumb > * > * 
+  display: inline-block
+  font-size: $breadcrumb-item-font-size
+  color: $breadcrumb-item-color
+
+/* Hover + Focus */
+.sk-breadcrumb > * > :hover,
+.sk-breadcrumb > * > :focus 
+  color: $breadcrumb-item-hover-color
+  text-decoration: $breadcrumb-item-hover-text-decoration
+
+/* Disabled */
+.sk-breadcrumb > .sk-disabled > * 
+
+/* Active */
+.sk-breadcrumb > :last-child > *
+  color: $breadcrumb-item-active-color
+
+/*
+ * Divider
+ * `nth-child` makes it also work without JS if it's only one row
+ */
+
+.sk-breadcrumb > :nth-child(n+2):not(.sk-first-column)::before
+  content: $breadcrumb-divider
+  display: inline-block
+  margin: 0 $breadcrumb-divider-margin-horizontal
+  color: $breadcrumb-divider-color

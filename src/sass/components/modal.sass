@@ -1,0 +1,239 @@
+// Name:            Modal
+// Description:     Component to create modal dialogs
+//
+// Component:       `sk-modal`
+//
+// Sub-objects:     `sk-modal-page`
+//                  `sk-modal-dialog`
+//                  `sk-modal-header`
+//                  `sk-modal-body`
+//                  `sk-modal-footer`
+//                  `sk-modal-title`
+//                  `sk-modal-close`
+//
+// Adopted:         `sk-modal-close-default`
+//                  `sk-modal-close-outside`
+//                  `sk-modal-close-full`
+//
+// Modifiers:       `sk-modal-container`
+//                  `sk-modal-full`
+//
+// States:          `sk-open`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Modal
+ ========================================================================== */
+
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Allow scrolling for the modal dialog
+ * 4. Horizontal padding
+ * 5. Mask the background page
+ * 6. Fade-in transition
+ */
+
+.sk-modal
+  /* 1 */
+  display: none
+  /* 2 */
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: $modal-z-index
+  /* 3 */
+  overflow-y: auto
+  -webkit-overflow-scrolling: touch
+  /* 4 */
+  padding: $modal-padding-vertical $modal-padding-horizontal
+  /* 5 */
+  background: $modal-background
+  /* 6 */
+  opacity: 0
+  transition: opacity 0.15s linear
+
+/* Phone landscape and bigger */
+@media (min-width: $breakpoint-small)
+  .sk-modal
+    padding: $modal-padding-vertical-s $modal-padding-horizontal-s
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium)
+  .sk-modal
+    padding-left: $modal-padding-horizontal-m
+    padding-right: $modal-padding-horizontal-m
+
+/*
+ * Open
+ */
+
+.sk-modal.sk-open
+  opacity: 1
+
+/* Page
+ ========================================================================== */
+
+/*
+ * Prevent scrollbars
+ */
+
+.sk-modal-page
+  overflow: hidden
+
+
+/* Dialog
+ ========================================================================== */
+
+/*
+ * 1. Create position context for spinner and close button
+ * 2. Dimensions
+ * 3. Fix `max-width: 100%` not working in combination with flex and responsive images in IE11
+ *    `!important` needed to overwrite `sk-width-auto`. See `#modal-media-image` in tests
+ * 4. Style
+ * 5. Slide-in transition
+ */
+
+.sk-modal-dialog
+  /* 1 */
+  position: relative
+  /* 2 */
+  box-sizing: border-box
+  margin: 0 auto
+  width: $modal-dialog-width
+  /* 3 */
+  max-width: unquote('calc(100% - 0.01px)') !important
+  /* 4 */
+  background: $modal-dialog-background
+  /* 5 */
+  opacity: 0
+  transform: translateY(-100px)
+  transition: 0.3s linear
+  transition-property: opacity, transform
+
+/*
+ * Open
+ */
+
+.sk-open > .sk-modal-dialog
+  opacity: 1
+  transform: translateY(0)
+
+/* Size modifier
+ ========================================================================== */
+
+/*
+ * Container size
+ * Take the same size as the Container component
+ */
+
+.sk-modal-container .sk-modal-dialog
+  width: $modal-container-width
+
+/*
+ * Full size
+ * 1. Remove padding and background from modal
+ * 2. Reset all default declarations from modal dialog
+ */
+
+/* 1 */
+.sk-modal-full
+  padding: 0
+  background: none
+
+/* 2 */
+.sk-modal-full .sk-modal-dialog
+  margin: 0
+  width: 100%
+  max-width: 100%
+  transform: translateY(0)
+
+
+/* Sections
+ ========================================================================== */
+
+.sk-modal-body
+  padding: $modal-body-padding-vertical $modal-body-padding-horizontal
+
+.sk-modal-header
+  padding: $modal-header-padding-vertical $modal-header-padding-horizontal
+  background: $modal-header-background
+
+.sk-modal-footer
+  padding: $modal-footer-padding-vertical $modal-footer-padding-horizontal
+  background: $modal-footer-background
+
+/*
+ * Micro clearfix
+ */
+
+.sk-modal-body::before,
+.sk-modal-body::after,
+.sk-modal-header::before,
+.sk-modal-header::after,
+.sk-modal-footer::before,
+.sk-modal-footer::after
+  content: ""
+  display: table
+
+.sk-modal-body::after,
+.sk-modal-header::after,
+.sk-modal-footer::after
+  clear: both
+/*
+ * Remove margin from the last-child
+ */
+
+.sk-modal-body > :last-child,
+.sk-modal-header > :last-child,
+.sk-modal-footer > :last-child
+  margin-bottom: 0
+
+/* Title
+ ========================================================================== */
+
+.sk-modal-title
+  font-size: $modal-title-font-size
+  line-height: $modal-title-line-height
+
+
+/* Close
+ * Adopts `sk-close`
+ ========================================================================== */
+
+[class*='sk-modal-close-']
+  position: absolute
+  z-index: $modal-z-index
+  top: $modal-close-position
+  right: $modal-close-position
+  padding: $modal-close-padding
+/*
+ * Remove margin from adjacent element
+ */
+
+[class*='sk-modal-close-']:first-child + *
+  margin-top: 0
+/*
+ * Outside
+ * 1. Prevent scrollbar on small devices
+ */
+
+.sk-modal-close-outside
+  top: $modal-close-outside-position
+  /* 1 */
+  right: (-$modal-close-padding)
+  transform: translate(0, -($modal-close-outside-translate))
+  color: $modal-close-outside-color
+
+.sk-modal-close-outside:hover
+  color: $modal-close-outside-hover-color
+
+/* Tablet landscape and bigger */
+@media (min-width: $breakpoint-medium)
+  /* 1 */
+  .sk-modal-close-outside
+    right: $modal-close-outside-position
+    transform: translate($modal-close-outside-translate, -($modal-close-outside-translate))

@@ -1,0 +1,35 @@
+//
+// Component:       Mixin
+// Description:     Defines mixins which are used across all components
+//
+// ========================================================================
+
+// SVG
+// ========================================================================
+
+=svg-fill($src, $color-default, $color-new)
+  $replace-src: str-replace($src, $color-default, $color-new) !default
+  $replace-src: str-replace($replace-src, "#", "%23")
+  background-image: url(quote($replace-src))
+
+
+// THEME CUSTOMIZATION
+// ========================================================================
+
+=customize()
+  $array: $themes
+  $prefix: theme
+  @each $theme, $map in $array
+    .#{$prefix}-#{$theme} &
+      $array-map: () !global
+      @each $key, $submap in $map
+        $value: map-get(map-get($array, $theme), '#{$key}')
+        $array-map: map-merge($array-map, ($key: $value)) !global
+      @content
+      $array-map: null !global
+
+// Gradient mixin
+=gradient($start-color, $end-color, $start-opacity: 1, $end-opacity: 1)
+  background: -moz-linear-gradient(top, rgba($start-color,$start-opacity) 0%, rgba($end-color,$end-opacity) 100%) /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba($start-color,$start-opacity) 0%,rgba($end-color,$end-opacity) 100%) /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba($start-color,$start-opacity) 0%,rgba($end-color,$end-opacity) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */

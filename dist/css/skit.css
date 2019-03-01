@@ -1,0 +1,8978 @@
+@charset "UTF-8";
+/*! sounder.fm v1.0.0 | MIT License */
+/*! minireset.css v0.0.4 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img,
+embed,
+iframe,
+object,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+audio {
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+html {
+  font-family: "usual", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  color: #5d6e76;
+  background-color: #f5f9fB;
+}
+
+a {
+  -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  cursor: pointer;
+  color: #0149ff;
+}
+
+a.active, a:hover {
+  color: #0041e7;
+  text-decoration: none;
+  outline: none;
+}
+
+abbr[title] {
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+body :not(pre) > code,
+body :not(pre) > kbd,
+body :not(pre) > samp {
+  font-family: Consolas, monaco, monospace;
+  font-size: 0.8571rem;
+  white-space: nowrap;
+  color: #ff0000;
+}
+
+ins {
+  text-decoration: none;
+  background-color: #ffd;
+  color: #1F2025;
+}
+
+mark {
+  background-color: #ffd;
+  color: #1F2025;
+}
+
+q {
+  font-style: italic;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * 1. Add responsiveness.
+ * 2. Auto-scale the height. Only needed if `height` attribute is present.
+ * 3. Corrects responsive `max-width` behavior if padding and border are used.
+ * 4. Exclude SVGs for IE11 because they don't preserve their aspect ratio.
+ */
+canvas,
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+@supports (display: block) {
+  svg {
+    max-width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+img:not([src]) {
+  visibility: hidden;
+}
+
+iframe {
+  border: 0;
+}
+
+p,
+ul,
+ol,
+dl,
+pre,
+address,
+fieldset,
+figure {
+  margin: 0 0 24px 0;
+}
+
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + pre,
+* + address,
+* + fieldset,
+* + figure {
+  margin-top: 24px;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin: 0 0 24px 0;
+  font-family: "usual", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: bold;
+  color: #121317;
+  text-transform: none;
+}
+
+* + h1, * + .h1,
+* + h2, * + .h2,
+* + h3, * + .h3,
+* + h4, * + .h4,
+* + h5, * + .h5,
+* + h6, * + .h6 {
+  margin-top: 48px;
+}
+
+h1, .h1 {
+  font-size: 2.42845rem;
+  line-height: 1.2;
+}
+
+h2, .h2 {
+  font-size: 1.9431rem;
+  line-height: 1.3;
+}
+
+h3, .h3 {
+  font-size: 1.714rem;
+  line-height: 1.4;
+}
+
+h4, .h4 {
+  font-size: 1.429rem;
+  line-height: 1.4;
+}
+
+h5, .h5 {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+h6, .h6 {
+  font-size: 0.8571rem;
+  line-height: 1.4;
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  h1, .h1 {
+    font-size: 2.857rem;
+  }
+  h2, .h2 {
+    font-size: 2.286rem;
+  }
+}
+
+ul,
+ol {
+  padding-left: 24px;
+}
+
+ul > li > ul,
+ul > li > ol,
+ol > li > ol,
+ol > li > ul {
+  margin: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0;
+}
+
+hr, .hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+  text-align: inherit;
+  margin: 0 0 24px 0;
+  border: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e5ebf0;
+}
+
+* + hr,
+* + .hr {
+  margin-top: 24px;
+}
+
+address {
+  font-style: normal;
+}
+
+blockquote {
+  margin: 0 0 24px 0;
+  font-size: 1.429rem;
+  line-height: 1.5;
+  font-style: italic;
+  color: #121317;
+}
+
+* + blockquote {
+  margin-top: 24px;
+}
+
+blockquote p:last-of-type {
+  margin-bottom: 0;
+}
+
+blockquote footer {
+  margin-top: 12px;
+  font-size: 0.8571rem;
+  line-height: 1.5;
+  color: #5d6e76;
+}
+
+blockquote footer::before {
+  content: "— ";
+}
+
+pre {
+  font: 0.8571rem / 1.5 Consolas, monaco, monospace;
+  color: #5d6e76;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+     tab-size: 4;
+  overflow: auto;
+  padding: 10px;
+  border: 1px solid #e5ebf0;
+  border-radius: 3px;
+  background: #fff;
+}
+
+pre code {
+  font-family: Consolas, monaco, monospace;
+  padding: 2px 6px;
+  background: #f5f9fB;
+}
+
+::-moz-selection {
+  text-shadow: none;
+  color: #fff;
+  background-color: #0149ff;
+}
+
+::selection {
+  text-shadow: none;
+  color: #fff;
+  background-color: #0149ff;
+}
+
+details,
+main {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+a.sk-link-muted,
+.sk-link-muted a {
+  color: #5d6e76;
+}
+
+a.sk-link-muted:hover,
+.sk-link-muted a:hover {
+  color: #5d6e76;
+}
+
+a.sk-link-text:not(:hover),
+.sk-link-text a:not(:hover) {
+  color: #121317;
+}
+
+a.sk-link-text:hover,
+.sk-link-text a:hover {
+  color: #121317;
+}
+
+a.sk-link-secondary:not(:hover),
+.sk-link-secondary a:not(:hover) {
+  color: #ff0039;
+}
+
+a.sk-link-secondary:hover,
+.sk-link-secondary a:hover {
+  color: #ff0039;
+}
+
+a.sk-link-tertiary:not(:hover),
+.sk-link-tertiary a:not(:hover) {
+  color: #FDF40F;
+}
+
+a.sk-link-tertiary:hover,
+.sk-link-tertiary a:hover {
+  color: #FDF40F;
+}
+
+a.sk-link-white:not(:hover),
+.sk-link-white a:not(:hover) {
+  color: #fff;
+}
+
+a.sk-link-white:hover,
+.sk-link-white a:hover {
+  color: #fff;
+}
+
+.sk-heading-primary {
+  font-size: 3.4288rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 960px) {
+  .sk-heading-primary {
+    font-size: 3.8574rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sk-heading-primary {
+    font-size: 4.286rem;
+    line-height: 1.1;
+  }
+}
+
+.sk-heading-hero {
+  font-size: 4.5715rem;
+  line-height: 1.1;
+}
+
+@media (min-width: 960px) {
+  .sk-heading-hero {
+    font-size: 6.85725rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sk-heading-hero {
+    font-size: 9.143rem;
+    line-height: 1;
+  }
+}
+
+.sk-list {
+  padding: 0;
+  list-style: none;
+}
+
+.sk-list > li::before,
+.sk-list > li::after {
+  content: "";
+  display: table;
+}
+
+.sk-list > li::after {
+  clear: both;
+}
+
+.sk-list > li > :last-child {
+  margin-bottom: 0;
+}
+
+.sk-list ul {
+  margin: 0;
+  padding-left: 24px;
+  list-style: none;
+}
+
+.sk-list > li:nth-child(n+2),
+.sk-list > li > ul {
+  margin-top: 12px;
+}
+
+.sk-list-divider > li:nth-child(n+2) {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #e5ebf0;
+}
+
+.sk-list-bullet > li {
+  position: relative;
+  padding-left: calc(1.5em + 12px);
+}
+
+.sk-list-bullet > li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%226%22%20height%3D%226%22%20viewBox%3D%220%200%206%206%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%235d6e76%22%20cx%3D%223%22%20cy%3D%223%22%20r%3D%223%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: block;
+}
+
+.sk-list-large > li:nth-child(n+2),
+.sk-list-large > li > ul {
+  margin-top: 24px;
+}
+
+.sk-list-large.sk-list-divider > li:nth-child(n+2) {
+  margin-top: 24px;
+  padding-top: 24px;
+}
+
+.sk-icon {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  padding: 0;
+  background-color: transparent;
+  display: inline-block;
+  fill: currentcolor;
+  line-height: 0;
+}
+
+button.sk-icon:not(:disabled) {
+  cursor: pointer;
+}
+
+.sk-icon::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.sk-icon:not(.uk-preserve) [fill*='#']:not(.preserve) {
+  fill: currentcolor;
+}
+
+.sk-icon:not(.uk-preserve) [stroke*='#']:not(.preserve) {
+  stroke: currentcolor;
+}
+
+.sk-icon > * {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+.sk-icon-button {
+  box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  vertical-align: middle;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121317;
+  color: #fff;
+}
+
+.sk-icon-button:hover,
+.sk-icon-button:focus {
+  outline: none;
+  background-color: #1d1f25;
+  color: #fff;
+}
+
+.sk-icon-button.sk-icon-button-transparent {
+  background: none;
+  color: #fff;
+}
+
+.sk-icon-button.sk-icon-button-transparent:hover {
+  background: none;
+}
+
+.sk-icon-button.sk-icon-button-overlay {
+  background: rgba(18, 19, 23, 0.7);
+}
+
+/*
+ * Link
+ */
+.sk-icon-link {
+  color: #0149ff;
+}
+
+.sk-icon-link:hover,
+.sk-icon-link:focus {
+  color: #0149ff;
+  outline: none;
+}
+
+/* OnClick + Active */
+.sk-icon-link:active,
+.sk-active > .sk-icon-link {
+  color: #0149ff;
+}
+
+.sk-input,
+.sk-select,
+.sk-textarea,
+.sk-radio,
+.sk-checkbox {
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.sk-input {
+  overflow: visible;
+}
+
+.sk-select {
+  text-transform: none;
+}
+
+/*
+ * 1. Change font properties to `inherit` in all browsers
+ * 2. Don't inherit the `font-weight` and use `bold` instead.
+ * NOTE: Both declarations don't work in Chrome, Safari and Opera.
+ */
+.sk-select optgroup {
+  font: inherit;
+  font-weight: bold;
+}
+
+.sk-textarea {
+  overflow: auto;
+}
+
+.sk-input[type="search"]::-webkit-search-cancel-button,
+.sk-input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+.sk-input[type="number"]::-webkit-inner-spin-button,
+.sk-input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+.sk-input::-moz-placeholder,
+.sk-textarea::-moz-placeholder {
+  opacity: 1;
+}
+
+.sk-radio:not(:disabled),
+.sk-checkbox:not(:disabled) {
+  cursor: pointer;
+}
+
+.sk-radio:not(:disabled),
+.sk-checkbox:not(:disabled) {
+  cursor: pointer;
+}
+
+.sk-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Input, select and textarea
+ * Allowed: `text`, `password`, `datetime`, `datetime-local`, `date`,  `month`,
+            `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
+ * Disallowed: `range`, `radio`, `checkbox`, `file`, `submit`, `reset` and `image`
+ @mixin ========================================================================= */
+.sk-input,
+.sk-textarea {
+  -webkit-appearance: none;
+}
+
+/*
+ * 1. Prevent content overflow if a fixed width is used
+ * 2. Take the full width
+ * 3. Reset default
+ * 4. Style
+ */
+.sk-input,
+.sk-select,
+.sk-textarea {
+  max-width: 100%;
+  width: 100%;
+  border: 0 none;
+  padding: 0 10px;
+  background: #fff;
+  color: #1F2025;
+}
+
+/*
+ * Single-line
+ * 1. Allow any element to look like an `input` or `select` element
+ * 2. Make sure line-height is not larger than height
+ *    Also needed to center the text vertically
+ */
+.sk-input,
+.sk-select:not([multiple]):not([size]) {
+  height: 40px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.sk-select:not(select) {
+  line-height: 40px;
+}
+
+.sk-select[multiple],
+.sk-select[size],
+.sk-textarea {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  vertical-align: top;
+}
+
+.sk-input:focus,
+.sk-select:focus,
+.sk-textarea:focus {
+  outline: none;
+  background: #fff;
+  color: #1F2025;
+}
+
+.sk-input:disabled,
+.sk-select:disabled,
+.sk-textarea:disabled {
+  background: #fff;
+  color: #1F2025;
+}
+
+.sk-input::-ms-input-placeholder {
+  color: #1F2025 !important;
+}
+
+.sk-input::-webkit-input-placeholder {
+  color: #1F2025 !important;
+}
+
+.sk-input:-ms-input-placeholder {
+  color: #1F2025 !important;
+}
+
+.sk-input::placeholder {
+  color: #1F2025 !important;
+}
+
+.sk-textarea::-ms-input-placeholder {
+  color: #1F2025 !important;
+}
+
+.sk-textarea::-webkit-input-placeholder {
+  color: #1F2025 !important;
+}
+
+.sk-textarea:-ms-input-placeholder {
+  color: #1F2025 !important;
+}
+
+.sk-textarea::placeholder {
+  color: #1F2025 !important;
+}
+
+/*
+ * Small
+ */
+.sk-form-small {
+  font-size: 0.8571rem;
+}
+
+.sk-form-small:not(textarea):not([multiple]):not([size]) {
+  height: 30px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.sk-form-small:not(select):not(input):not(textarea) {
+  line-height: 30px;
+}
+
+.sk-form-large {
+  font-size: 1.429rem;
+}
+
+.sk-form-large:not(textarea):not([multiple]):not([size]) {
+  height: 55px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.sk-form-large:not(select):not(input):not(textarea) {
+  line-height: 55px;
+}
+
+/*
+ * Error
+ */
+.sk-form-danger,
+.sk-form-danger:focus {
+  color: #ff0000 !important;
+}
+
+/*
+ * Success
+ */
+.sk-form-success,
+.sk-form-success:focus {
+  color: #00e652 !important;
+}
+
+/*
+ * Blank
+ */
+.sk-form-blank {
+  background: none;
+}
+
+/*
+ * Fixed widths
+ * Different widths for mini sized `input` and `select` elements
+ */
+input.sk-form-width-xsmall {
+  width: 50px;
+}
+
+select.sk-form-width-xsmall {
+  width: 75px;
+}
+
+.sk-form-width-small {
+  width: 130px;
+}
+
+.sk-form-width-medium {
+  width: 200px;
+}
+
+.sk-form-width-large {
+  width: 500px;
+}
+
+/* Select
+ @mixin ========================================================================= */
+/*
+ * 1. Remove default style. Also works in Firefox
+ * 2. Style
+ * 3. Remove default style in IE 10/11
+ * 4. Set `color` for options in the select dropdown, because the inherited `color` might be too light.
+ */
+.select:not([multiple]):not([size]) {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 20px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%231F2025%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%231F2025%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+}
+
+.select:not([multiple]):not([size])::-ms-expand {
+  display: none;
+}
+
+.select:not([multiple]):not([size]) option {
+  color: #444;
+}
+
+.select:not([multiple]):not([size]):disabled {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%231F2025%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%231F2025%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+
+/* Radio and checkbox
+ * Note: Does not work in IE11
+ @mixin ========================================================================= */
+/*
+ * 1. Style
+ * 2. Make box more robust so it clips the child element
+ * 3. Vertical alignment
+ * 4. Remove default style
+ * 5. Fix black background on iOS
+ * 6. Center icons
+ */
+.radio,
+.checkbox {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  overflow: hidden;
+  margin-top: -4px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.radio {
+  border-radius: 50%;
+}
+
+.radio:focus,
+.checkbox:focus {
+  outline: none;
+}
+
+/*
+ * Checked
+ */
+.radio:checked,
+.checkbox:checked,
+.checkbox:indeterminate {
+  background-color: #fff;
+}
+
+/* Focus */
+.radio:checked:focus,
+.checkbox:checked:focus,
+.checkbox:indeterminate:focus {
+  background-color: #fff;
+}
+
+/*
+ * Icons
+ */
+.radio:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%230149ff%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%230149ff%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox:indeterminate {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%230149ff%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+/*
+ * Disabled
+ */
+.radio:disabled,
+.checkbox:disabled {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%235d6e76%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.radio:disabled:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%235d6e76%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox:disabled:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%235d6e76%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox:disabled:indeterminate {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%235d6e76%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+/* Legend
+ @mixin ========================================================================= */
+/*
+ * Legend
+ * 1. Behave like block element
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 4. Style
+ */
+.legend {
+  width: 100%;
+  color: inherit;
+  padding: 0;
+  font-size: 1.714rem;
+  line-height: 1.4;
+}
+
+/* Custom controls
+ @mixin ========================================================================= */
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Behave like most inline-block elements
+ */
+.form-custom {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/*
+ * 1. Position and resize the form control to always cover its container
+ * 2. Required for Firefox for positioning to the left
+ * 3. Required for Webkit to make `height` work
+ * 4. Hide controle and show cursor
+ * 5. Needed for the cursor
+ * 6. Clip height caused by 5. Needed for Webkit only
+ */
+.form-custom select,
+.form-custom input[type="file"] {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  /* 2 */
+  left: 0;
+  /* 3 */
+  -webkit-appearance: none;
+  /* 4 */
+  opacity: 0;
+  cursor: pointer;
+}
+
+.form-custom input[type="file"] {
+  /* 5 */
+  font-size: 500px;
+  /* 6 */
+  overflow: hidden;
+}
+
+/* Layout
+ @mixin ========================================================================= */
+/*
+ * Stacked
+ */
+.form-stacked .form-label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+/*
+ * Horizontal
+ */
+/* Tablet portrait and smaller */
+@media (max-width: 959px) {
+  .form-horizontal .form-label {
+    display: block;
+    margin-bottom: 12px;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .form-horizontal .form-label {
+    width: 200px;
+    margin-top: 7px;
+    float: left;
+  }
+  .form-horizontal .form-controls {
+    margin-left: 215px;
+  }
+  /* Better vertical alignment if controls are checkboxes and radio buttons with text */
+  .form-horizontal .form-controls-text {
+    padding-top: 7px;
+  }
+}
+
+/* Icons
+ @mixin ========================================================================= */
+/*
+ * 1. Set position
+ * 2. Set width
+ * 3. Center icon vertically and horizontally
+ * 4. Style
+ */
+.form-icon {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* 2 */
+  width: 40px;
+  /* 3 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #94a7aF;
+}
+
+.form-icon:hover {
+  color: #94a7aF;
+}
+
+/*
+ * Make `input` element clickable through icon, e.g. if it's a `span`
+ */
+.form-icon:not(a):not(button):not(input) {
+  pointer-events: none;
+}
+
+/*
+ * Input padding
+ */
+.form-icon:not(.form-icon-flip) ~ .input {
+  padding-left: 40px !important;
+}
+
+/*
+ * Position modifier
+ */
+.form-icon-flip {
+  right: 0;
+  left: auto;
+}
+
+.form-icon-flip ~ .input {
+  padding-right: 40px !important;
+}
+
+/* ========================================================================
+   Component: Button
+ @mixin ========================================================================= */
+/*
+ * 1. Remove margins in Chrome, Safari and Opera.
+ * 2. Remove borders for `button`.
+ * 3. Address `overflow` set to `hidden` in IE.
+ * 4. Correct `font` properties and `color` not being inherited for `button`.
+ * 5. Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 6. Style
+ * 7. `line-height` is used to create a height because it also centers the text vertically for `a` elements.
+ *    Better would be to use height and flexbox to center the text vertically but flexbox doesn't work in Firefox on `button` elements.
+ * 8. Align text if button has a width
+ * 9. Required for `a`.
+ */
+.sk-button {
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  border: none;
+  border-radius: 4px;
+  /* 3 */
+  overflow: visible;
+  /* 4 */
+  font: inherit;
+  font-weight: bold;
+  color: #5d6e76;
+  /* 5 */
+  text-transform: uppercase;
+  /* 6 */
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 0 24px;
+  vertical-align: middle;
+  font-size: 0.7857rem;
+  letter-spacing: 0.175em;
+  /* 7 */
+  line-height: 40px;
+  /* 8 */
+  text-align: center;
+  /* 9 */
+  text-decoration: none;
+  background-color: #e5ebf0;
+}
+
+.sk-button:not(sk-button-square) .sk-icon {
+  position: relative;
+  top: -0.19em;
+}
+
+.sk-button:not(:disabled) {
+  cursor: pointer;
+}
+
+.sk-button-extended {
+  padding: 0 36px;
+}
+
+.sk-button-extended-l {
+  padding: 0 60px;
+}
+
+/*
+ * Remove the inner border and padding in Firefox.
+ */
+.sk-button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Hover */
+.sk-button:hover {
+  /* 9 */
+  text-decoration: none;
+}
+
+/* Focus */
+.sk-button:focus {
+  outline: none;
+}
+
+.sk-button-square {
+  width: 3rem;
+  padding: 0;
+  text-align: center;
+}
+
+/* OnClick + Active */
+/* Style modifiers
+ @mixin ========================================================================= */
+.sk-button-default {
+  background-color: #e5ebf0;
+  color: #5d6e76;
+}
+
+/* Hover + Focus */
+.sk-button-default:hover,
+.sk-button-default:focus {
+  background-color: #d5dfe7;
+  color: #5d6e76;
+}
+
+/* OnClick + Active */
+.sk-button-default:active,
+.sk-button-default.active {
+  background-color: #d5dfe7;
+  color: #5d6e76;
+}
+
+/*
+ * Primary
+ */
+.sk-button-primary {
+  background-color: #0149ff;
+  color: #fff;
+}
+
+.sk-button-primary.sk-button-outline {
+  background: none;
+  color: #0149ff;
+  border: 2px solid #0149ff;
+}
+
+.sk-button-primary.sk-button-invert {
+  background: #fff;
+  color: #0149ff;
+}
+
+/* Hover + Focus */
+.sk-button-primary:hover,
+.sk-button-primary:focus {
+  background-color: #0041e7;
+  color: #fff;
+}
+
+.sk-button-primary:hover.sk-button-outline,
+.sk-button-primary:focus.sk-button-outline {
+  background: none;
+  color: #0149ff;
+  border: 2px solid #0149ff;
+}
+
+.sk-button-primary:hover.sk-button-invert,
+.sk-button-primary:focus.sk-button-invert {
+  background: #fff;
+  color: #0149ff;
+}
+
+/* OnClick + Active */
+.sk-button-primary:active,
+.sk-button-primary.active {
+  background-color: #0041e7;
+  color: #fff;
+}
+
+.sk-button-primary:active.sk-button-outline,
+.sk-button-primary.active.sk-button-outline {
+  background: none;
+  color: #0149ff;
+  border: 2px solid #0149ff;
+}
+
+.sk-button-primary:active.sk-button-invert,
+.sk-button-primary.active.sk-button-invert {
+  background: #fff;
+  color: #0149ff;
+}
+
+/*
+ * Secondary
+ */
+.sk-button-secondary {
+  background-color: #ff0039;
+  color: #fff;
+}
+
+.sk-button-secondary.sk-button-outline {
+  background: none;
+  color: #ff0039;
+  border: 2px solid #ff0039;
+}
+
+.sk-button-secondary.sk-button-invert {
+  background: #fff;
+  color: #ff0039;
+}
+
+/* Hover + Focus */
+.sk-button-secondary:hover,
+.sk-button-secondary:focus {
+  background-color: #e60033;
+  color: #fff;
+}
+
+.sk-button-secondary:hover.sk-button-outline,
+.sk-button-secondary:focus.sk-button-outline {
+  background: none;
+  color: #ff0039;
+  border: 2px solid #ff0039;
+}
+
+.sk-button-secondary:hover.sk-button-invert,
+.sk-button-secondary:focus.sk-button-invert {
+  background: #fff;
+  color: #ff0039;
+}
+
+/* OnClick + Active */
+.sk-button-secondary:active,
+.sk-button-secondary.active {
+  background-color: #e60033;
+  color: #fff;
+}
+
+.sk-button-secondary:active.sk-button-outline,
+.sk-button-secondary.active.sk-button-outline {
+  background: none;
+  color: #ff0039;
+  border: 2px solid #ff0039;
+}
+
+.sk-button-secondary:active.sk-button-invert,
+.sk-button-secondary.active.sk-button-invert {
+  background: #fff;
+  color: #ff0039;
+}
+
+/*
+  * Tertiary
+  */
+.sk-button-tertiary {
+  background-color: #FDF40F;
+  color: black;
+}
+
+.sk-button-tertiary.sk-button-outline {
+  background: none;
+  color: rgba(18, 19, 23, 0.7);
+  border: 2px solid #FDF40F;
+}
+
+/* Hover + Focus */
+.sk-button-tertiary:hover,
+.sk-button-tertiary:focus {
+  background-color: #f0e702;
+  color: black;
+}
+
+.sk-button-tertiary:hover.sk-button-outline,
+.sk-button-tertiary:focus.sk-button-outline {
+  background: none;
+  color: rgba(18, 19, 23, 0.7);
+  border: 2px solid #FDF40F;
+}
+
+/* OnClick + Active */
+.sk-button-tertiary:active,
+.sk-button-tertiary.active {
+  background-color: #f0e702;
+  color: black;
+}
+
+.sk-button-tertiary:active.sk-button-outline,
+.sk-button-tertiary.active.sk-button-outline {
+  background: none;
+  color: black;
+  border: 2px solid #FDF40F;
+}
+
+/*
+  * Dark
+  */
+.sk-button-black {
+  background-color: #121317;
+  color: #fff;
+}
+
+.sk-button-black.sk-button-invert {
+  background: #fff;
+  color: #121317;
+}
+
+/* Hover + Focus */
+.sk-button-black:hover,
+.sk-button-black:focus,
+.sk-button-black:active,
+.sk-button-black.active {
+  background-color: #070709;
+  color: #fff;
+}
+
+.sk-button-black:hover.sk-button-invert,
+.sk-button-black:focus.sk-button-invert,
+.sk-button-black:active.sk-button-invert,
+.sk-button-black.active.sk-button-invert {
+  background: #fff;
+  color: #121317;
+}
+
+.sk-button-black-transparent {
+  background-color: rgba(18, 19, 23, 0.5);
+  color: #fff;
+}
+
+.sk-button-black-transparent:hover,
+.sk-button-black-transparent:focus,
+.sk-button-black-transparent:active,
+.sk-button-black-transparent.active {
+  background-color: rgba(18, 19, 23, 0.7);
+  color: #fff;
+}
+
+/*
+ * Blue
+  */
+/* Hover + Focus */
+.sk-button-blue:hover,
+.sk-button-blue:focus,
+.sk-button-blue:active,
+.sk-button-blue.active {
+  background-color: #00123e;
+  color: #fff;
+}
+
+.sk-button-blue:hover.sk-button-outline,
+.sk-button-blue:focus.sk-button-outline,
+.sk-button-blue:active.sk-button-outline,
+.sk-button-blue.active.sk-button-outline {
+  background: none;
+  color: #001A57;
+  border: 2px solid #001A57;
+}
+
+.sk-button-blue:hover.sk-button-invert,
+.sk-button-blue:focus.sk-button-invert,
+.sk-button-blue:active.sk-button-invert,
+.sk-button-blue.active.sk-button-invert {
+  background: #fff;
+  color: #001A57;
+}
+
+/*
+ * Teal
+  */
+/* Hover + Focus */
+.sk-button-teal:hover,
+.sk-button-teal:focus,
+.sk-button-teal:active,
+.sk-button-teal.active {
+  background-color: #13a696;
+  color: #fff;
+}
+
+.sk-button-teal:hover.sk-button-outline,
+.sk-button-teal:focus.sk-button-outline,
+.sk-button-teal:active.sk-button-outline,
+.sk-button-teal.active.sk-button-outline {
+  background: none;
+  color: #16BDAB;
+  border: 2px solid #16BDAB;
+}
+
+.sk-button-teal:hover.sk-button-invert,
+.sk-button-teal:focus.sk-button-invert,
+.sk-button-teal:active.sk-button-invert,
+.sk-button-teal.active.sk-button-invert {
+  background: #fff;
+  color: #16BDAB;
+}
+
+/*
+ * Disabled
+ * The same for all style modifiers
+ */
+.sk-button-default:disabled,
+.sk-button-primary:disabled,
+.sk-button-secondary:disabled,
+.sk-button-tertiary:disabled {
+  background-color: #f5f7f9;
+  color: #BCCAD0;
+}
+
+.sk-button-transparent {
+  background-color: transparent !important;
+  color: #fff;
+}
+
+/* Size modifiers
+ @mixin ========================================================================= */
+.sk-button-small {
+  padding: 0 12px;
+  line-height: 30px;
+  font-size: 0.5714rem;
+}
+
+.sk-button-large {
+  padding: 0 48px;
+  line-height: 55px;
+  font-size: 1.429rem;
+}
+
+/* Text modifiers
+ @mixin ========================================================================= */
+/*
+ * Text
+ * 1. Reset
+ * 2. Style
+ */
+.sk-button-group {
+  /* 1 */
+  display: inline-flex;
+  /* 2 */
+  vertical-align: middle;
+  /* 3 */
+  position: relative;
+}
+
+/* ========================================================================
+   Component: Section
+ @mixin ========================================================================= */
+/*
+ * 1. Make it work with `100vh` and height in general
+ */
+.sk-section {
+  box-sizing: border-box;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 960px) {
+  .sk-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+
+/*
+ * Micro clearfix
+ */
+.sk-section:after,
+.sk-section:before {
+  content: "";
+  display: table;
+}
+
+.sk-section::after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-section > :last-child {
+  margin-bottom: 0;
+}
+
+/* Size modifiers
+ @mixin ========================================================================= */
+/*
+ * XSmall
+ */
+.sk-section-xsmall {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+/*
+ * Small
+ */
+.sk-section-small {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+/*
+ * Large
+ */
+.sk-section-large {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-section-large {
+    padding-top: 144px;
+    padding-bottom: 144px;
+  }
+}
+
+/*
+ * XLarge
+ */
+.sk-section-xlarge {
+  padding-top: 144px;
+  padding-bottom: 144px;
+}
+
+@media (min-width: 960px) {
+  .sk-section-xlarge {
+    padding-top: 216px;
+    padding-bottom: 216px;
+  }
+}
+
+/* Overlap modifier
+ @mixin ========================================================================= */
+/*
+ * Reserved modifier to make a section overlap another section with an border image
+ * Implemented by the theme
+ */
+/* ========================================================================
+   Component: Container
+ @mixin ========================================================================= */
+/*
+ * 1. Box sizing has to be `content-box` so the max-width is always the same and
+ *    unaffected by the padding on different breakpoints. It's important for the size modifiers.
+ */
+.sk-container {
+  /* 1 */
+  box-sizing: content-box;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/*
+ * Micro clearfix
+ */
+.sk-container::before,
+.sk-container::after {
+  content: "";
+  display: table;
+}
+
+.sk-container::after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-container > :last-child {
+  margin-bottom: 0;
+}
+
+/*
+ * Remove padding from nested containers
+ */
+.sk-container .sk-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Size modifier
+ @mixin ========================================================================= */
+.sk-container-xsmall {
+  max-width: 750px;
+}
+
+.sk-container-small {
+  max-width: 900px;
+}
+
+.sk-container-large {
+  max-width: 1600px;
+}
+
+.sk-container-expand {
+  max-width: none;
+}
+
+.sk-container-out {
+  max-width: none;
+  width: 110%;
+}
+
+/* Expand modifier
+ @mixin ========================================================================= */
+/*
+ * Expand one side only
+ */
+.sk-container-expand-left {
+  margin-left: 0;
+}
+
+.sk-container-expand-right {
+  margin-right: 0;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-container-expand-left.sk-container-xsmall,
+  .sk-container-expand-right.sk-container-xsmall {
+    max-width: calc(50% + (750px / 2) - 24px);
+  }
+  .sk-container-expand-left.sk-container-small,
+  .sk-container-expand-right.sk-container-small {
+    max-width: calc(50% + (900px / 2) - 24px);
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-container-expand-left,
+  .sk-container-expand-right {
+    max-width: calc(50% + (1200px / 2) - 48px);
+  }
+  .sk-container-expand-left.sk-container-xsmall,
+  .sk-container-expand-right.sk-container-xsmall {
+    max-width: calc(50% + (750px / 2) - 48px);
+  }
+  .sk-container-expand-left.sk-container-small,
+  .sk-container-expand-right.sk-container-small {
+    max-width: calc(50% + (900px / 2) - 48px);
+  }
+  .sk-container-expand-left.sk-container-large,
+  .sk-container-expand-right.sk-container-large {
+    max-width: calc(50% + (1600px / 2) - 48px);
+  }
+}
+
+/* ========================================================================
+   Component: Grid
+ @mixin ========================================================================= */
+/*
+ * 1. Allow cells to wrap into the next line
+ * 2. Reset list
+ */
+.sk-grid {
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+  /* 2 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+ * Grid cell
+ * Note: Space is allocated solely based on content dimensions, but shrinks: 0 1 auto
+ * Reset margin for e.g. paragraphs
+ */
+.sk-grid > * {
+  margin: 0;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-grid > * > :last-child {
+  margin-bottom: 0;
+}
+
+/* Gutter
+ @mixin ========================================================================= */
+/*
+ * Default
+ */
+/* Horizontal */
+.sk-grid {
+  margin-left: -24px;
+}
+
+.sk-grid > * {
+  padding-left: 24px;
+}
+
+/* Vertical */
+.sk-grid + .sk-grid,
+.sk-grid > .sk-grid-margin,
+* + .sk-grid-margin {
+  margin-top: 24px;
+}
+
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  /* Horizontal */
+  .sk-grid {
+    margin-left: -24px;
+  }
+  .sk-grid > * {
+    padding-left: 24px;
+  }
+  /* Vertical */
+  .sk-grid + .sk-grid,
+  .sk-grid > .sk-grid-margin,
+  * + .sk-grid-margin {
+    margin-top: 24px;
+  }
+}
+
+/*
+ * Small
+ */
+/* Horizontal */
+.sk-grid-small {
+  margin-left: -12px;
+}
+
+.sk-grid-small > * {
+  padding-left: 12px;
+}
+
+/* Vertical */
+.sk-grid + .sk-grid-small,
+.sk-grid-small > .sk-grid-margin,
+* + .sk-grid-margin-small {
+  margin-top: 12px;
+}
+
+/*
+ * Medium
+ */
+/* Horizontal */
+.sk-grid-medium {
+  margin-left: -24px;
+}
+
+.sk-grid-medium > * {
+  padding-left: 24px;
+}
+
+/* Vertical */
+.sk-grid + .sk-grid-medium,
+.sk-grid-medium > .sk-grid-margin,
+* + .sk-grid-margin-medium {
+  margin-top: 24px;
+}
+
+/*
+ * Large
+ */
+.sk-grid-large {
+  margin-left: -48px;
+}
+
+.sk-grid-large > * {
+  padding-left: 48px;
+}
+
+/* Vertical */
+.sk-grid + .sk-grid-large,
+.sk-grid-large > .sk-grid-margin,
+* + .sk-grid-margin-large {
+  margin-top: 48px;
+}
+
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  /* Horizontal */
+  .sk-grid-large {
+    margin-left: -72px;
+  }
+  .sk-grid-large > * {
+    padding-left: 72px;
+  }
+  /* Vertical */
+  .sk-grid + .sk-grid-large,
+  .sk-grid-large > .sk-grid-margin,
+  * + .sk-grid-margin-large {
+    margin-top: 72px;
+  }
+}
+
+/*
+ * Collapse
+ */
+/* Horizontal */
+.sk-grid-collapse {
+  margin-left: 0;
+}
+
+.sk-grid-collapse > * {
+  padding-left: 0;
+}
+
+/* Vertical */
+.sk-grid + .sk-grid-collapse,
+.sk-grid-collapse > .sk-grid-margin {
+  margin-top: 0;
+}
+
+/* Match child of a grid cell
+ @mixin ========================================================================= */
+/*
+ * Behave like a block element
+ * 1. Wrap into the next line
+ * 2. Take the full width, at least 100%. Only if no class from the Width component is set.
+ * 3. Expand width even if larger than 100%, e.g. because of negative margin (Needed for nested grids)
+ */
+.sk-grid-match > *,
+.sk-grid-item-match {
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+}
+
+.sk-grid-match > * > :not([class*='sk-width']),
+.sk-grid-item-match > :not([class*='sk-width']) {
+  /* 2 */
+  box-sizing: border-box;
+  width: 100%;
+  /* 3 */
+  flex: auto;
+}
+
+/* ========================================================================
+   Component: Column
+ @mixin ========================================================================= */
+[class*='sk-column-'] {
+  -webkit-column-gap: 24px;
+          column-gap: 24px;
+}
+
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  -webkit-column-gap: 48px;
+          column-gap: 48px;
+}
+
+/*
+ * Fix image 1px line wrapping into the next column in Chrome
+ */
+[class*='sk-column-'] img {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+/* Width modifiers
+ @mixin ========================================================================= */
+.sk-column-1-2 {
+  -webkit-column-count: 2;
+          column-count: 2;
+}
+
+.sk-column-1-3 {
+  -webkit-column-count: 3;
+          column-count: 3;
+}
+
+.sk-column-1-4 {
+  -webkit-column-count: 4;
+          column-count: 4;
+}
+
+.sk-column-1-5 {
+  -webkit-column-count: 5;
+          column-count: 5;
+}
+
+.sk-column-1-6 {
+  -webkit-column-count: 6;
+          column-count: 6;
+}
+
+@media (min-width: 640px) {
+  .sk-column-1-2-s {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+  .sk-column-1-3-s {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+  .sk-column-1-4-s {
+    -webkit-column-count: 4;
+            column-count: 4;
+  }
+  .sk-column-1-5-s {
+    -webkit-column-count: 5;
+            column-count: 5;
+  }
+  .sk-column-1-6-s {
+    -webkit-column-count: 6;
+            column-count: 6;
+  }
+}
+
+@media (min-width: 960px) {
+  .sk-column-1-2-m {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+  .sk-column-1-3-m {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+  .sk-column-1-4-m {
+    -webkit-column-count: 4;
+            column-count: 4;
+  }
+  .sk-column-1-5-m {
+    -webkit-column-count: 5;
+            column-count: 5;
+  }
+  .sk-column-1-6-m {
+    -webkit-column-count: 6;
+            column-count: 6;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sk-column-1-2-l {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+  .sk-column-1-3-l {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+  .sk-column-1-4-l {
+    -webkit-column-count: 4;
+            column-count: 4;
+  }
+  .sk-column-1-5-l {
+    -webkit-column-count: 5;
+            column-count: 5;
+  }
+  .sk-column-1-6-l {
+    -webkit-column-count: 6;
+            column-count: 6;
+  }
+}
+
+@media (min-width: 1600px) {
+  .sk-column-1-2-xl {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+  .sk-column-1-3-xl {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+  .sk-column-1-4-xl {
+    -webkit-column-count: 4;
+            column-count: 4;
+  }
+  .sk-column-1-5-xl {
+    -webkit-column-count: 5;
+            column-count: 5;
+  }
+  .sk-column-1-6-xl {
+    -webkit-column-count: 6;
+            column-count: 6;
+  }
+}
+
+/* Make element span across all columns
+ * Does not work in Firefox yet
+ @mixin ========================================================================= */
+.sk-column-span {
+  -webkit-column-span: all;
+          column-span: all;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  overflow: hidden;
+}
+
+.sk-sidebar-left {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 240px;
+  overflow: auto;
+  background: #fff;
+}
+
+@media (min-width: 960px) {
+  .sk-sidebar-left + .sk-main {
+    padding-left: 240px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sk-sidebar-left {
+    width: 300px;
+  }
+  .sk-sidebar-left + .sk-main {
+    padding-left: 300px;
+  }
+}
+
+@media (max-width: 959px) {
+  .sk-visible-m.sk-sidebar-show {
+    display: block !important;
+    z-index: 1100;
+  }
+}
+
+.sk-mosaic {
+  align-items: stretch;
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
+}
+
+.sk-mosaic.is-ancestor {
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-top: -12px;
+}
+
+.sk-mosaic.is-ancestor:last-child {
+  margin-bottom: -12px;
+}
+
+.sk-mosaic.is-ancestor:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.sk-mosaic.is-child {
+  margin: 0;
+}
+
+.sk-mosaic.is-parent {
+  padding: 12px;
+}
+
+.sk-mosaic.is-vertical {
+  flex-direction: column;
+}
+
+.sk-mosaic.is-vertical > .tile.is-child:not(:last-child) {
+  margin-bottom: 24px !important;
+}
+
+@media (min-width: 1200px) {
+  .sk-mosaic:not(.is-child) {
+    display: flex;
+  }
+  .sk-mosaic.is-1 {
+    flex: none;
+    width: 8.33333%;
+  }
+  .sk-mosaic.is-2 {
+    flex: none;
+    width: 16.66667%;
+  }
+  .sk-mosaic.is-3 {
+    flex: none;
+    width: 25%;
+  }
+  .sk-mosaic.is-4 {
+    flex: none;
+    width: 33.33333%;
+  }
+  .sk-mosaic.is-5 {
+    flex: none;
+    width: 41.66667%;
+  }
+  .sk-mosaic.is-6 {
+    flex: none;
+    width: 50%;
+  }
+  .sk-mosaic.is-7 {
+    flex: none;
+    width: 58.33333%;
+  }
+  .sk-mosaic.is-8 {
+    flex: none;
+    width: 66.66667%;
+  }
+  .sk-mosaic.is-9 {
+    flex: none;
+    width: 75%;
+  }
+  .sk-mosaic.is-10 {
+    flex: none;
+    width: 83.33333%;
+  }
+  .sk-mosaic.is-11 {
+    flex: none;
+    width: 91.66667%;
+  }
+  .sk-mosaic.is-12 {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* ========================================================================
+   Component: Tile
+ @mixin ========================================================================= */
+.sk-tile {
+  position: relative;
+  box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-tile {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-tile {
+    padding-left: 48px;
+    padding-right: 48px;
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+
+/*
+ * Micro clearfix
+ */
+.sk-tile::before,
+.sk-tile::after {
+  content: "";
+  display: table;
+}
+
+.sk-tile::after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-tile > :last-child {
+  margin-bottom: 0;
+}
+
+/* Size modifiers
+ @mixin ========================================================================= */
+/*
+ * XSmall
+ */
+.sk-tile-xsmall {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+/*
+ * Small
+ */
+.sk-tile-small {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+/*
+ * Large
+ */
+.sk-tile-large {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-tile-large {
+    padding-top: 144px;
+    padding-bottom: 144px;
+  }
+}
+
+/*
+ * XLarge
+ */
+.sk-tile-xlarge {
+  padding-top: 144px;
+  padding-bottom: 144px;
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-tile-xlarge {
+    padding-top: 216px;
+    padding-bottom: 216px;
+  }
+}
+
+/* Style modifiers
+ @mixin ========================================================================= */
+/*
+ * Default
+ */
+.sk-tile-default {
+  background: #fff;
+}
+
+/*
+ * Muted
+ */
+.sk-tile-muted {
+  background: #fff;
+}
+
+/*
+ * Primary
+ */
+.sk-tile-primary {
+  background: #0149ff;
+}
+
+/*
+ * Secondary
+ */
+.sk-tile-secondary {
+  background: #ff0039;
+}
+
+/*
+ * Tertiary
+ */
+.sk-tile-tertiary {
+  background: #FDF40F;
+}
+
+.sk-horizontal-wrapper {
+  min-width: 100%;
+  display: flex;
+  overflow-x: auto;
+  position: relative;
+}
+
+.sk-horizontal-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.sk-horizontal-wrapper .sk-container-expand {
+  width: 100%;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-horizontal-wrapper {
+    width: 100%;
+  }
+  .sk-horizontal-wrapper .sk-container-expand {
+    width: 100%;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 1200px) {
+  .sk-horizontal-wrapper .sk-container-expand {
+    width: auto;
+    min-width: 140%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .sk-horizontal-wrapper .sk-container-expand {
+    width: auto;
+    min-width: 110%;
+  }
+}
+
+/* ========================================================================
+   Component: Close
+ @mixin ========================================================================= */
+/*
+ * Adopts `sk-icon`
+ */
+.sk-close {
+  color: #94a7aF;
+  transition: 0.1s ease-in-out;
+  transition-property: color, opacity;
+}
+
+/* Hover + Focus */
+.sk-close:hover,
+.sk-close:focus {
+  color: #5d6e76;
+  outline: none;
+}
+
+/* ========================================================================
+   Component: Spinner
+ @mixin ========================================================================= */
+/* SVG
+ @mixin ========================================================================= */
+.sk-spinner > * {
+  -webkit-animation: sk-spinner-rotate 1.4s linear infinite;
+          animation: sk-spinner-rotate 1.4s linear infinite;
+}
+
+@-webkit-keyframes sk-spinner-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+@keyframes sk-spinner-rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(270deg);
+            transform: rotate(270deg);
+  }
+}
+
+/*
+ * Circle
+ */
+.sk-spinner > * > * {
+  stroke-dasharray: 88px;
+  stroke-dashoffset: 0;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation: sk-spinner-dash 1.4s ease-in-out infinite;
+          animation: sk-spinner-dash 1.4s ease-in-out infinite;
+  stroke-width: 1;
+  stroke-linecap: round;
+}
+
+@-webkit-keyframes sk-spinner-dash {
+  0% {
+    stroke-dashoffset: 88px;
+  }
+  50% {
+    stroke-dashoffset: 22px;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 88px;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+@keyframes sk-spinner-dash {
+  0% {
+    stroke-dashoffset: 88px;
+  }
+  50% {
+    stroke-dashoffset: 22px;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 88px;
+    -webkit-transform: rotate(450deg);
+            transform: rotate(450deg);
+  }
+}
+
+/* ========================================================================
+   Component: Totop
+ @mixin ========================================================================= */
+/*
+ * Addopts `sk-icon`
+ */
+.sk-totop {
+  padding: 5px;
+  color: #94a7aF;
+}
+
+/* Hover + Focus */
+.sk-totop:hover,
+.sk-totop:focus {
+  color: #5d6e76;
+  outline: none;
+}
+
+/* OnClick */
+.sk-totop:active {
+  color: #121317;
+}
+
+/*
+ * Addopts `sk-icon`
+ */
+.sk-marker {
+  padding: 5px;
+  background: #001A57;
+  color: #fff;
+}
+
+/* Hover + Focus */
+.sk-marker:hover,
+.sk-marker:focus {
+  color: #fff;
+  outline: none;
+}
+
+/* ========================================================================
+   Component: Alert
+ @mixin ========================================================================= */
+.sk-alert {
+  position: relative;
+  margin-bottom: 24px;
+  padding: 12px 26px 12px 12px;
+  background: #94a7aF;
+  color: #5d6e76;
+}
+
+/* Add margin if adjacent element */
+* + .sk-alert {
+  margin-top: 24px;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-alert > :last-child {
+  margin-bottom: 0;
+}
+
+/* Close
+ * Adopts `sk-close`
+ @mixin ========================================================================= */
+.sk-alert-close {
+  position: absolute;
+  top: 17px;
+  right: 12px;
+  color: inherit;
+  opacity: 0.4;
+}
+
+.sk-alert-close:hover {
+  color: inherit;
+  opacity: 0.8;
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+.sk-alert-close:first-child + * {
+  margin-top: 0;
+}
+
+/*
+ * Hover + Focus
+ */
+/* Style modifiers
+ @mixin ========================================================================= */
+/*
+ * Primary
+ */
+.sk-alert-primary {
+  background: #cddbff;
+  color: #0149ff;
+}
+
+/*
+ * Success
+ */
+.sk-alert-success {
+  background: #dafbe6;
+  color: #00e652;
+}
+
+/*
+ * Warning
+ */
+.sk-alert-warning {
+  background: #ffecc0;
+  color: #ffb201;
+}
+
+/*
+ * Danger
+ */
+.sk-alert-danger {
+  background: #ffcccc;
+  color: #ff0000;
+}
+
+.sk-alert h1,
+.sk-alert h2,
+.sk-alert h3,
+.sk-alert h4,
+.sk-alert h5,
+.sk-alert h6 {
+  color: inherit;
+}
+
+.sk-alert a:not([class]) {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.sk-alert a:not([class]):hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* ========================================================================
+   Component: Badge
+ @mixin ========================================================================= */
+/*
+ * 1. Style
+ * 2. Center child vertically and horizontally
+ */
+.sk-badge {
+  box-sizing: border-box;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  border-radius: 500px;
+  vertical-align: middle;
+  /* 1 */
+  background: #0149ff;
+  color: #fff;
+  font-size: 0.8571rem;
+  /* 2 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+ * Required for `a`
+ */
+.sk-badge:hover,
+.sk-badge:focus {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+
+/* ========================================================================
+   Component: Label
+ @mixin ========================================================================= */
+.sk-label {
+  display: inline-block;
+  padding: 0 12px;
+  background: #0149ff;
+  line-height: 1.5;
+  font-size: 0.8571rem;
+  color: #fff;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Color modifiers
+ @mixin ========================================================================= */
+/*
+ * Success
+ */
+.sk-label-success {
+  background-color: #00e652;
+  color: rgba(18, 19, 23, 0.7);
+}
+
+/*
+ * Warning
+ */
+.sk-label-warning {
+  background-color: #ffb201;
+  color: rgba(18, 19, 23, 0.7);
+}
+
+/*
+ * Danger
+ */
+.sk-label-danger {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+/* ========================================================================
+   Component: Overlay
+ @mixin ========================================================================= */
+.sk-overlay {
+  padding: 24px 24px;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-overlay > :last-child {
+  margin-bottom: 0;
+}
+
+/* Style modifiers
+ @mixin ========================================================================= */
+/*
+ * Default
+ */
+.sk-overlay-default {
+  background: rgba(93, 110, 118, 0.8);
+}
+
+/*
+ * Primary
+ */
+.sk-overlay-primary {
+  background: rgba(0, 26, 87, 0.8);
+}
+
+/* ========================================================================
+   Component: Article
+ @mixin ========================================================================= */
+/*
+ * Micro clearfix
+ */
+.sk-article::before,
+.sk-article::after {
+  content: "";
+  display: table;
+}
+
+.sk-article::after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-article > :last-child {
+  margin-bottom: 0;
+}
+
+/* Adjacent sibling
+ @mixin ========================================================================= */
+.sk-article + .sk-article {
+  margin-top: 72px;
+}
+
+/* Title
+ @mixin ========================================================================= */
+.sk-article-title {
+  font-size: 2.42845rem;
+  line-height: 1.2;
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-article-title {
+    font-size: 2.857rem;
+  }
+}
+
+/* Meta
+ @mixin ========================================================================= */
+.sk-article-meta {
+  font-size: 0.8571rem;
+  line-height: 1.4;
+  color: #94a7aF;
+}
+
+.sk-article-meta a {
+  color: #94a7aF;
+}
+
+.sk-article-meta a:hover {
+  color: #5d6e76;
+  text-decoration: none;
+}
+
+.sk-side-navigation {
+  padding: 24px;
+  padding-top: 31px;
+}
+
+.sk-side-navigation .sk-logo img {
+  width: 120px;
+}
+
+/* ========================================================================
+   Component: Nav
+ @mixin ========================================================================= */
+/*
+ * Reset
+ * 1. Prepare lists
+ * 2. Prepare links
+ * 3. Remove default focus style
+ */
+/* 1 */
+.sk-nav,
+.sk-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 2 */
+.sk-nav li > a {
+  display: block;
+  text-decoration: none;
+}
+
+/* 3 */
+.sk-nav li > a:focus {
+  outline: none;
+}
+
+/*
+ * Items
+ * Must target `a` elements to exclude other elements (e.g. lists)
+ */
+.sk-nav > li > a {
+  padding: 5px 0;
+}
+
+/* Sublists
+ @mixin ========================================================================= */
+/*
+ * Level 2
+ * `ul` needed for higher specificity to override padding
+ */
+ul.sk-nav-sub {
+  padding: 5px 0 5px 15px;
+}
+
+/*
+ * Level 3 and deeper
+ */
+.sk-nav-sub ul {
+  padding-left: 15px;
+}
+
+/*
+ * Items
+ */
+.sk-nav-sub a {
+  padding: 2px 0;
+}
+
+/* Parent icon modifier
+ @mixin ========================================================================= */
+.sk-nav-parent-icon > .sk-parent > a::after {
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  float: right;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%235d6e76%22%20stroke-width%3D%221.1%22%20points%3D%2210%201%204%207%2010%2013%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.sk-nav-parent-icon > .sk-parent.sk-open > a::after {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%235d6e76%22%20stroke-width%3D%221.1%22%20points%3D%221%204%207%2010%2013%204%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+/* Header
+ @mixin ========================================================================= */
+.sk-nav-header {
+  padding: 5px 0;
+  text-transform: uppercase;
+  font-size: 0.8571rem;
+  letter-spacing: .175em;
+}
+
+.sk-nav-header:not(:first-child) {
+  margin-top: 24px;
+}
+
+/* Divider
+ @mixin ========================================================================= */
+.sk-nav-divider {
+  margin: 5px 0;
+}
+
+/* Default modifier
+ @mixin ========================================================================= */
+/*
+ * Items
+ */
+.sk-nav-default > li > a {
+  color: #121317;
+}
+
+/* Hover + Focus */
+.sk-nav-default > li > a:hover,
+.sk-nav-default > li > a:focus {
+  color: #5d6e76;
+}
+
+/* Active */
+.sk-nav-default > li.sk-active > a {
+  color: #0149ff;
+}
+
+/*
+ * Header
+ */
+.sk-nav-default .sk-nav-header {
+  color: #94a7aF;
+}
+
+/*
+ * Divider
+ */
+.sk-nav-default .sk-nav-divider {
+  border-top: 1px solid 1px solid #e5ebf0;
+}
+
+/*
+ * Sublists
+ */
+.sk-nav-default .sk-nav-sub a {
+  color: #94a7aF;
+}
+
+.sk-nav-default .sk-nav-sub a:hover,
+.sk-nav-default .sk-nav-sub a:focus {
+  olor: #5d6e76;
+}
+
+.sk-nav-default .sk-nav-sub li.sk-active > a {
+  color: #121317;
+}
+
+/* Primary modifier
+ @mixin ========================================================================= */
+/*
+ * Items
+ */
+.sk-nav-primary > li > a {
+  font-size: 1.714rem;
+  line-height: 1.5;
+  color: #94a7aF;
+}
+
+/* Hover + Focus */
+.sk-nav-primary > li > a:hover,
+.sk-nav-primary > li > a:focus {
+  color: #5d6e76;
+}
+
+/* Active */
+.sk-nav-primary > li.sk-active > a {
+  color: #121317;
+}
+
+/*
+ * Header
+ */
+.sk-nav-primary .sk-nav-header {
+  color: #121317;
+}
+
+/*
+ * Divider
+ */
+.sk-nav-primary .sk-nav-divider {
+  border-top: 1px solid 1px solid #e5ebf0;
+}
+
+/*
+ * Sublists
+ */
+.sk-nav-primary .sk-nav-sub a {
+  color: #94a7aF;
+}
+
+.sk-nav-primary .sk-nav-sub a:hover,
+.sk-nav-primary .sk-nav-sub a:focus {
+  color: #5d6e76;
+}
+
+.sk-nav-primary .sk-nav-sub li.sk-active > a {
+  color: #121317;
+}
+
+/* Alignment modifier
+ @mixin ========================================================================= */
+.sk-nav-center {
+  text-align: center;
+}
+
+/* Sublists */
+.sk-nav-center .sk-nav-sub,
+.sk-nav-center .sk-nav-sub ul {
+  padding-left: 0;
+}
+
+/* Parent icon modifier  */
+.sk-nav-center.sk-nav-parent-icon > .sk-parent > a::after {
+  position: absolute;
+}
+
+/* ========================================================================
+   Component: Navbar
+ @mixin ========================================================================= */
+/*
+ * 1. Create position context to center navbar group
+ */
+.sk-navbar {
+  display: flex;
+  /* 1 */
+  position: relative;
+}
+
+/* Container
+ @mixin ========================================================================= */
+.sk-navbar-container:not(.sk-navbar-transparent) {
+  background: #fff;
+}
+
+/*
+ * Remove pseudo elements created by micro clearfix as precaution (if Container component is used)
+ */
+.sk-navbar-container > ::before,
+.sk-navbar-container > ::after {
+  display: none !important;
+}
+
+/* Groups
+ @mixin ========================================================================= */
+/*
+ * 1. Align navs and items vertically if they have a different height
+ * 2. Note: IE 11 requires an extra `div` which affects the center selector
+ */
+.sk-navbar-center,
+.sk-navbar-center-left > *,
+.sk-navbar-center-right > * {
+  display: flex;
+  /* 1 */
+  align-items: center;
+}
+
+/*
+ * Horizontal alignment
+ * 1. Create position context for centered navbar with sub groups (left/right)
+ * 2. Needed for dropdowns because a new position context is created
+ *    `z-index` must be smaller than off-canvas
+ * 3. Fix text wrapping if the centered section is larger than 50% of the navbar
+ * 4. Align sub groups for centered navbar
+ */
+.sk-navbar-right {
+  margin-left: auto;
+}
+
+.sk-navbar-center:only-child {
+  margin-left: auto;
+  margin-right: auto;
+  /* 1 */
+  position: relative;
+}
+
+.sk-navbar-center:not(:only-child) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* 2 */
+  z-index: 990;
+}
+
+/* 3 */
+.sk-navbar-center:not(:only-child) .sk-navbar-nav > li > a,
+.sk-navbar-center:not(:only-child) .sk-navbar-item,
+.sk-navbar-center:not(:only-child) .sk-navbar-toggle {
+  white-space: nowrap;
+}
+
+/* 4 */
+.sk-navbar-center-left,
+.sk-navbar-center-right {
+  position: absolute;
+  top: 0;
+}
+
+.sk-navbar-center-left {
+  right: 100%;
+}
+
+.sk-navbar-center-right {
+  left: 100%;
+}
+
+[class*='sk-navbar-center-'] .sk-navbar-nav > li > a,
+[class*='sk-navbar-center-'] .sk-navbar-item,
+[class*='sk-navbar-center-'] .sk-navbar-toggle {
+  white-space: nowrap;
+}
+
+/* Nav
+ @mixin ========================================================================= */
+/*
+ * 1. Reset list
+ */
+.sk-navbar-nav {
+  display: flex;
+  /* 1 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*
+ * Allow items to wrap into the next line
+ * Only not `absolute` positioned groups
+ */
+.sk-navbar-left,
+.sk-navbar-right,
+.sk-navbar-center:only-child {
+  flex-wrap: wrap;
+}
+
+/*
+ * Items
+ * 1. Center content vertically and horizontally
+ * 2. Dimensions
+ * 3. Style
+ * 4. Required for `a`
+ */
+.sk-navbar-nav > li > a,
+.sk-navbar-item,
+.sk-navbar-toggle {
+  /* 1 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 2 */
+  box-sizing: border-box;
+  min-height: 80px;
+  padding: 0 15px;
+  /* 3 */
+  font-size: 14px;
+  font-family: "usual", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+  text-decoration: none;
+}
+
+/*
+ * Nav items
+ */
+.sk-navbar-nav > li > a {
+  color: #94a7aF;
+}
+
+/*
+ * Hover
+ * Apply hover style also to focus state and if dropdown is opened
+ */
+.sk-navbar-nav > li:hover > a,
+.sk-navbar-nav > li > a:focus,
+.sk-navbar-nav > li > a.sk-open {
+  color: #5d6e76;
+  outline: none;
+}
+
+/* OnClick */
+.sk-navbar-nav > li > a:active {
+  color: #121317;
+}
+
+/* Active */
+.sk-navbar-nav > li.sk-active > a {
+  color: #121317;
+}
+
+/* Item
+ @mixin ========================================================================= */
+.sk-navbar-item {
+  color: #5d6e76;
+}
+
+/* Toggle
+ @mixin ========================================================================= */
+.sk-navbar-toggle {
+  color: #94a7aF;
+}
+
+.sk-navbar-toggle:hover,
+.sk-navbar-toggle:focus,
+.sk-navbar-toggle.sk-open {
+  color: #5d6e76;
+  outline: none;
+  text-decoration: none;
+}
+
+/*
+ * Icon
+ * Adopts `sk-icon`
+ */
+/* Hover + Focus */
+/* Subtitle
+ @mixin ========================================================================= */
+.sk-navbar-subtitle {
+  font-size: 0.7857rem;
+}
+
+/* Style modifiers
+ @mixin ========================================================================= */
+/* Dropdown
+ @mixin ========================================================================= */
+/*
+ * Adopts `sk-dropdown`
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Set a default width
+ * 4. Style
+ */
+.sk-navbar-dropdown {
+  /* 1 */
+  display: none;
+  /* 2 */
+  position: absolute;
+  z-index: 1020;
+  /* 3 */
+  box-sizing: border-box;
+  width: 200px;
+  /* 4 */
+  padding: 15px;
+  background: #fff;
+  color: #5d6e76;
+}
+
+/* Show */
+.sk-navbar-dropdown.sk-open {
+  display: block;
+}
+
+/*
+ * Direction / Alignment modifiers
+ */
+/* Direction */
+[class*='sk-navbar-dropdown-top'] {
+  margin-top: 0;
+}
+
+[class*='sk-navbar-dropdown-bottom'] {
+  margin-top: 0;
+}
+
+[class*='sk-navbar-dropdown-left'] {
+  margin-left: 0;
+}
+
+[class*='sk-navbar-dropdown-right'] {
+  margin-left: 0;
+}
+
+/*
+ * Grid
+ * Adopts `sk-grid`
+ */
+/* Gutter Horizontal */
+.sk-navbar-dropdown-grid {
+  margin-left: -24px;
+}
+
+.sk-navbar-dropdown-grid > * {
+  padding-left: 24px;
+}
+
+/* Gutter Vertical */
+.sk-navbar-dropdown-grid > .sk-grid-margin {
+  margin-top: 24px;
+}
+
+/* Stack */
+.sk-navbar-dropdown-stack .sk-navbar-dropdown-grid > * {
+  width: 100% !important;
+}
+
+/*
+ * Width modifier
+ */
+.sk-navbar-dropdown-width-2:not(.sk-navbar-dropdown-stack) {
+  width: 400px;
+}
+
+.sk-navbar-dropdown-width-3:not(.sk-navbar-dropdown-stack) {
+  width: 600px;
+}
+
+.sk-navbar-dropdown-width-4:not(.sk-navbar-dropdown-stack) {
+  width: 800px;
+}
+
+.sk-navbar-dropdown-width-5:not(.sk-navbar-dropdown-stack) {
+  width: 1000px;
+}
+
+/*
+ * Dropbar modifier
+ */
+.sk-navbar-dropdown-dropbar {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Dropdown Nav
+ * Adopts `sk-nav`
+ @mixin ========================================================================= */
+/*
+ * Items
+ */
+.sk-navbar-dropdown-nav > li > a {
+  color: #94a7aF;
+}
+
+/* Hover + Focus */
+.sk-navbar-dropdown-nav > li > a:hover,
+.sk-navbar-dropdown-nav > li > a:focus {
+  color: #5d6e76;
+}
+
+/* Active */
+.sk-navbar-dropdown-nav > li.sk-active > a {
+  color: #121317;
+}
+
+/*
+ * Header
+ */
+.sk-navbar-dropdown-nav .sk-nav-header {
+  color: #121317;
+}
+
+/*
+ * Divider
+ */
+.sk-navbar-dropdown-nav .sk-nav-divider {
+  border-top: 1px solid 1px solid #e5ebf0;
+}
+
+/*
+ * Sublists
+ */
+.sk-navbar-dropdown-nav .sk-nav-sub a {
+  color: #94a7aF;
+}
+
+.sk-navbar-dropdown-nav .sk-nav-sub a:hover,
+.sk-navbar-dropdown-nav .sk-nav-sub a:focus {
+  color: #5d6e76;
+}
+
+.sk-navbar-dropdown-nav .sk-nav-sub li.sk-active > a {
+  color: #121317;
+}
+
+/* Dropbar
+ @mixin ========================================================================= */
+.sk-navbar-dropbar {
+  background: #fff;
+}
+
+/*
+ * Slide modifier
+ */
+.sk-navbar-dropbar-slide {
+  position: absolute;
+  z-index: 980;
+  left: 0;
+  right: 0;
+}
+
+/* ========================================================================
+   Component: Tab
+ @mixin ========================================================================= */
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Gutter
+ * 3. Reset list
+ */
+.sk-tab {
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+  /* 2 */
+  margin-left: -20px;
+  /* 3 */
+  padding: 0;
+  list-style: none;
+}
+
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Gutter
+ * 3. Create position context for dropdowns
+ */
+.sk-tab > * {
+  /* 1 */
+  flex: none;
+  /* 2 */
+  padding-left: 20px;
+  /* 3 */
+  position: relative;
+}
+
+/* Items
+ @mixin ========================================================================= */
+/*
+ * Items must target `a` elements to exclude other elements (e.g. dropdowns)
+ * 1. Center text if a width is set
+ * 2. Style
+ */
+.sk-tab > * > a {
+  /* 1 */
+  display: block;
+  text-align: center;
+  /* 2 */
+  padding: 5px 10px;
+  color: #94a7aF;
+}
+
+/* Hover + Focus */
+.sk-tab > * > a:hover,
+.sk-tab > * > a:focus {
+  color: #5d6e76;
+  text-decoration: none;
+}
+
+/* Active */
+.sk-tab > .sk-active > a {
+  color: #121317;
+}
+
+/* Disabled */
+.sk-tab > .sk-disabled > a {
+  color: #94a7aF;
+}
+
+/* Position modifier
+ @mixin ========================================================================= */
+/*
+ * Bottom
+ */
+/*
+ * Left + Right
+ * 1. Reset Gutter
+ */
+.sk-tab-left,
+.sk-tab-right {
+  flex-direction: column;
+  /* 1 */
+  margin-left: 0;
+}
+
+/* 1 */
+.sk-tab-left > *,
+.sk-tab-right > * {
+  padding-left: 0;
+}
+
+.sk-tab-left > * > a {
+  text-align: left;
+}
+
+.sk-tab-right > * > a {
+  text-align: left;
+}
+
+/* ========================================================================
+   Component: Slidenav
+ @mixin ========================================================================= */
+/*
+ * Adopts `sk-icon`
+ */
+.sk-slidenav {
+  padding: 5px 10px;
+  color: rgba(93, 110, 118, 0.5);
+}
+
+/* Hover + Focus */
+.sk-slidenav:hover,
+.sk-slidenav:focus {
+  color: rgba(93, 110, 118, 0.9);
+  outline: none;
+}
+
+/* OnClick */
+.sk-slidenav:active {
+  color: rgba(93, 110, 118, 0.5);
+}
+
+/* Icon modifier
+ @mixin ========================================================================= */
+/*
+ * Previous
+ */
+/*
+ * Next
+ */
+/* Size modifier
+ @mixin ========================================================================= */
+.sk-slidenav-large {
+  padding: 10px 10px;
+}
+
+/* Container
+ @mixin ========================================================================= */
+.sk-slidenav-container {
+  display: flex;
+}
+
+/* ========================================================================
+   Component: Dotnav
+ @mixin ========================================================================= */
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Reset list
+ * 3. Gutter
+ */
+.sk-dotnav {
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+  /* 2 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 3 */
+  margin-left: -12px;
+}
+
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Gutter
+ */
+.sk-dotnav > * {
+  /* 1 */
+  flex: none;
+  /* 2 */
+  padding-left: 12px;
+}
+
+/* Items
+ @mixin ========================================================================= */
+/*
+ * Items
+ * 1. Hide text if present
+ */
+.sk-dotnav > * > * {
+  display: block;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+  /* 1 */
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 1px solid rgba(93, 110, 118, 0.4);
+  transition: 0.2s ease-in-out;
+  transition-property: background-color, border-color;
+}
+
+/* Hover + Focus */
+.sk-dotnav > * > :hover,
+.sk-dotnav > * > :focus {
+  background-color: rgba(93, 110, 118, 0.6);
+  outline: none;
+}
+
+/* OnClick */
+.sk-dotnav > * > :active {
+  background-color: rgba(93, 110, 118, 0.2);
+}
+
+/* Active */
+.sk-dotnav > .sk-active > * {
+  background-color: rgba(93, 110, 118, 0.6);
+}
+
+/* Modifier: 'sk-dotnav-vertical'
+ @mixin ========================================================================= */
+/*
+ * 1. Change direction
+ * 2. Gutter
+ */
+.sk-dotnav-vertical {
+  /* 1 */
+  flex-direction: column;
+  /* 2 */
+  margin-left: 0;
+  margin-top: -12px;
+}
+
+/* 2 */
+.sk-dotnav-vertical > * {
+  padding-left: 0;
+  padding-top: 12px;
+}
+
+/* ========================================================================
+   Component: Card
+ @mixin ========================================================================= */
+.sk-card {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+/* Sections
+ @mixin ========================================================================= */
+.sk-card-body {
+  padding: 24px 24px;
+}
+
+.sk-card-header {
+  padding: 24px 24px;
+}
+
+.sk-card-footer {
+  padding: 24px 24px;
+}
+
+/*
+ * Micro clearfix
+ */
+.sk-card-body::before,
+.sk-card-body::after,
+.sk-card-header::before,
+.sk-card-header::after,
+.sk-card-footer::before,
+.sk-card-footer::after {
+  content: "";
+  display: table;
+}
+
+.sk-card-body::after,
+.sk-card-header::after,
+.sk-card-footer::after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-card-body > :last-child,
+.sk-card-header > :last-child,
+.sk-card-footer > :last-child {
+  margin-bottom: 0;
+}
+
+/* Title
+ @mixin ========================================================================= */
+.sk-card-title {
+  font-size: 0.7857rem;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: .175em;
+}
+
+/* Badge
+ @mixin ========================================================================= */
+.sk-card-badge {
+  margin: 0;
+  /* 2 */
+  border: none;
+  border-radius: 4px;
+  /* 3 */
+  overflow: visible;
+  /* 4 */
+  font: inherit;
+  font-weight: bold;
+  color: #fff;
+  /* 5 */
+  text-transform: uppercase;
+  /* 6 */
+  display: inline-block;
+  box-sizing: border-box;
+  z-index: 1;
+  vertical-align: middle;
+  font-size: 0.5714rem;
+  letter-spacing: 0.175em;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  /* 7 */
+  line-height: 30px;
+  /* 8 */
+  text-align: center;
+  /* 9 */
+  text-decoration: none;
+  padding: 0 12px;
+  background: #121317;
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+.sk-card-badge:first-child + * {
+  margin-top: 0;
+}
+
+/* Hover modifier
+ @mixin ========================================================================= */
+.sk-card-hover:not(.sk-card-default):not(.sk-card-primary):not(.sk-card-secondary):not(.sk-card-tertiary):not(.sk-card-blue):not(.sk-card-dark):hover {
+  background: #fff;
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+}
+
+/* Style modifiers
+ @mixin ========================================================================= */
+/*
+ * Default
+ * Note: Header and Footer are only implemented for the default style
+ */
+.sk-card-default {
+  background: #fff;
+  color: #5d6e76;
+}
+
+.sk-card-default .sk-card-title {
+  color: #121317;
+}
+
+.sk-card-default.sk-card-hover:hover {
+  background-color: #f2f2f2;
+}
+
+/*
+ * Primary
+ */
+.sk-card-primary {
+  background: #0149ff;
+  color: #fff;
+}
+
+.sk-card-primary .sk-card-title {
+  color: #fff;
+}
+
+.sk-card-primary.sk-card-hover:hover {
+  background-color: #0041e7;
+}
+
+/*
+ * Secondary
+ */
+.sk-card-secondary {
+  background: #ff0039;
+  color: #fff;
+}
+
+.sk-card-secondary .sk-card-title {
+  color: #fff;
+}
+
+.sk-card-secondary.sk-card-hover:hover {
+  background-color: #e60033;
+}
+
+/*
+ * Tertiary
+ */
+.sk-card-tertiary {
+  background: #FDF40F;
+  color: #000;
+}
+
+.sk-card-tertiary .sk-card-title {
+  color: #000;
+}
+
+.sk-card-tertiary.sk-card-hover:hover {
+  background-color: #f0e702;
+}
+
+/*
+ * Blue
+ */
+.sk-card-blue {
+  background: #001A57;
+  color: #fff;
+}
+
+.sk-card-blue .sk-card-title {
+  color: #fff;
+}
+
+.sk-card-blue.sk-card-hover:hover {
+  background-color: #00123e;
+}
+
+/*
+ * Dark
+ */
+.sk-card-dark {
+  background: #212428;
+  color: #fff;
+}
+
+.sk-card-dark .sk-card-title {
+  color: #fff;
+}
+
+.sk-card-dark.sk-card-hover:hover {
+  background-color: #15171a;
+}
+
+/* Color profiles
+ @mixin ================================t========================================= */
+.sk-card-subtle-profile {
+  color: #BCCAD0 !important;
+}
+
+.sk-card-subtle-profile .sk-card-title {
+  color: #BCCAD0 !important;
+}
+
+/* Media
+ @mixin ================================t========================================= */
+.sk-card-media {
+  max-height: 260px;
+}
+
+.sk-card-media img {
+  min-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* Card Absolute positioned body
+ @mixin ================================t========================================= */
+.sk-card-body-absolute {
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px 24px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+.sk-card-body-absolute.sk-light {
+  color: #fff !important;
+}
+
+.sk-card-body-absolute.sk-card-subtle {
+  color: #BCCAD0 !important;
+}
+
+.sk-card-body-absolute.sk-no-background-mask {
+  background: transparent;
+}
+
+/* ========================================================================
+   Component: Box repeater
+ @mixin ========================================================================= */
+.sk-box-repeater {
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 16.8px;
+}
+
+/* Style modifiers
+ @mixin ========================================================================= */
+.sk-box-repeater-default {
+  background: #fff;
+  color: #5d6e76;
+}
+
+.sk-box-repeater-border {
+  background: transparent;
+  border-radius: 0;
+  border-bottom: 1px solid #e5ebf0;
+}
+
+.sk-box-repeater-border.sk-dark {
+  border-bottom: 1px solid rgba(148, 167, 175, 0.08);
+  color: #94a7aF;
+}
+
+.sk-box-repeater-border:last-child {
+  border-bottom: none;
+}
+
+/* ========================================================================
+   Component: Search
+ @mixin ========================================================================= */
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Reset `form`
+ */
+.sk-search {
+  /* 1 */
+  display: inline-block;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  max-width: 100%;
+  /* 4 */
+  margin: 0;
+}
+
+/* Input
+ @mixin ========================================================================= */
+/*
+ * Remove the inner padding and cancel buttons in Chrome on OS X and Safari on OS X.sk-
+ */
+.sk-search-input::-webkit-search-cancel-button,
+.sk-search-input::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Removes placeholder transparency in Firefox.sk-
+ */
+.sk-search-input::-moz-placeholder {
+  opacity: 1;
+}
+
+/*
+ * 1. Define consistent box sizing.
+ * 2. Address margins set differently in Firefox/IE and Chrome/Safari/Opera.
+ * 3. Remove `border-radius` in iOS.
+ * 4. Change font properties to `inherit` in all browsers
+ * 5. Show the overflow in Edge.
+ * 6. Remove default style in iOS.
+ * 7. Vertical alignment
+ * 8. Take the full container width
+ * 9. Style
+ */
+.sk-search-input {
+  /* 1 */
+  box-sizing: border-box;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  border-radius: 4px;
+  /* 4 */
+  font: inherit;
+  /* 5 */
+  overflow: visible;
+  /* 6 */
+  -webkit-appearance: none;
+  /* 7 */
+  vertical-align: middle;
+  /* 8 */
+  width: 100%;
+  /* 9 */
+  border: none;
+  color: #1F2025;
+}
+
+.sk-search-input:focus {
+  outline: none;
+}
+
+/* Placeholder */
+.sk-search-input:-ms-input-placeholder {
+  color: #1F2025 !important;
+}
+
+.sk-search-input::-webkit-input-placeholder {
+  color: #1F2025;
+}
+
+.sk-search-input::-ms-input-placeholder {
+  color: #1F2025;
+}
+
+.sk-search-input::placeholder {
+  color: #1F2025;
+}
+
+/* Icon (Adopts `sk-icon`)
+ @mixin ========================================================================= */
+/*
+ * Remove default focus style
+ */
+.sk-search-icon:focus {
+  outline: none;
+}
+
+/*
+ * Position above input
+ * 1. Set position
+ * 2. Center icon vertically and horizontally
+ * 3. Style
+ */
+.sk-search .sk-search-icon {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* 2 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* 3 */
+  color: #94a7aF;
+}
+
+/*
+ * Required for `a`.
+ */
+.sk-search .sk-search-icon:hover {
+  color: #94a7aF;
+}
+
+/*
+ * Make `input` element clickable through icon, e.g. if it's a `span`
+ */
+.sk-search .sk-search-icon:not(a):not(button):not(input) {
+  pointer-events: none;
+}
+
+/*
+ * Position modifier
+ */
+.sk-search .sk-search-icon-flip {
+  right: 0;
+  left: auto;
+}
+
+/* Default modifier
+ @mixin ========================================================================= */
+.sk-search-default {
+  width: 320px;
+}
+
+.sk-search-default .sk-search-input {
+  height: 40px;
+  padding-left: 6px;
+  padding-right: 6px;
+  background: #fff;
+}
+
+/* Focus */
+.sk-search-default .sk-search-input:focus {
+  background-color: #fff;
+}
+
+/*
+ * Icon
+ */
+.sk-search-default .sk-search-icon {
+  width: 40px;
+}
+
+.sk-search-default .sk-search-icon:not(.sk-search-icon-flip) ~ .sk-search-input {
+  padding-left: 40px;
+}
+
+.sk-search-default .sk-search-icon-flip ~ .sk-search-input {
+  padding-right: 40px;
+}
+
+/* Navbar modifier
+ @mixin ========================================================================= */
+.sk-search-navbar {
+  width: 400px;
+}
+
+/*
+ * Input
+ */
+.sk-search-navbar .sk-search-input {
+  height: 40px;
+  background: transparent;
+  font-size: 1.714rem;
+}
+
+/*
+ * Icon
+ */
+.sk-search-navbar .sk-search-icon {
+  width: 40px;
+}
+
+.sk-search-navbar .sk-search-icon:not(.sk-search-icon-flip) ~ .sk-search-input {
+  padding-left: 40px;
+}
+
+.sk-search-navbar .sk-search-icon-flip ~ .sk-search-input {
+  padding-right: 40px;
+}
+
+/* Large modifier
+ @mixin ========================================================================= */
+.sk-search-large {
+  width: 500px;
+}
+
+/*
+ * Input
+ */
+.sk-search-large .sk-search-input {
+  height: 80px;
+  background: transparent;
+  font-size: 2.857rem;
+}
+
+/*
+ * Icon
+ */
+.sk-search-large .sk-search-icon {
+  width: 80px;
+}
+
+.sk-search-large .sk-search-icon:not(.sk-search-icon-flip) ~ .sk-search-input {
+  padding-left: 80px;
+}
+
+.sk-search-large .sk-search-icon-flip ~ .sk-search-input {
+  padding-right: 80px;
+}
+
+/* Toggle
+ @mixin ========================================================================= */
+.sk-search-toggle {
+  color: #94a7aF;
+}
+
+/* Hover + Focus */
+.sk-search-toggle:hover,
+.sk-search-toggle:focus {
+  color: #94a7aF;
+}
+
+/* ========================================================================
+   Component: Accordion
+ @mixin ========================================================================= */
+.sk-accordion {
+  padding: 0;
+  list-style: none;
+}
+
+/* Item
+ @mixin ========================================================================= */
+.sk-accordion > :nth-child(n+2) {
+  margin-top: 24px;
+}
+
+/* Title
+ @mixin ========================================================================= */
+.sk-accordion-title {
+  display: block;
+  font-size: 1.429rem;
+  line-height: 1.4;
+  color: #121317;
+  overflow: hidden;
+}
+
+.sk-accordion-title::before {
+  content: "";
+  width: 1.4em;
+  height: 1.4em;
+  margin-left: 10px;
+  float: right;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%235d6e76%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%20%20%20%20%3Crect%20fill%3D%22%235d6e76%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%20%2F%3E%0A%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.sk-open > .sk-accordion-title::before {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%235d6e76%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+/* Hover + Focus */
+.sk-accordion-title:hover,
+.sk-accordion-title:focus {
+  color: #5d6e76;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Content
+ @mixin ========================================================================= */
+.sk-accordion-content {
+  margin-top: 24px;
+}
+
+/*
+ * Micro clearfix
+ */
+.sk-accordion-content::before,
+.sk-accordion-content::after {
+  content: "";
+  display: table;
+}
+
+.sk-accordion-content::after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-accordion-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================================================
+   Component: Drop
+ @mixin ========================================================================= */
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Set a default width
+ */
+.sk-drop {
+  /* 1 */
+  display: none;
+  /* 2 */
+  position: absolute;
+  z-index: 1020;
+  /* 3 */
+  box-sizing: border-box;
+  width: 300px;
+}
+
+/* Show */
+.sk-drop.sk-open {
+  display: block;
+}
+
+/* Direction / Alignment modifiers
+ @mixin ========================================================================= */
+/* Direction */
+[class*='sk-drop-top'] {
+  margin-top: -24px;
+}
+
+[class*='sk-drop-bottom'] {
+  margin-top: 24px;
+}
+
+[class*='sk-drop-left'] {
+  margin-left: -24px;
+}
+
+[class*='sk-drop-right'] {
+  margin-left: 24px;
+}
+
+/* Grid modifiers
+ @mixin ========================================================================= */
+.sk-drop-stack .sk-drop-grid > * {
+  width: 100% !important;
+}
+
+/* ========================================================================
+   Component: Dropdown
+ @mixin ========================================================================= */
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Set a default width
+ * 4. Style
+ */
+.sk-dropdown {
+  /* 1 */
+  display: none;
+  /* 2 */
+  position: absolute;
+  z-index: 1020;
+  /* 3 */
+  box-sizing: border-box;
+  min-width: 200px;
+  /* 4 */
+  padding: 25px;
+  background: #fff;
+  color: #5d6e76;
+  box-shadow: 0 5px 12px rgba(18, 19, 23, 0.15);
+}
+
+/* Show */
+.sk-dropdown.sk-open {
+  display: block;
+}
+
+/* Nav
+ * Adopts `sk-nav`
+ @mixin ========================================================================= */
+.sk-dropdown-nav {
+  white-space: nowrap;
+  font-size: 0.8571rem;
+}
+
+/*
+ * Items
+ */
+.sk-dropdown-nav > li > a {
+  color: #94a7aF;
+}
+
+/* Hover + Focus + Active */
+.sk-dropdown-nav > li > a:hover,
+.sk-dropdown-nav > li > a:focus,
+.sk-dropdown-nav > li.sk-active > a {
+  color: #5d6e76;
+}
+
+/*
+ * Header
+ */
+.sk-dropdown-nav .sk-nav-header {
+  color: #121317;
+}
+
+/*
+ * Divider
+ */
+.sk-dropdown-nav .sk-nav-divider {
+  border-top: 1px solid #e5ebf0;
+}
+
+/*
+ * Sublists
+ */
+.sk-dropdown-nav .sk-nav-sub a {
+  color: #94a7aF;
+}
+
+.sk-dropdown-nav .sk-nav-sub a:hover,
+.sk-dropdown-nav .sk-nav-sub a:focus,
+.sk-dropdown-nav .sk-nav-sub li.sk-active > a {
+  color: #5d6e76;
+}
+
+/* Direction / Alignment modifiers
+ @mixin ========================================================================= */
+/* Direction */
+[class*='sk-dropdown-top'] {
+  margin-top: -12px;
+}
+
+[class*='sk-dropdown-bottom'] {
+  margin-top: 12px;
+}
+
+[class*='sk-dropdown-left'] {
+  margin-left: -12px;
+}
+
+[class*='sk-dropdown-right'] {
+  margin-left: 12px;
+}
+
+/* Grid modifiers
+ @mixin ========================================================================= */
+.sk-dropdown-stack .sk-dropdown-grid > * {
+  width: 100% !important;
+}
+
+/* ========================================================================
+   Component: Modal
+ @mixin ========================================================================= */
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Allow scrolling for the modal dialog
+ * 4. Horizontal padding
+ * 5. Mask the background page
+ * 6. Fade-in transition
+ */
+.sk-modal {
+  /* 1 */
+  display: none;
+  /* 2 */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  /* 3 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  /* 4 */
+  padding: 15px 15px;
+  /* 5 */
+  background: rgba(18, 19, 23, 0.6);
+  /* 6 */
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-modal {
+    padding: 48px 24px;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-modal {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+/*
+ * Open
+ */
+.sk-modal.sk-open {
+  opacity: 1;
+}
+
+/* Page
+ @mixin ========================================================================= */
+/*
+ * Prevent scrollbars
+ */
+.sk-modal-page {
+  overflow: hidden;
+}
+
+/* Dialog
+ @mixin ========================================================================= */
+/*
+ * 1. Create position context for spinner and close button
+ * 2. Dimensions
+ * 3. Fix `max-width: 100%` not working in combination with flex and responsive images in IE11
+ *    `!important` needed to overwrite `sk-width-auto`. See `#modal-media-image` in tests
+ * 4. Style
+ * 5. Slide-in transition
+ */
+.sk-modal-dialog {
+  /* 1 */
+  position: relative;
+  /* 2 */
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 600px;
+  /* 3 */
+  max-width: calc(100% - 0.01px) !important;
+  /* 4 */
+  background: #fff;
+  /* 5 */
+  opacity: 0;
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  transition: 0.3s linear;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+}
+
+/*
+ * Open
+ */
+.sk-open > .sk-modal-dialog {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+/* Size modifier
+ @mixin ========================================================================= */
+/*
+ * Container size
+ * Take the same size as the Container component
+ */
+.sk-modal-container .sk-modal-dialog {
+  width: 1200px;
+}
+
+/*
+ * Full size
+ * 1. Remove padding and background from modal
+ * 2. Reset all default declarations from modal dialog
+ */
+/* 1 */
+.sk-modal-full {
+  padding: 0;
+  background: none;
+}
+
+/* 2 */
+.sk-modal-full .sk-modal-dialog {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+/* Sections
+ @mixin ========================================================================= */
+.sk-modal-body {
+  padding: 24px 24px;
+}
+
+.sk-modal-header {
+  padding: 12px 24px;
+  background: #fff;
+}
+
+.sk-modal-footer {
+  padding: 12px 24px;
+  background: #fff;
+}
+
+/*
+ * Micro clearfix
+ */
+.sk-modal-body::before,
+.sk-modal-body::after,
+.sk-modal-header::before,
+.sk-modal-header::after,
+.sk-modal-footer::before,
+.sk-modal-footer::after {
+  content: "";
+  display: table;
+}
+
+.sk-modal-body::after,
+.sk-modal-header::after,
+.sk-modal-footer::after {
+  clear: both;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-modal-body > :last-child,
+.sk-modal-header > :last-child,
+.sk-modal-footer > :last-child {
+  margin-bottom: 0;
+}
+
+/* Title
+ @mixin ========================================================================= */
+.sk-modal-title {
+  font-size: 2.286rem;
+  line-height: 1.3;
+}
+
+/* Close
+ * Adopts `sk-close`
+ @mixin ========================================================================= */
+[class*='sk-modal-close-'] {
+  position: absolute;
+  z-index: 1000;
+  top: 12px;
+  right: 12px;
+  padding: 5px;
+}
+
+/*
+ * Remove margin from adjacent element
+ */
+[class*='sk-modal-close-']:first-child + * {
+  margin-top: 0;
+}
+
+/*
+ * Outside
+ * 1. Prevent scrollbar on small devices
+ */
+.sk-modal-close-outside {
+  top: 0;
+  /* 1 */
+  right: -5px;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  color: #94a7aF;
+}
+
+.sk-modal-close-outside:hover {
+  color: #5d6e76;
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  /* 1 */
+  .sk-modal-close-outside {
+    right: 0;
+    -webkit-transform: translate(100%, -100%);
+            transform: translate(100%, -100%);
+  }
+}
+
+/* ========================================================================
+   Component: Sortable
+ @mixin ========================================================================= */
+.sk-sortable {
+  position: relative;
+}
+
+/*
+ * Deactivate pointer-events on SVGs in Safari
+ */
+.sk-sortable svg {
+  pointer-events: none;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-sortable > :last-child {
+  margin-bottom: 0;
+}
+
+/* Drag
+ @mixin ========================================================================= */
+.sk-sortable-drag {
+  position: absolute !important;
+  z-index: 1000 !important;
+  pointer-events: none;
+}
+
+/* Placeholder
+ @mixin ========================================================================= */
+.sk-sortable-placeholder {
+  opacity: 0;
+}
+
+/* Empty modifier
+ @mixin ========================================================================= */
+.sk-sortable-empty {
+  min-height: 50px;
+}
+
+/* Handle
+ @mixin ========================================================================= */
+/* Hover */
+.sk-sortable-handle:hover {
+  cursor: move;
+}
+
+/* ========================================================================
+   Component: Lightbox
+ @mixin ========================================================================= */
+/*
+ * 1. Hide by default
+ * 2. Set position
+ * 3. Allow scrolling for the modal dialog
+ * 4. Horizontal padding
+ * 5. Mask the background page
+ * 6. Fade-in transition
+ */
+.sk-lightbox {
+  /* 1 */
+  display: none;
+  /* 2 */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  /* 5 */
+  background: #121317;
+  /* 6 */
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+
+/*
+ * Open
+ * 1. Center child
+ * 2. Fade-in
+ */
+.sk-lightbox.sk-open {
+  display: block;
+  /* 2 */
+  opacity: 1;
+}
+
+/* Page
+ @mixin ========================================================================= */
+/*
+ * Prevent scrollbars
+ */
+.sk-lightbox-page {
+  overflow: hidden;
+}
+
+/* Item
+ @mixin ========================================================================= */
+/*
+ * 1. Center child within the viewport
+ * 2. Not visible by default
+ * 3. Color needed for spinner icon
+ * 4. Optimize animation
+ * 5. Responsiveness
+ *    Using `vh` for `max-height` to fix image proportions after resize in Safari and Opera
+ *    Using `vh` and `vw` to make responsive image work in IE11
+ */
+.sk-lightbox-items > * {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* 2 */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  /* 3 */
+  color: rgba(255, 255, 255, 0.7);
+  /* 4 */
+  will-change: transform, opacity;
+}
+
+/* 5 */
+.sk-lightbox-items > * > * {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.sk-lightbox-items > * > :not(iframe) {
+  width: auto;
+  height: auto;
+}
+
+.sk-lightbox-items > .sk-active {
+  display: flex;
+}
+
+/* Toolbar
+ @mixin ========================================================================= */
+.sk-lightbox-toolbar {
+  padding: 10px 10px;
+  background: rgba(18, 19, 23, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sk-lightbox-toolbar > * {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Toolbar Icon (Close)
+ @mixin ========================================================================= */
+.sk-lightbox-toolbar-icon {
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/*
+ * Hover
+ */
+.sk-lightbox-toolbar-icon:hover {
+  color: #fff;
+}
+
+/* Button (Slidenav)
+ @mixin ========================================================================= */
+/*
+ * 1. Center icon vertically and horizontally
+ */
+.sk-lightbox-button {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  background: rgba(18, 19, 23, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  /* 1 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+ * Hover
+ */
+.sk-lightbox-button:hover {
+  color: #fff;
+}
+
+/* Caption
+ @mixin ========================================================================= */
+/* Iframe
+ @mixin ========================================================================= */
+.sk-lightbox-iframe {
+  width: 80%;
+  height: 80%;
+}
+
+/* ========================================================================
+   Component: Slideshow
+ @mixin ========================================================================= */
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+.sk-slideshow {
+  /* 1 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Items
+ @mixin ========================================================================= */
+/*
+ * 1. Create position and stacking context
+ * 2. Reset list
+ * 3. Clip child elements
+ * 4. Prevent displaying the callout information on iOS.
+ */
+.sk-slideshow-items {
+  /* 1 */
+  position: relative;
+  z-index: 0;
+  /* 2 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 3 */
+  overflow: hidden;
+  /* 4 */
+  -webkit-touch-callout: none;
+}
+
+/* Item
+ @mixin ========================================================================= */
+/*
+ * 1. Position items above each other
+ * 2. Take the full width
+ * 3. Clip child elements, e.g. for `sk-cover`
+ * 4. Optimize animation
+ * 5. Disable horizontal panning gestures in IE11 and Edge
+ */
+.sk-slideshow-items > * {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 2 */
+  right: 0;
+  bottom: 0;
+  /* 3 */
+  overflow: hidden;
+  /* 4 */
+  will-change: transform, opacity;
+  /* 5 */
+  touch-action: pan-y;
+}
+
+/*
+ * Hide not active items
+ */
+.sk-slideshow-items > :not(.sk-active) {
+  display: none;
+}
+
+/* ========================================================================
+   Component: Slider
+ @mixin ========================================================================= */
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+.sk-slider {
+  /* 1 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Container
+ @mixin ========================================================================= */
+/*
+ * 1. Clip child elements
+ */
+.sk-slider-container {
+  /* 1 */
+  overflow: hidden;
+}
+
+/* Items
+ @mixin ========================================================================= */
+/*
+ * 1. Optimize animation
+ * 2. Create a containing block. In Safari it's neither created by `transform` nor `will-change`.
+ */
+.sk-slider-items {
+  /* 1 */
+  will-change: transform;
+  /* 2 */
+  position: relative;
+}
+
+/*
+ * 1. Reset list style without interfering with grid
+ * 2. Prevent displaying the callout information on iOS.
+ */
+.sk-slider-items:not(.sk-grid) {
+  display: flex;
+  /* 1 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 2 */
+  -webkit-touch-callout: none;
+}
+
+.sk-slider-items.sk-grid {
+  flex-wrap: nowrap;
+}
+
+/* Item
+ @mixin ========================================================================= */
+/*
+ * 1. Let items take content dimensions (0 0 auto)
+ * 2. Create position context
+ * 3. Disable horizontal panning gestures in IE11 and Edge
+ */
+.sk-slider-items > * {
+  /* 1 */
+  flex: none;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  touch-action: pan-y;
+}
+
+/* ========================================================================
+   Component: Sticky
+ @mixin ========================================================================= */
+/*
+ * 1. Resolve frame rate issues on devices with lower frame rates by forcing hardware acceleration
+ */
+.sk-sticky-fixed {
+  z-index: 980;
+  box-sizing: border-box;
+  margin: 0 !important;
+  /* 1 */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/*
+ * Faster animations
+ */
+.sk-sticky[class*='sk-animation-'] {
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+.sk-sticky.sk-animation-reverse {
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+}
+
+/* ========================================================================
+   Component: Switcher
+ @mixin ========================================================================= */
+/*
+ * Reset list
+ */
+.sk-switcher {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Items
+ @mixin ========================================================================= */
+/*
+ * Hide not active items
+ */
+.sk-switcher > :not(.sk-active) {
+  display: none;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-switcher > * > :last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================================================
+   Component: Leader
+ @mixin ========================================================================= */
+.sk-leader {
+  overflow: hidden;
+}
+
+/*
+ * 1. Place element in text flow
+ * 2. Never break into a new line
+ * 3. Get a string back with as many repeating characters to fill the container
+ * 4. Prevent wrapping. Overflowing characters will be clipped by the container
+ */
+.sk-leader-fill::after {
+  /* 1 */
+  display: inline-block;
+  margin-left: 12px;
+  /* 2 */
+  width: 0;
+  /* 3 */
+  content: attr(data-fill);
+  /* 4 */
+  white-space: nowrap;
+}
+
+/*
+ * Hide if media does not match
+ */
+.sk-leader-fill.sk-leader-hide::after {
+  display: none;
+}
+
+/*
+ * Pass fill character to JS
+ */
+.sk-leader-fill-content::before {
+  content: ".";
+}
+
+:root {
+  --sk-leader-fill-content: .;
+}
+
+/* ========================================================================
+   Component: Iconnav
+ @mixin ========================================================================= */
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Reset list
+ * 3. Gutter
+ */
+.sk-iconnav {
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+  /* 2 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 3 */
+  margin-left: -12px;
+}
+
+/*
+ * Space is allocated based on content dimensions, but shrinks: 0 1 auto
+ * 1. Gutter
+ */
+.sk-iconnav > * {
+  /* 1 */
+  padding-left: 12px;
+}
+
+/* Items
+ @mixin ========================================================================= */
+/*
+ * Items must target `a` elements to exclude other elements (e.g. dropdowns)
+ * 1. Prevent gap if child element is `inline-block`, e.g. an icon
+ * 2. Style
+ */
+.sk-iconnav > * > a {
+  /* 1 */
+  display: block;
+  /* 2 */
+  color: #94a7aF;
+}
+
+/* Hover + Focus */
+.sk-iconnav > * > a:hover,
+.sk-iconnav > * > a:focus {
+  color: #5d6e76;
+  outline: none;
+}
+
+/* Active */
+.sk-iconnav > .sk-active > a {
+  color: #5d6e76;
+}
+
+/* Modifier: 'sk-iconnav-vertical'
+ @mixin ========================================================================= */
+/*
+ * 1. Change direction
+ * 2. Gutter
+ */
+.sk-iconnav-vertical {
+  /* 1 */
+  flex-direction: column;
+  /* 2 */
+  margin-left: 0;
+  margin-top: -12px;
+}
+
+/* 2 */
+.sk-iconnav-vertical > * {
+  padding-left: 0;
+  padding-top: 12px;
+}
+
+/* ========================================================================
+   Component: Notification
+ @mixin ========================================================================= */
+/*
+ * 1. Set position
+ * 2. Dimensions
+ */
+.sk-notification {
+  /* 1 */
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1040;
+  /* 2 */
+  box-sizing: border-box;
+  width: 350px;
+}
+
+/* Position modifiers
+ @mixin ========================================================================= */
+.sk-notification-top-right,
+.sk-notification-bottom-right {
+  left: auto;
+  right: 10px;
+}
+
+.sk-notification-top-center,
+.sk-notification-bottom-center {
+  left: 50%;
+  margin-left: -175px;
+}
+
+.sk-notification-bottom-left,
+.sk-notification-bottom-right,
+.sk-notification-bottom-center {
+  top: auto;
+  bottom: 10px;
+}
+
+/* Responsiveness
+ @mixin ========================================================================= */
+/* Phones portrait and smaller */
+@media (max-width: 639px) {
+  .sk-notification {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    margin: 0;
+  }
+}
+
+/* Message
+ @mixin ========================================================================= */
+.sk-notification-message {
+  position: relative;
+  padding: 12px;
+  background: #fff;
+  color: #5d6e76;
+  font-size: 1.429rem;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+* + .sk-notification-message {
+  margin-top: 10px;
+}
+
+/* Close
+ * Adopts `sk-close`
+ @mixin ========================================================================= */
+.sk-notification-close {
+  display: none;
+  position: absolute;
+  top: 17px;
+  right: 12px;
+}
+
+.sk-notification-message:hover .sk-notification-close {
+  display: block;
+}
+
+/* Style modifiers
+ @mixin ========================================================================= */
+/*
+ * Primary
+ */
+.sk-notification-message-primary {
+  color: #0149ff;
+}
+
+/*
+ * Success
+ */
+.sk-notification-message-success {
+  color: #00e652;
+}
+
+/*
+ * Warning
+ */
+.sk-notification-message-warning {
+  color: #ffb201;
+}
+
+/*
+ * Danger
+ */
+.sk-notification-message-danger {
+  color: #ff0000;
+}
+
+/* ========================================================================
+   Component: Tooltip
+ @mixin ========================================================================= */
+/*
+ * 1. Hide by default
+ * 2. Position
+ * 3. Dimensions
+ * 4. Style
+ */
+.sk-tooltip {
+  /* 1 */
+  display: none;
+  /* 2 */
+  position: absolute;
+  z-index: 1030;
+  /* 3 */
+  box-sizing: border-box;
+  max-width: 200px;
+  padding: 3px 6px;
+  /* 4 */
+  background: #121317;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+}
+
+/* Show */
+.sk-tooltip.sk-active {
+  display: block;
+}
+
+/* Direction / Alignment modifiers
+ @mixin ========================================================================= */
+/* Direction */
+[class*='sk-tooltip-top'] {
+  margin-top: -10px;
+}
+
+[class*='sk-tooltip-bottom'] {
+  margin-top: 10px;
+}
+
+[class*='sk-tooltip-left'] {
+  margin-left: -10px;
+}
+
+[class*='sk-tooltip-right'] {
+  margin-left: 10px;
+}
+
+/* ========================================================================
+   Component: Placeholder
+ @mixin ========================================================================= */
+.sk-placeholder {
+  margin-bottom: 24px;
+  padding: 24px 24px;
+  background: #fff;
+}
+
+/* Add margin if adjacent element */
+* + .sk-placeholder {
+  margin-top: 24px;
+}
+
+/*
+ * Remove margin from the last-child
+ */
+.sk-placeholder > :last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================================================
+   Component: Progress
+ @mixin ========================================================================= */
+/*
+ * 1. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ * 2. Remove default style
+ * 3. Behave like a block element
+ * 4. Remove borders in Firefox and Edge
+ * 5. Set background color for progress container in Firefox, IE11 and Edge
+ * 6. Style
+ */
+.sk-progress {
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* 3 */
+  display: block;
+  width: 100%;
+  /* 4 */
+  border: 0;
+  /* 5 */
+  background-color: #e5ebf0;
+  /* 6 */
+  margin-bottom: 0;
+  height: 2px;
+}
+
+/* Add margin if adjacent element */
+* + .sk-progress {
+  margin-top: 0;
+}
+
+/*
+ * Remove animated circles for indeterminate state in IE11 and Edge
+ */
+.sk-progress:indeterminate {
+  color: transparent;
+}
+
+/*
+ * Progress container
+ * 2. Remove progress bar for indeterminate state in Firefox
+ */
+.sk-progress::-webkit-progress-bar {
+  background-color: #e5ebf0;
+}
+
+/* 2 */
+.sk-progress:indeterminate::-moz-progress-bar {
+  width: 0;
+}
+
+/*
+ * Progress bar
+ * 1. Remove right border in IE11 and Edge
+ */
+.sk-progress::-webkit-progress-value {
+  background-color: #0149ff;
+  transition: width 0.6s ease;
+}
+
+.sk-progress::-moz-progress-bar {
+  background-color: #0149ff;
+}
+
+.sk-progress::-ms-fill {
+  background-color: #0149ff;
+  transition: width 0.6s ease;
+  /* 1 */
+  border: 0;
+}
+
+.sk-media {
+  align-items: flex-start;
+  display: flex;
+  text-align: left;
+}
+
+.sk-media .sk-media {
+  display: flex;
+}
+
+.sk-media + .sk-media {
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.sk-media-left,
+.sk-media-right {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.sk-media-left {
+  margin-right: 1rem;
+}
+
+.sk-media-right {
+  margin-left: 1rem;
+}
+
+.sk-media-content {
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: left;
+}
+
+/* ========================================================================
+   Component: Align
+ @mixin ========================================================================= */
+[class*='sk-align'] {
+  display: block;
+  margin-bottom: 24px;
+}
+
+* + [class*='sk-align'] {
+  margin-top: 24px;
+}
+
+/*
+ * Center
+ */
+.sk-align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+ * Left/Right
+ */
+.sk-align-left {
+  margin-top: 0;
+  margin-right: 24px;
+  float: left;
+}
+
+.sk-align-right {
+  margin-top: 0;
+  margin-left: 24px;
+  float: right;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-align-left-s {
+    margin-top: 0;
+    margin-right: 24px;
+    float: left;
+  }
+  .sk-align-right-s {
+    margin-top: 0;
+    margin-left: 24px;
+    float: right;
+  }
+}
+
+/* Tablet and bigger */
+@media (min-width: 960px) {
+  .sk-align-left-m {
+    margin-top: 0;
+    margin-right: 24px;
+    float: left;
+  }
+  .sk-align-right-m {
+    margin-top: 0;
+    margin-left: 24px;
+    float: right;
+  }
+}
+
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  .sk-align-left-l {
+    margin-top: 0;
+    margin-right: 24px;
+    float: left;
+  }
+  .sk-align-right-l {
+    margin-top: 0;
+    margin-left: 24px;
+    float: right;
+  }
+}
+
+/* Large screen and bigger */
+@media (min-width: 1600px) {
+  .sk-align-left-xl {
+    margin-top: 0;
+    margin-right: 24px;
+    float: left;
+  }
+  .sk-align-right-xl {
+    margin-top: 0;
+    margin-left: 24px;
+    float: right;
+  }
+}
+
+/* ========================================================================
+   Component: Width
+ @mixin ========================================================================= */
+/* Equal child widths
+ @mixin ========================================================================= */
+[class*='sk-child-width'] > * {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.sk-child-width-1-2 > * {
+  width: 50%;
+}
+
+.sk-child-width-1-3 > * {
+  width: calc(100% * 1 / 3.001);
+}
+
+.sk-child-width-1-4 > * {
+  width: 25%;
+}
+
+.sk-child-width-1-5 > * {
+  width: 20%;
+}
+
+.sk-child-width-1-6 > * {
+  width: calc(100% * 1 / 6.001);
+}
+
+.sk-child-width-auto > * {
+  width: auto;
+}
+
+/*
+ * 1. Reset the `min-width`, which is set to auto by default, because
+ *    flex items won't shrink below their minimum intrinsic content size.
+ *    Using `1px` instead of `0`, so items still wrap into the next line,
+ *    if they have zero width and padding and the predecessor is 100% wide.
+ */
+.sk-child-width-expand > :not([class*='sk-width']) {
+  flex: 1;
+  min-width: 1px;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-child-width-1-1-s > * {
+    width: 100%;
+  }
+  .sk-child-width-1-2-s > * {
+    width: 50%;
+  }
+  .sk-child-width-1-3-s > * {
+    width: calc(100% * 1 / 3.001);
+  }
+  .sk-child-width-1-4-s > * {
+    width: 25%;
+  }
+  .sk-child-width-1-5-s > * {
+    width: 20%;
+  }
+  .sk-child-width-1-6-s > * {
+    width: calc(100% * 1 / 6.001);
+  }
+  .sk-child-width-auto-s > * {
+    width: auto;
+  }
+  .sk-child-width-expand-s > :not([class*='sk-width']) {
+    flex: 1;
+    min-width: 1px;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-child-width-1-1-m > * {
+    width: 100%;
+  }
+  .sk-child-width-1-2-m > * {
+    width: 50%;
+  }
+  .sk-child-width-1-3-m > * {
+    width: calc(100% * 1 / 3.001);
+  }
+  .sk-child-width-1-4-m > * {
+    width: 25%;
+  }
+  .sk-child-width-1-5-m > * {
+    width: 20%;
+  }
+  .sk-child-width-1-6-m > * {
+    width: calc(100% * 1 / 6.001);
+  }
+  .sk-child-width-auto-m > * {
+    width: auto;
+  }
+  .sk-child-width-expand-m > :not([class*='sk-width']) {
+    flex: 1;
+    min-width: 1px;
+  }
+}
+
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  .sk-child-width-1-1-l > * {
+    width: 100%;
+  }
+  .sk-child-width-1-2-l > * {
+    width: 50%;
+  }
+  .sk-child-width-1-3-l > * {
+    width: calc(100% * 1 / 3.001);
+  }
+  .sk-child-width-1-4-l > * {
+    width: 25%;
+  }
+  .sk-child-width-1-5-l > * {
+    width: 20%;
+  }
+  .sk-child-width-1-6-l > * {
+    width: calc(100% * 1 / 6.001);
+  }
+  .sk-child-width-auto-l > * {
+    width: auto;
+  }
+  .sk-child-width-expand-l > :not([class*='sk-width']) {
+    flex: 1;
+    min-width: 1px;
+  }
+}
+
+/* Large screen and bigger */
+@media (min-width: 1600px) {
+  .sk-child-width-1-1-xl > * {
+    width: 100%;
+  }
+  .sk-child-width-1-2-xl > * {
+    width: 50%;
+  }
+  .sk-child-width-1-3-xl > * {
+    width: calc(100% * 1 / 3.001);
+  }
+  .sk-child-width-1-4-xl > * {
+    width: 25%;
+  }
+  .sk-child-width-1-5-xl > * {
+    width: 20%;
+  }
+  .sk-child-width-1-6-xl > * {
+    width: calc(100% * 1 / 6.001);
+  }
+  .sk-child-width-auto-xl > * {
+    width: auto;
+  }
+  .sk-child-width-expand-xl > :not([class*='sk-width']) {
+    flex: 1;
+    min-width: 1px;
+  }
+}
+
+/* Single Widths
+ @mixin ========================================================================= */
+/*
+ * 1. `max-width` is needed for the pixel-based classes
+ */
+[class*='sk-width'] {
+  box-sizing: border-box;
+  width: 100%;
+  /* 1 */
+  max-width: 100%;
+}
+
+/* Halves */
+.sk-width-1-2 {
+  width: 50%;
+}
+
+/* Thirds */
+.sk-width-1-3 {
+  width: calc(100% * 1 / 3.001);
+}
+
+.sk-width-2-3 {
+  width: calc(100% * 2 / 3.001);
+}
+
+/* Quarters */
+.sk-width-1-4 {
+  width: 25%;
+}
+
+.sk-width-3-4 {
+  width: 75%;
+}
+
+/* Fifths */
+.sk-width-1-5 {
+  width: 20%;
+}
+
+.sk-width-2-5 {
+  width: 40%;
+}
+
+.sk-width-3-5 {
+  width: 60%;
+}
+
+.sk-width-4-5 {
+  width: 80%;
+}
+
+/* Sixths */
+.sk-width-1-6 {
+  width: calc(100% * 1 / 6.001);
+}
+
+.sk-width-5-6 {
+  width: calc(100% * 5 / 6.001);
+}
+
+/* Pixel */
+.sk-width-small {
+  width: 150px;
+}
+
+.sk-width-medium {
+  width: 300px;
+}
+
+.sk-width-large {
+  width: 450px;
+}
+
+.sk-width-xlarge {
+  width: 600px;
+}
+
+.sk-width-xxlarge {
+  width: 750px;
+}
+
+/* Auto */
+.sk-width-auto {
+  width: auto;
+}
+
+/* Expand */
+.sk-width-expand {
+  flex: 1;
+  min-width: 1px;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-width-1-1-s {
+    width: 100%;
+  }
+  /* Halves */
+  .sk-width-1-2-s {
+    width: 50%;
+  }
+  /* Thirds */
+  .sk-width-1-3-s {
+    width: calc(100% * 1 / 3.001);
+  }
+  .sk-width-2-3-s {
+    width: calc(100% * 2 / 3.001);
+  }
+  /* Quarters */
+  .sk-width-1-4-s {
+    width: 25%;
+  }
+  .sk-width-3-4-s {
+    width: 75%;
+  }
+  /* Fifths */
+  .sk-width-1-5-s {
+    width: 20%;
+  }
+  .sk-width-2-5-s {
+    width: 40%;
+  }
+  .sk-width-3-5-s {
+    width: 60%;
+  }
+  .sk-width-4-5-s {
+    width: 80%;
+  }
+  /* Sixths */
+  .sk-width-1-6-s {
+    width: calc(100% * 1 / 6.001);
+  }
+  .sk-width-5-6-s {
+    width: calc(100% * 5 / 6.001);
+  }
+  /* Pixel */
+  .sk-width-small-s {
+    width: 150px;
+  }
+  .sk-width-medium-s {
+    width: 300px;
+  }
+  .sk-width-large-s {
+    width: 450px;
+  }
+  .sk-width-xlarge-s {
+    width: 600px;
+  }
+  .sk-width-xxlarge-s {
+    width: 750px;
+  }
+  /* Auto */
+  .sk-width-auto-s {
+    width: auto;
+  }
+  /* Expand */
+  .sk-width-expand-s {
+    flex: 1;
+    min-width: 1px;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-width-1-1-m {
+    width: 100%;
+  }
+  /* Halves */
+  .sk-width-1-2-m {
+    width: 50%;
+  }
+  /* Thirds */
+  .sk-width-1-3-m {
+    width: calc(100% * 1 / 3.001);
+  }
+  .sk-width-2-3-m {
+    width: calc(100% * 2 / 3.001);
+  }
+  /* Quarters */
+  .sk-width-1-4-m {
+    width: 25%;
+  }
+  .sk-width-3-4-m {
+    width: 75%;
+  }
+  /* Fifths */
+  .sk-width-1-5-m {
+    width: 20%;
+  }
+  .sk-width-2-5-m {
+    width: 40%;
+  }
+  .sk-width-3-5-m {
+    width: 60%;
+  }
+  .sk-width-4-5-m {
+    width: 80%;
+  }
+  /* Sixths */
+  .sk-width-1-6-m {
+    width: calc(100% * 1 / 6.001);
+  }
+  .sk-width-5-6-m {
+    width: calc(100% * 5 / 6.001);
+  }
+  /* Pixel */
+  .sk-width-small-m {
+    width: 150px;
+  }
+  .sk-width-medium-m {
+    width: 300px;
+  }
+  .sk-width-large-m {
+    width: 450px;
+  }
+  .sk-width-xlarge-m {
+    width: 600px;
+  }
+  .sk-width-xxlarge-m {
+    width: 750px;
+  }
+  /* Auto */
+  .sk-width-auto-m {
+    width: auto;
+  }
+  /* Expand */
+  .sk-width-expand-m {
+    flex: 1;
+    min-width: 1px;
+  }
+}
+
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  .sk-width-1-1-l {
+    width: 100%;
+  }
+  /* Halves */
+  .sk-width-1-2-l {
+    width: 50%;
+  }
+  /* Thirds */
+  .sk-width-1-3-l {
+    width: calc(100% * 1 / 3.001);
+  }
+  .sk-width-2-3-l {
+    width: calc(100% * 2 / 3.001);
+  }
+  /* Quarters */
+  .sk-width-1-4-l {
+    width: 25%;
+  }
+  .sk-width-3-4-l {
+    width: 75%;
+  }
+  /* Fifths */
+  .sk-width-1-5-l {
+    width: 20%;
+  }
+  .sk-width-2-5-l {
+    width: 40%;
+  }
+  .sk-width-3-5-l {
+    width: 60%;
+  }
+  .sk-width-4-5-l {
+    width: 80%;
+  }
+  /* Sixths */
+  .sk-width-1-6-l {
+    width: calc(100% * 1 / 6.001);
+  }
+  .sk-width-5-6-l {
+    width: calc(100% * 5 / 6.001);
+  }
+  /* Pixel */
+  .sk-width-small-l {
+    width: 150px;
+  }
+  .sk-width-medium-l {
+    width: 300px;
+  }
+  .sk-width-large-l {
+    width: 450px;
+  }
+  .sk-width-xlarge-l {
+    width: 600px;
+  }
+  .sk-width-xxlarge-l {
+    width: 750px;
+  }
+  /* Auto */
+  .sk-width-auto-l {
+    width: auto;
+  }
+  /* Expand */
+  .sk-width-expand-l {
+    flex: 1;
+    min-width: 1px;
+  }
+}
+
+/* Large screen and bigger */
+@media (min-width: 1600px) {
+  .sk-width-1-1-xl {
+    width: 100%;
+  }
+  /* Halves */
+  .sk-width-1-2-xl {
+    width: 50%;
+  }
+  /* Thirds */
+  .sk-width-1-3-xl {
+    width: calc(100% * 1 / 3.001);
+  }
+  .sk-width-2-3-xl {
+    width: calc(100% * 2 / 3.001);
+  }
+  /* Quarters */
+  .sk-width-1-4-xl {
+    width: 25%;
+  }
+  .sk-width-3-4-xl {
+    width: 75%;
+  }
+  /* Fifths */
+  .sk-width-1-5-xl {
+    width: 20%;
+  }
+  .sk-width-2-5-xl {
+    width: 40%;
+  }
+  .sk-width-3-5-xl {
+    width: 60%;
+  }
+  .sk-width-4-5-xl {
+    width: 80%;
+  }
+  /* Sixths */
+  .sk-width-1-6-xl {
+    width: calc(100% * 1 / 6.001);
+  }
+  .sk-width-5-6-xl {
+    width: calc(100% * 5 / 6.001);
+  }
+  /* Pixel */
+  .sk-width-small-xl {
+    width: 150px;
+  }
+  .sk-width-medium-xl {
+    width: 300px;
+  }
+  .sk-width-large-xl {
+    width: 450px;
+  }
+  .sk-width-xlarge-xl {
+    width: 600px;
+  }
+  .sk-width-xxlarge-xl {
+    width: 750px;
+  }
+  /* Auto */
+  .sk-width-auto-xl {
+    width: auto;
+  }
+  /* Expand */
+  .sk-width-expand-xl {
+    flex: 1;
+    min-width: 1px;
+  }
+}
+
+/* ========================================================================
+   Component: Height
+ @mixin ========================================================================= */
+[class*='sk-height'] {
+  box-sizing: border-box;
+}
+
+/*
+ * Only works if parent element has a height set
+ */
+.sk-height-1-1 {
+  height: 100%;
+}
+
+.sk-height-viewport {
+  min-height: 100vh;
+}
+
+/*
+ * Pixel
+ * Useful for `overflow: auto`
+ */
+.sk-height-small {
+  height: 120px;
+}
+
+.sk-height-medium {
+  height: 240px;
+}
+
+.sk-height-large {
+  height: 360px;
+}
+
+.sk-height-max-small {
+  max-height: 120px;
+}
+
+.sk-height-max-medium {
+  max-height: 240px;
+}
+
+.sk-height-max-large {
+  max-height: 360px;
+}
+
+/* ========================================================================
+   Component: Animation
+ @mixin ========================================================================= */
+[class*='sk-animation-'] {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+/* Direction modifier
+ @mixin ========================================================================= */
+.sk-animation-reverse {
+  animation-direction: reverse;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+}
+
+/* Toggle (Hover + Focus)
+ @mixin ========================================================================= */
+/*
+ * The toggle is triggered on touch devices using `:focus` and tabindex
+ */
+.sk-animation-toggle:not(:hover):not(:focus) [class*='sk-animation-'] {
+  -webkit-animation-name: none;
+          animation-name: none;
+}
+
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+.sk-animation-toggle {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+ * Remove outline for `tabindex`
+ */
+.sk-animation-toggle:focus {
+  outline: none;
+}
+
+/* Animations
+ @mixin ========================================================================= */
+/*
+ * Fade
+ */
+.sk-animation-fade {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+/*
+ * Scale
+ */
+.sk-animation-scale-up {
+  -webkit-animation-name: fade-scale-02;
+          animation-name: fade-scale-02;
+}
+
+.sk-animation-scale-down {
+  -webkit-animation-name: fade-scale-18;
+          animation-name: fade-scale-18;
+}
+
+/*
+ * Slide
+ * Slide have many versions, a general one, small and medium
+ */
+.sk-animation-slide-top {
+  -webkit-animation-name: fade-top;
+          animation-name: fade-top;
+}
+
+.sk-animation-slide-bottom {
+  -webkit-animation-name: fade-bottom;
+          animation-name: fade-bottom;
+}
+
+.sk-animation-slide-left {
+  -webkit-animation-name: fade-left;
+          animation-name: fade-left;
+}
+
+.sk-animation-slide-right {
+  -webkit-animation-name: fade-right;
+          animation-name: fade-right;
+}
+
+.sk-animation-slide-top-small {
+  -webkit-animation-name: fade-top-small;
+          animation-name: fade-top-small;
+}
+
+.sk-animation-slide-bottom-small {
+  -webkit-animation-name: fade-bottom-small;
+          animation-name: fade-bottom-small;
+}
+
+.sk-animation-slide-left-small {
+  -webkit-animation-name: fade-left-small;
+          animation-name: fade-left-small;
+}
+
+.sk-animation-slide-right-small {
+  -webkit-animation-name: fade-right-small;
+          animation-name: fade-right-small;
+}
+
+.sk-animation-slide-top-medium {
+  -webkit-animation-name: fade-top-medium;
+          animation-name: fade-top-medium;
+}
+
+.sk-animation-slide-bottom-medium {
+  -webkit-animation-name: fade-bottom-medium;
+          animation-name: fade-bottom-medium;
+}
+
+.sk-animation-slide-left-medium {
+  -webkit-animation-name: fade-left-medium;
+          animation-name: fade-left-medium;
+}
+
+.sk-animation-slide-right-medium {
+  -webkit-animation-name: fade-right-medium;
+          animation-name: fade-right-medium;
+}
+
+/*
+ * KenBurns
+ */
+.sk-animation-kenburns {
+  -webkit-animation-name: scale-kenburns;
+          animation-name: scale-kenburns;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+}
+
+/*
+ * Shake
+ */
+.sk-animation-shake {
+  -webkit-animation-name: shake;
+          animation-name: shake;
+}
+
+/* Duration modifier
+ @mixin ========================================================================= */
+.sk-animation-fast {
+  -webkit-animation-duration: 0.1s;
+          animation-duration: 0.1s;
+}
+
+/* Keyframes used by animation classes
+ @mixin ========================================================================= */
+/*
+ * Fade
+ */
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+ * Slide Top
+ */
+@-webkit-keyframes fade-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fade-top {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/*
+ * Slide Bottom
+ */
+@-webkit-keyframes fade-bottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fade-bottom {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/*
+ * Slide Left
+ */
+@-webkit-keyframes fade-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/*
+ * Slide Right
+ */
+@-webkit-keyframes fade-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/*
+ * Slide Top Small
+ */
+@-webkit-keyframes fade-top-small {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fade-top-small {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/*
+ * Slide Bottom Small
+ */
+@-webkit-keyframes fade-bottom-small {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fade-bottom-small {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/*
+ * Slide Left Small
+ */
+@-webkit-keyframes fade-left-small {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes fade-left-small {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/*
+ * Slide Right Small
+ */
+@-webkit-keyframes fade-right-small {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes fade-right-small {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/*
+ * Slide Top Medium
+ */
+@-webkit-keyframes fade-top-medium {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fade-top-medium {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/*
+ * Slide Bottom Medium
+ */
+@-webkit-keyframes fade-bottom-medium {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes fade-bottom-medium {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+/*
+ * Slide Left Medium
+ */
+@-webkit-keyframes fade-left-medium {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes fade-left-medium {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/*
+ * Slide Right Medium
+ */
+@-webkit-keyframes fade-right-medium {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes fade-right-medium {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+/*
+ * Scale Up
+ */
+@-webkit-keyframes fade-scale-02 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes fade-scale-02 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/*
+ * Scale Down
+ */
+@-webkit-keyframes fade-scale-18 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes fade-scale-18 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/*
+ * KenBurns
+ */
+@-webkit-keyframes scale-kenburns {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+@keyframes scale-kenburns {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+/*
+ * Shake
+ */
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10% {
+    -webkit-transform: translateX(-9px);
+            transform: translateX(-9px);
+  }
+  20% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  30% {
+    -webkit-transform: translateX(-7px);
+            transform: translateX(-7px);
+  }
+  40% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  60% {
+    -webkit-transform: translateX(4px);
+            transform: translateX(4px);
+  }
+  70% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  80% {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+  }
+  90% {
+    -webkit-transform: translateX(-1px);
+            transform: translateX(-1px);
+  }
+}
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  10% {
+    -webkit-transform: translateX(-9px);
+            transform: translateX(-9px);
+  }
+  20% {
+    -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+  }
+  30% {
+    -webkit-transform: translateX(-7px);
+            transform: translateX(-7px);
+  }
+  40% {
+    -webkit-transform: translateX(6px);
+            transform: translateX(6px);
+  }
+  50% {
+    -webkit-transform: translateX(-5px);
+            transform: translateX(-5px);
+  }
+  60% {
+    -webkit-transform: translateX(4px);
+            transform: translateX(4px);
+  }
+  70% {
+    -webkit-transform: translateX(-3px);
+            transform: translateX(-3px);
+  }
+  80% {
+    -webkit-transform: translateX(2px);
+            transform: translateX(2px);
+  }
+  90% {
+    -webkit-transform: translateX(-1px);
+            transform: translateX(-1px);
+  }
+}
+
+/* ========================================================================
+   Component: Text
+ @mixin ========================================================================= */
+/* Style modifiers
+ @mixin ========================================================================= */
+.sk-text-lead {
+  font-size: 1.714rem;
+  line-height: 1.5;
+}
+
+.sk-text-meta {
+  font-size: 0.8571rem;
+  line-height: 1.4;
+}
+
+/* Size modifiers
+ @mixin ========================================================================= */
+.sk-text-xxsmall {
+  font-size: 0.5714rem;
+  line-height: 1.5;
+}
+
+.sk-text-xsmall {
+  font-size: 0.7857rem;
+  line-height: 1.5;
+}
+
+.sk-text-small {
+  font-size: 0.8571rem;
+  line-height: 1.5;
+}
+
+.sk-text-large {
+  font-size: 1.714rem;
+  line-height: 1.5;
+}
+
+.sk-text-xlarge {
+  font-size: 2.286rem;
+  line-height: 1.5;
+}
+
+.sk-text-xxlarge {
+  font-size: 2.857rem;
+  line-height: 1.5;
+}
+
+/* Weight modifier
+ @mixin ========================================================================= */
+.sk-text-bold {
+  font-weight: 600;
+}
+
+.sk-text-light {
+  font-weight: 300;
+}
+
+/* Transform modifier
+ @mixin ========================================================================= */
+.sk-text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.sk-text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.sk-text-capitalize {
+  text-transform: capitalize !important;
+}
+
+/* Color modifiers
+ @mixin ========================================================================= */
+.sk-text-grey-lighter {
+  color: #94a7aF;
+}
+
+.sk-text-grey-light {
+  color: #758993;
+}
+
+.sk-text-grey {
+  color: #5d6e76;
+}
+
+.sk-text-primary {
+  color: #0149ff;
+}
+
+.sk-text-success {
+  color: #00e652;
+}
+
+.sk-text-danger {
+  color: #ff0000;
+}
+
+.sk-text-warning {
+  color: #ffb201;
+}
+
+.sk-text-secondary {
+  color: #ff0039;
+}
+
+.sk-text-tertiary {
+  color: #FDF40F;
+}
+
+.sk-text-blue {
+  color: #001A57;
+}
+
+.sk-text-teal {
+  color: #16BDAB;
+}
+
+.sk-text-white {
+  color: #fff;
+}
+
+/* Alignment modifiers
+ @mixin ========================================================================= */
+.sk-text-left {
+  text-align: left !important;
+}
+
+.sk-text-right {
+  text-align: right !important;
+}
+
+.sk-text-center {
+  text-align: center !important;
+}
+
+.sk-text-justify {
+  text-align: justify !important;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-text-left-s {
+    text-align: left !important;
+  }
+  .sk-text-right-s {
+    text-align: right !important;
+  }
+  .sk-text-center-s {
+    text-align: center !important;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-text-left-m {
+    text-align: left !important;
+  }
+  .sk-text-right-m {
+    text-align: right !important;
+  }
+  .sk-text-center-m {
+    text-align: center !important;
+  }
+}
+
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  .sk-text-left-l {
+    text-align: left !important;
+  }
+  .sk-text-right-l {
+    text-align: right !important;
+  }
+  .sk-text-center-l {
+    text-align: center !important;
+  }
+}
+
+/* Large screen and bigger */
+@media (min-width: 1600px) {
+  .sk-text-left-xl {
+    text-align: left !important;
+  }
+  .sk-text-right-xl {
+    text-align: right !important;
+  }
+  .sk-text-center-xl {
+    text-align: center !important;
+  }
+}
+
+/*
+ * Vertical
+ */
+.sk-text-top {
+  vertical-align: top !important;
+}
+
+.sk-text-middle {
+  vertical-align: middle !important;
+}
+
+.sk-text-bottom {
+  vertical-align: bottom !important;
+}
+
+.sk-text-baseline {
+  vertical-align: baseline !important;
+}
+
+/* Wrap modifiers
+ @mixin ========================================================================= */
+.sk-text-nowrap {
+  white-space: nowrap;
+}
+
+/*
+ * 1. Make sure a max-width is set after which truncation can occur
+ * 2. Prevent text from wrapping onto multiple lines, and truncate with an ellipsis
+ * 3. Fix for table cells
+ */
+.sk-text-truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th.sk-text-truncate,
+td.sk-text-truncate {
+  max-width: 0;
+}
+
+/*
+ * 1. Wrap long words onto the next line and break them if they are too long to fit
+ * 2. Legacy `word-wrap` as fallback for `overflow-wrap`
+ * 3. Fix `overflow-wrap` which doesn't work with table cells in Chrome, Opera, IE11 and Edge
+ *    Must use `break-all` to support IE11 and Edge
+ * Note: Not using `hyphens: auto;` because it hyphenates text even if not needed
+ */
+.sk-text-break {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+th.sk-text-break,
+td.sk-text-break {
+  word-break: break-all;
+}
+
+.sk-flex, .sk-box-repeater-row {
+  display: flex;
+}
+
+.sk-flex-inline {
+  display: inline-flex;
+}
+
+/*
+ * Remove pseudo elements created by micro clearfix as precaution
+ */
+.sk-flex::before, .sk-box-repeater-row::before,
+.sk-flex::after,
+.sk-box-repeater-row::after,
+.sk-flex-inline::before,
+.sk-flex-inline::after {
+  display: none;
+}
+
+/* Alignment
+ @mixin ========================================================================= */
+/*
+ * Align items along the main axis of the current line of the flex container
+ * Row: Horizontal
+ */
+.sk-flex-left {
+  justify-content: flex-start;
+}
+
+.sk-flex-right {
+  justify-content: flex-end;
+}
+
+.sk-flex-center {
+  justify-content: center;
+}
+
+.sk-flex-between {
+  justify-content: space-between;
+}
+
+.sk-flex-around {
+  justify-content: space-around;
+}
+
+/*
+ * Align items in the cross axis of the current line of the flex container
+ * Row: Vertical
+ */
+.sk-flex-stretch {
+  align-items: stretch;
+}
+
+.sk-flex-top {
+  align-items: flex-start;
+}
+
+.sk-flex-middle, .sk-box-repeater-row {
+  align-items: center;
+}
+
+.sk-flex-bottom {
+  align-items: flex-end;
+}
+
+/* Direction
+ @mixin ========================================================================= */
+.sk-flex-row, .sk-box-repeater-row {
+  flex-direction: row;
+}
+
+.sk-flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.sk-flex-column {
+  flex-direction: column;
+}
+
+.sk-flex-column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* Wrap
+ @mixin ========================================================================= */
+.sk-flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.sk-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.sk-flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/*
+ * Aligns items within the flex container when there is extra space in the cross-axis
+ * Only works if there is more than one line of flex items
+ */
+.sk-flex-wrap-stretch {
+  align-content: stretch;
+}
+
+.sk-flex-wrap-top {
+  align-content: flex-start;
+}
+
+.sk-flex-wrap-middle {
+  align-content: center;
+}
+
+.sk-flex-wrap-bottom {
+  align-content: flex-end;
+}
+
+.sk-flex-wrap-between {
+  align-content: space-between;
+}
+
+.sk-flex-wrap-around {
+  align-content: space-around;
+}
+
+/* Item ordering
+ @mixin ========================================================================= */
+.sk-flex-first {
+  order: -1;
+}
+
+.sk-flex-last {
+  order: 99;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-flex-first-s {
+    order: -1;
+  }
+  .sk-flex-last-s {
+    order: 99;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-flex-first-m {
+    order: -1;
+  }
+  .sk-flex-last-m {
+    order: 99;
+  }
+}
+
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  .sk-flex-first-l {
+    order: -1;
+  }
+  .sk-flex-last-l {
+    order: 99;
+  }
+}
+
+/* Large screen and bigger */
+@media (min-width: 1600px) {
+  .sk-flex-first-xl {
+    order: -1;
+  }
+  .sk-flex-last-xl {
+    order: 99;
+  }
+}
+
+/* Item dimensions
+ @mixin ========================================================================= */
+/*
+ * Initial: 0 1 auto
+ * Content dimensions, but shrinks
+ */
+/*
+ * No Flex: 0 0 auto
+ * Content dimensions
+ */
+.sk-flex-none {
+  flex: none;
+}
+
+/*
+ * Relative Flex: 1 1 auto
+ * Space is allocated considering content
+ */
+.sk-flex-auto {
+  flex: auto;
+}
+
+/*
+ * Absolute Flex: 1 1 0%
+ * Space is allocated solely based on flex
+ */
+.sk-flex-1 {
+  flex: 1;
+}
+
+/* ========================================================================
+   Component: SVG
+ @mixin ========================================================================= */
+/*
+ * 1.sk- Fill all SVG elements with the current text color if no `fill` attribute is set
+ * 2.sk- Set the fill and stroke color of all SVG elements to the current text color
+ */
+/* 1 */
+.sk-svg,
+.sk-svg:not(.sk-preserve) [fill*='#']:not(.sk-preserve) {
+  fill: currentcolor;
+}
+
+.sk-svg:not(.sk-preserve) [stroke*='#']:not(.sk-preserve) {
+  stroke: currentcolor;
+}
+
+/*
+ * Fix Firefox blurry SVG rendering: https://bugzilla.sk-mozilla.org/show_bug.cgi?id=1046835
+ */
+.sk-svg {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+/* ========================================================================
+   Component: Utility
+ @mixin ========================================================================= */
+/* Clearfix
+ @mixin ========================================================================= */
+/* 1 */
+.sk-clearfix::before {
+  content: "";
+  display: table-cell;
+}
+
+/* 2 */
+.sk-clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Float
+ @mixin ========================================================================= */
+.sk-float-left {
+  float: left;
+}
+
+.sk-float-right {
+  float: right;
+}
+
+[class*='sk-float-'] {
+  max-width: 100%;
+}
+
+/* Overfow
+ @mixin ========================================================================= */
+.sk-overflow-hidden {
+  overflow: hidden;
+}
+
+/*
+ * Enable scrollbars if content is clipped
+ * Note: Firefox ignores `padding-bottom` for the scrollable overflow https://bugzilla.mozilla.org/show_bug.cgi?id=748518
+ */
+.sk-overflow-auto {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sk-overflow-auto > :last-child {
+  margin-bottom: 0;
+}
+
+/* Resize
+ @mixin ========================================================================= */
+.sk-resize {
+  resize: both;
+}
+
+.sk-resize-vertical {
+  resize: vertical;
+}
+
+.sk-resize-horizontal {
+  resize: horizontal;
+}
+
+/* Display
+ @mixin ========================================================================= */
+.sk-display-block {
+  display: block !important;
+}
+
+.sk-display-inline {
+  display: inline !important;
+}
+
+.sk-display-inline-block {
+  display: inline-block !important;
+}
+
+/* Inline
+ @mixin ========================================================================= */
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Behave like most inline-block elements
+ * 5. Force hardware acceleration without creating a new stacking context
+ *    to fix 1px glitch when combined with overlays and transitions in Webkit
+ * 6. Clip child elements
+ */
+[class*='sk-inline'] {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  vertical-align: middle;
+  -webkit-backface-visibility: hidden;
+}
+
+.sk-inline-clip {
+  overflow: hidden;
+}
+
+/* Responsive objects
+ @mixin ========================================================================= */
+/*
+ * Preserve original dimensions
+ * Because `img, `video`, `canvas` and  `audio` are already responsive by default, see Base component
+ */
+.sk-preserve-width,
+.sk-preserve-width canvas,
+.sk-preserve-width img,
+.sk-preserve-width svg,
+.sk-preserve-width video,
+.sk-preserve-width audio {
+  max-width: none;
+}
+
+/*
+ * Responsiveness
+ * Corrects `max-width` and `max-height` behavior if padding and border are used
+ */
+.sk-responsive-width,
+.sk-responsive-height {
+  box-sizing: border-box;
+}
+
+/*
+ * 1. Set a maximum width. `important` needed to override `preserve-width img`
+ * 2. Auto scale the height. Only needed if `height` attribute is present
+ */
+.sk-responsive-width {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/*
+ * 1. Set a maximum height. Only works if the parent element has a fixed height
+ * 2. Auto scale the width. Only needed if `width` attribute is present
+ * 3. Reset max-width, which `img, `video`, `canvas` and  `audio` already have by default
+ */
+.sk-responsive-height {
+  max-height: 100%;
+  width: auto;
+  max-width: none;
+}
+
+/* Border
+ @mixin ========================================================================= */
+.sk-border-circle {
+  border-radius: 50%;
+}
+
+.sk-border-pill {
+  border-radius: 500px;
+}
+
+.sk-border-rounded {
+  border-radius: 4px;
+}
+
+.sk-border-rounded-large {
+  border-radius: 6px;
+}
+
+.sk-border-rounded-small {
+  border-radius: 2px;
+}
+
+/*
+ * Fix `overflow: hidden` to be ignored with border-radius and CSS transforms in Webkit
+ */
+.sk-inline-clip[class*='sk-border-'] {
+  -webkit-transform: translateZ(0);
+}
+
+/* Box-shadow
+ @mixin ========================================================================= */
+.sk-box-shadow-small {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.sk-box-shadow-medium {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.sk-box-shadow-large {
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+}
+
+.sk-box-shadow-xlarge {
+  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.16);
+}
+
+/*
+ * Hover
+ */
+[class*='sk-box-shadow-hover'] {
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.sk-box-shadow-hover-small:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.sk-box-shadow-hover-medium:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.sk-box-shadow-hover-large:hover {
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.16);
+}
+
+.sk-box-shadow-hover-xlarge:hover {
+  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.16);
+}
+
+/* Box-shadow bottom
+ @mixin ========================================================================= */
+/*
+ * 1. Set position.
+ * 2. Set style
+ * 3. Blur doesn't work on pseudo elements with negative `z-index` in Edge.
+ *    Solved by using `before` and add position context to child elements.
+ */
+@supports ((-webkit-filter: blur(0)) or (filter: blur(0))) {
+  .sk-box-shadow-bottom {
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  .sk-box-shadow-bottom::before {
+    content: "";
+    /* 1 */
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    /* 2 */
+    height: 30px;
+    border-radius: 100%;
+    background: #444;
+    -webkit-filter: blur(20px);
+            filter: blur(20px);
+  }
+  .sk-box-shadow-bottom > * {
+    position: relative;
+  }
+}
+
+/* Drop cap
+ @mixin ========================================================================= */
+/*
+ * 1. Firefox doesn't apply `::first-letter` if the first letter is inside child elements
+ *    https://bugzilla.mozilla.org/show_bug.cgi?id=214004
+ * 2. In Firefox, a floating `::first-letter` doesn't have a line box and there for no `line-height`
+ *    https://bugzilla.mozilla.org/show_bug.cgi?id=317933
+ * 3. Caused by 1.: Edge creates two nested `::first-letter` containers, one for each selector
+ *    This doubles the `font-size` exponential when using the `em` unit.
+ */
+.sk-dropcap::first-letter,
+.sk-dropcap > p:first-of-type::first-letter {
+  display: block;
+  margin-right: 10px;
+  float: left;
+  font-size: 4.5em;
+  line-height: 1;
+}
+
+@-moz-document url-prefix() {
+  .sk-dropcap::first-letter,
+  .sk-dropcap > p:first-of-type::first-letter {
+    margin-top: 1.1%;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  .sk-dropcap > p:first-of-type::first-letter {
+    font-size: 1em;
+  }
+}
+
+/* Disabled State
+ @mixin ========================================================================= */
+.sk-disabled {
+  pointer-events: none;
+}
+
+/* Drag State
+ @mixin ========================================================================= */
+/*
+ * 1. Needed if moving over elements with have their own cursor on hover, e.g. links or buttons
+ * 2. Fix dragging over iframes
+ */
+.sk-drag,
+.sk-drag * {
+  cursor: move;
+}
+
+.sk-drag iframe {
+  pointer-events: none;
+}
+
+/* Dragover State
+ @mixin ========================================================================= */
+/*
+ * Create a box-shadow when dragging a file over the upload area
+ */
+.sk-dragover {
+  box-shadow: 0 0 20px rgba(100, 100, 100, 0.3);
+}
+
+/* Blend modes
+ @mixin ========================================================================= */
+.sk-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.sk-blend-screen {
+  mix-blend-mode: screen;
+}
+
+.sk-blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+.sk-blend-darken {
+  mix-blend-mode: darken;
+}
+
+.sk-blend-lighten {
+  mix-blend-mode: lighten;
+}
+
+.sk-blend-color-dodge {
+  mix-blend-mode: color-dodge;
+}
+
+.sk-blend-color-burn {
+  mix-blend-mode: color-burn;
+}
+
+.sk-blend-hard-light {
+  mix-blend-mode: hard-light;
+}
+
+.sk-blend-soft-light {
+  mix-blend-mode: soft-light;
+}
+
+.sk-blend-difference {
+  mix-blend-mode: difference;
+}
+
+.sk-blend-exclusion {
+  mix-blend-mode: exclusion;
+}
+
+.sk-blend-hue {
+  mix-blend-mode: hue;
+}
+
+.sk-blend-saturation {
+  mix-blend-mode: saturation;
+}
+
+.sk-blend-color {
+  mix-blend-mode: color;
+}
+
+.sk-blend-luminosity {
+  mix-blend-mode: luminosity;
+}
+
+/* Transform
+ * ========================================================================== */
+.sk-transform-center {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* Transform Origin
+ * ========================================================================== */
+.sk-transform-origin-top-left {
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+.sk-transform-origin-top-center {
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+}
+
+.sk-transform-origin-top-right {
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
+}
+
+.sk-transform-origin-center-left {
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+}
+
+.sk-transform-origin-center-right {
+  -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+}
+
+.sk-transform-origin-bottom-left {
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+
+.sk-transform-origin-bottom-center {
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+
+.sk-transform-origin-bottom-right {
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%;
+}
+
+/* Color
+ @mixin ========================================================================= */
+.sk-background-primary {
+  background-color: #0149ff !important;
+}
+
+.sk-background-secondary {
+  background-color: #ff0039 !important;
+}
+
+.sk-background-tertiary {
+  background-color: #FDF40F !important;
+}
+
+.sk-background-danger {
+  background-color: #ff0000 !important;
+}
+
+.sk-background-success {
+  background-color: #00e652 !important;
+}
+
+.sk-background-blue {
+  background-color: #001A57 !important;
+}
+
+.sk-background-teal {
+  background-color: #16BDAB !important;
+}
+
+.sk-background-white {
+  background-color: #fff !important;
+}
+
+/* Size
+ @mixin ========================================================================= */
+.sk-background-cover,
+.sk-background-contain {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.sk-background-cover {
+  background-size: cover;
+}
+
+.sk-background-contain {
+  background-size: contain;
+}
+
+/* Position
+ @mixin ========================================================================= */
+.sk-background-top-left {
+  background-position: 0 0;
+}
+
+.sk-background-top-center {
+  background-position: 50% 0;
+}
+
+.sk-background-top-right {
+  background-position: 100% 0;
+}
+
+.sk-background-center-left {
+  background-position: 0 50%;
+}
+
+.sk-background-center-center {
+  background-position: 50% 50%;
+}
+
+.sk-background-center-right {
+  background-position: 100% 50%;
+}
+
+.sk-background-bottom-left {
+  background-position: 0 100%;
+}
+
+.sk-background-bottom-center {
+  background-position: 50% 100%;
+}
+
+.sk-background-bottom-right {
+  background-position: 100% 100%;
+}
+
+/* Repeat
+ @mixin ========================================================================= */
+.sk-background-norepeat {
+  background-repeat: no-repeat;
+}
+
+/* Attachment
+ @mixin ========================================================================= */
+/*
+ * 1. Fix bug introduced in Chrome 67: the background image is not visible if any element on the page uses `translate3d`
+ */
+.sk-background-fixed {
+  background-attachment: fixed;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+/*
+ * Exclude touch devices because `fixed` doesn't work on iOS and Android
+ */
+@media (pointer: coarse) {
+  .sk-background-fixed {
+    background-attachment: scroll;
+  }
+}
+
+/* Blend modes
+ @mixin ========================================================================= */
+.sk-background-blend-multiply {
+  background-blend-mode: multiply;
+}
+
+.sk-background-blend-screen {
+  background-blend-mode: screen;
+}
+
+.sk-background-blend-overlay {
+  background-blend-mode: overlay;
+}
+
+.sk-background-blend-darken {
+  background-blend-mode: darken;
+}
+
+.sk-background-blend-lighten {
+  background-blend-mode: lighten;
+}
+
+.sk-background-blend-color-dodge {
+  background-blend-mode: color-dodge;
+}
+
+.sk-background-blend-color-burn {
+  background-blend-mode: color-burn;
+}
+
+.sk-background-blend-hard-light {
+  background-blend-mode: hard-light;
+}
+
+.sk-background-blend-soft-light {
+  background-blend-mode: soft-light;
+}
+
+.sk-background-blend-difference {
+  background-blend-mode: difference;
+}
+
+.sk-background-blend-exclusion {
+  background-blend-mode: exclusion;
+}
+
+.sk-background-blend-hue {
+  background-blend-mode: hue;
+}
+
+.sk-background-blend-saturation {
+  background-blend-mode: saturation;
+}
+
+.sk-background-blend-color {
+  background-blend-mode: color;
+}
+
+.sk-background-blend-luminosity {
+  background-blend-mode: luminosity;
+}
+
+/*
+ * Default
+ */
+.sk-margin {
+  margin-bottom: 24px;
+}
+
+* + .sk-margin {
+  margin-top: 24px !important;
+}
+
+.sk-margin-top {
+  margin-top: 24px !important;
+}
+
+.sk-margin-bottom {
+  margin-bottom: 24px !important;
+}
+
+.sk-margin-left {
+  margin-left: 24px !important;
+}
+
+.sk-margin-right {
+  margin-right: 24px !important;
+}
+
+/* Small
+ @mixin ========================================================================= */
+.sk-margin-small {
+  margin-bottom: 12px;
+}
+
+* + .sk-margin-small {
+  margin-top: 12px !important;
+}
+
+.sk-margin-small-top {
+  margin-top: 12px !important;
+}
+
+.sk-margin-small-bottom, .sk-box-repeater-default {
+  margin-bottom: 12px !important;
+}
+
+.sk-margin-small-left {
+  margin-left: 12px !important;
+}
+
+.sk-margin-small-right {
+  margin-right: 12px !important;
+}
+
+/* Medium
+ @mixin ========================================================================= */
+.sk-margin-medium {
+  margin-bottom: 48px;
+}
+
+* + .sk-margin-medium {
+  margin-top: 48px !important;
+}
+
+.sk-margin-medium-top {
+  margin-top: 48px !important;
+}
+
+.sk-margin-medium-bottom {
+  margin-bottom: 48px !important;
+}
+
+.sk-margin-medium-left {
+  margin-left: 48px !important;
+}
+
+.sk-margin-medium-right {
+  margin-right: 48px !important;
+}
+
+/* Large
+ @mixin ========================================================================= */
+.sk-margin-large {
+  margin-bottom: 48px;
+}
+
+* + .sk-margin-large {
+  margin-top: 48px !important;
+}
+
+.sk-margin-large-top {
+  margin-top: 48px !important;
+}
+
+.sk-margin-large-bottom {
+  margin-bottom: 48px !important;
+}
+
+.sk-margin-large-left {
+  margin-left: 48px !important;
+}
+
+.sk-margin-large-right {
+  margin-right: 48px !important;
+}
+
+/* XLarge
+ @mixin ========================================================================= * */
+.sk-margin-xlarge {
+  margin-bottom: 48px;
+}
+
+* + .sk-margin-xlarge {
+  margin-top: 72px !important;
+}
+
+.sk-margin-xlarge-top {
+  margin-top: 72px !important;
+}
+
+.sk-margin-xlarge-bottom {
+  margin-bottom: 72px !important;
+}
+
+.sk-margin-xlarge-left {
+  margin-left: 72px !important;
+}
+
+.sk-margin-xlarge-right {
+  margin-right: 72px !important;
+}
+
+/* Remove
+ @mixin ========================================================================= */
+.sk-margin-remove {
+  margin: 0 !important;
+}
+
+.sk-margin-remove-top {
+  margin-top: 0 !important;
+}
+
+.sk-margin-remove-bottom {
+  margin-bottom: 0 !important;
+}
+
+.sk-margin-remove-left {
+  margin-left: 0 !important;
+}
+
+.sk-margin-remove-right {
+  margin-right: 0 !important;
+}
+
+.sk-margin-remove-vertical {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.sk-margin-remove-adjacent + * {
+  margin-top: 0 !important;
+}
+
+/* Auto
+ @mixin ========================================================================= */
+.sk-margin-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.sk-margin-auto-top {
+  margin-top: auto !important;
+}
+
+.sk-margin-auto-bottom {
+  margin-bottom: auto !important;
+}
+
+.sk-margin-auto-left {
+  margin-left: auto !important;
+}
+
+.sk-margin-auto-right {
+  margin-right: auto !important;
+}
+
+.sk-margin-auto-vertical {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+/*
+ * Default
+ */
+.sk-padding {
+  padding-bottom: 24px;
+}
+
+* + .sk-padding {
+  padding-top: 24px !important;
+}
+
+.sk-padding-top {
+  padding-top: 24px !important;
+}
+
+.sk-padding-bottom {
+  padding-bottom: 24px !important;
+}
+
+.sk-padding-left {
+  padding-left: 24px !important;
+}
+
+.sk-padding-right {
+  padding-right: 24px !important;
+}
+
+/* Small
+ @mixin ========================================================================= */
+.sk-padding-small {
+  padding-bottom: 12px;
+}
+
+* + .sk-padding-small {
+  padding-top: 12px !important;
+}
+
+.sk-padding-small-top {
+  padding-top: 12px !important;
+}
+
+.sk-padding-small-bottom {
+  padding-bottom: 12px !important;
+}
+
+.sk-padding-small-left {
+  padding-left: 12px !important;
+}
+
+.sk-padding-small-right {
+  padding-right: 12px !important;
+}
+
+/* Medium
+ @mixin ========================================================================= */
+.sk-padding-medium {
+  padding-bottom: 48px;
+}
+
+* + .sk-padding-medium {
+  padding-top: 48px !important;
+}
+
+.sk-padding-medium-top {
+  padding-top: 48px !important;
+}
+
+.sk-padding-medium-bottom {
+  padding-bottom: 48px !important;
+}
+
+.sk-padding-medium-left {
+  padding-left: 48px !important;
+}
+
+.sk-padding-medium-right {
+  padding-right: 48px !important;
+}
+
+/* Large
+ @mixin ========================================================================= */
+.sk-padding-large {
+  padding-bottom: 48px;
+}
+
+* + .sk-padding-large {
+  padding-top: 48px !important;
+}
+
+.sk-padding-large-top {
+  padding-top: 48px !important;
+}
+
+.sk-padding-large-bottom {
+  padding-bottom: 48px !important;
+}
+
+.sk-padding-large-left {
+  padding-left: 48px !important;
+}
+
+.sk-padding-large-right {
+  padding-right: 48px !important;
+}
+
+/* XLarge
+ @mixin ========================================================================= * */
+.sk-padding-xlarge {
+  padding-bottom: 48px;
+}
+
+* + .sk-padding-xlarge {
+  padding-top: 72px !important;
+}
+
+.sk-padding-xlarge-top {
+  padding-top: 72px !important;
+}
+
+.sk-padding-xlarge-bottom {
+  padding-bottom: 72px !important;
+}
+
+.sk-padding-xlarge-left {
+  padding-left: 72px !important;
+}
+
+.sk-padding-xlarge-right {
+  padding-right: 72px !important;
+}
+
+/* Remove
+ @mixin ========================================================================= */
+.sk-padding-remove {
+  padding: 0 !important;
+}
+
+.sk-padding-remove-top {
+  padding-top: 0 !important;
+}
+
+.sk-padding-remove-bottom {
+  padding-bottom: 0 !important;
+}
+
+.sk-padding-remove-left {
+  padding-left: 0 !important;
+}
+
+.sk-padding-remove-right {
+  padding-right: 0 !important;
+}
+
+.sk-padding-remove-vertical {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.sk-padding-remove-adjacent + * {
+  padding-top: 0 !important;
+}
+
+/* Auto
+ @mixin ========================================================================= */
+.sk-padding-auto {
+  padding-left: auto !important;
+  padding-right: auto !important;
+}
+
+.sk-padding-auto-top {
+  padding-top: auto !important;
+}
+
+.sk-padding-auto-bottom {
+  padding-bottom: auto !important;
+}
+
+.sk-padding-auto-left {
+  padding-left: auto !important;
+}
+
+.sk-padding-auto-right {
+  padding-right: auto !important;
+}
+
+.sk-padding-auto-vertical {
+  padding-top: auto !important;
+  padding-bottom: auto !important;
+}
+
+/* Directions
+ @mixin ========================================================================= */
+[class*='sk-position-top'],
+[class*='sk-position-bottom'],
+[class*='sk-position-left'],
+[class*='sk-position-right'],
+[class*='sk-position-center'] {
+  position: absolute !important;
+}
+
+/* Edges
+ @mixin ========================================================================= */
+/* Don't use `width: 100%` because it is wrong if the parent has padding. */
+.sk-position-top {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.sk-position-bottom {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.sk-position-left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.sk-position-right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Corners
+ @mixin ========================================================================= */
+.sk-position-top-left {
+  top: 0;
+  left: 0;
+}
+
+.sk-position-top-right {
+  top: 0;
+  right: 0;
+}
+
+.sk-position-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.sk-position-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+/*
+ * Center
+ * 1. Fix text wrapping if content is larger than 50% of the container.
+ */
+.sk-position-center {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /* 1 */
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Vertical */
+[class*='sk-position-center-left'],
+[class*='sk-position-center-right'] {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.sk-position-center-left {
+  left: 0;
+}
+
+.sk-position-center-right {
+  right: 0;
+}
+
+.sk-position-center-left-out {
+  right: 100%;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+}
+
+.sk-position-center-right-out {
+  left: 100%;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+}
+
+/* Horizontal */
+.sk-position-top-center,
+.sk-position-bottom-center {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  /* 1 */
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.sk-position-top-center {
+  top: 0;
+}
+
+.sk-position-bottom-center {
+  bottom: 0;
+}
+
+/* Cover
+ @mixin ========================================================================= */
+.sk-position-cover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Utility
+ @mixin ========================================================================= */
+.sk-position-relative {
+  position: relative !important;
+}
+
+.sk-position-absolute {
+  position: absolute !important;
+}
+
+.sk-position-fixed {
+  position: fixed !important;
+}
+
+.sk-position-z-index {
+  z-index: 1;
+}
+
+/* Margin modifier
+ @mixin ========================================================================= */
+/*
+ * Small
+ */
+.sk-position-small {
+  max-width: calc(100% - (12px * 2));
+  margin: 12px;
+}
+
+.sk-position-small.sk-position-center {
+  -webkit-transform: translate(-50%, -50%) translate(-12px, -12px);
+          transform: translate(-50%, -50%) translate(-12px, -12px);
+}
+
+.sk-position-small[class*='sk-position-center-left'],
+.sk-position-small[class*='sk-position-center-right'] {
+  -webkit-transform: translateY(-50%) translateY(-12px);
+          transform: translateY(-50%) translateY(-12px);
+}
+
+.sk-position-small.sk-position-top-center,
+.sk-position-small.sk-position-bottom-center {
+  -webkit-transform: translateX(-50%) translateX(-12px);
+          transform: translateX(-50%) translateX(-12px);
+}
+
+/*
+ * Medium
+ */
+.sk-position-medium {
+  max-width: calc(100% - (24px * 2));
+  margin: 24px;
+}
+
+.sk-position-medium.sk-position-center {
+  -webkit-transform: translate(-50%, -50%) translate(-24px, -24px);
+          transform: translate(-50%, -50%) translate(-24px, -24px);
+}
+
+.sk-position-medium[class*='sk-position-center-left'],
+.sk-position-medium[class*='sk-position-center-right'] {
+  -webkit-transform: translateY(-50%) translateY(-24px);
+          transform: translateY(-50%) translateY(-24px);
+}
+
+.sk-position-medium.sk-position-top-center,
+.sk-position-medium.sk-position-bottom-center {
+  -webkit-transform: translateX(-50%) translateX(-24px);
+          transform: translateX(-50%) translateX(-24px);
+}
+
+/*
+ * Large
+ */
+.sk-position-large {
+  max-width: calc(100% - (24px * 2));
+  margin: 24px;
+}
+
+.sk-position-large.sk-position-center {
+  -webkit-transform: translate(-50%, -50%) translate(-24px, -24px);
+          transform: translate(-50%, -50%) translate(-24px, -24px);
+}
+
+.sk-position-large[class*='sk-position-center-left'],
+.sk-position-large[class*='sk-position-center-right'] {
+  -webkit-transform: translateY(-50%) translateY(-24px);
+          transform: translateY(-50%) translateY(-24px);
+}
+
+.sk-position-large.sk-position-top-center,
+.sk-position-large.sk-position-bottom-center {
+  -webkit-transform: translateX(-50%) translateX(-24px);
+          transform: translateX(-50%) translateX(-24px);
+}
+
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  .sk-position-large {
+    max-width: calc(100% - (48px * 2));
+    margin: 48px;
+  }
+  .sk-position-large.sk-position-center {
+    -webkit-transform: translate(-50%, -50%) translate(-48px, -48px);
+            transform: translate(-50%, -50%) translate(-48px, -48px);
+  }
+  .sk-position-large[class*='sk-position-center-left'],
+  .sk-position-large[class*='sk-position-center-right'] {
+    -webkit-transform: translateY(-50%) translateY(-48px);
+            transform: translateY(-50%) translateY(-48px);
+  }
+  .sk-position-large.sk-position-top-center,
+  .sk-position-large.sk-position-bottom-center {
+    -webkit-transform: translateX(-50%) translateX(-48px);
+            transform: translateX(-50%) translateX(-48px);
+  }
+}
+
+/* ========================================================================
+   Component: Transition
+ @mixin ========================================================================= */
+/* Toggle (Hover + Focus)
+ @mixin ========================================================================= */
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+.sk-transition-toggle {
+  /* 1 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+ * Remove outline for `tabindex`
+ */
+.sk-transition-toggle:focus {
+  outline: none;
+}
+
+/* Transitions
+ @mixin ========================================================================= */
+/*
+ * The toggle is triggered on touch devices by two methods:
+ * 1. Using `:focus` and tabindex
+ * 2. Using `:hover` and a `touchstart` event listener registered on the document
+ *    (Doesn't work on Surface touch devices)
+ *
+ * Note: Transitions don't work with `sk-postion-center-*` classes because they also use `transform`,
+ *       therefore it's recommended to use an extra `div` for the transition.
+ */
+.sk-transition-fade,
+[class*='sk-transition-scale'],
+[class*='sk-transition-slide'],
+.sk-transition-stroke {
+  transition: 0.3s ease-out;
+  transition-property: opacity, stroke-dashoffset, -webkit-transform, -webkit-filter;
+  transition-property: opacity, transform, filter, stroke-dashoffset;
+  transition-property: opacity, transform, filter, stroke-dashoffset, -webkit-transform, -webkit-filter;
+  opacity: 0;
+}
+
+/*
+ * Fade
+ */
+.sk-transition-toggle:hover .sk-transition-fade,
+.sk-transition-toggle:focus .sk-transition-fade,
+.sk-transition-active.sk-active .sk-transition-fade {
+  opacity: 1;
+}
+
+/*
+ * Scale
+ * Note: Using `scale3d` for better image rendering
+ */
+.sk-transition-scale-up {
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+}
+
+.sk-transition-scale-down {
+  -webkit-transform: scale3d(1.1, 1.1, 1);
+          transform: scale3d(1.1, 1.1, 1);
+}
+
+/* Show */
+.sk-transition-toggle:hover .sk-transition-scale-up,
+.sk-transition-toggle:focus .sk-transition-scale-up,
+.sk-transition-active.sk-active .sk-transition-scale-up {
+  opacity: 1;
+  -webkit-transform: scale3d(1.1, 1.1, 1);
+          transform: scale3d(1.1, 1.1, 1);
+}
+
+.sk-transition-toggle:hover .sk-transition-scale-down,
+.sk-transition-toggle:focus .sk-transition-scale-down,
+.sk-transition-active.sk-active .sk-transition-scale-down {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+}
+
+/*
+ * Slide
+ */
+.sk-transition-slide-top {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.sk-transition-slide-bottom {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.sk-transition-slide-left {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.sk-transition-slide-right {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.sk-transition-slide-top-small {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.sk-transition-slide-bottom-small {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.sk-transition-slide-left-small {
+  -webkit-transform: translateX(-10px);
+          transform: translateX(-10px);
+}
+
+.sk-transition-slide-right-small {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.sk-transition-slide-top-medium {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+}
+
+.sk-transition-slide-bottom-medium {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+}
+
+.sk-transition-slide-left-medium {
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+.sk-transition-slide-right-medium {
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+}
+
+/* Show */
+.sk-transition-toggle:hover [class*='sk-transition-slide'],
+.sk-transition-toggle:focus [class*='sk-transition-slide'],
+.sk-transition-active.sk-active [class*='sk-transition-slide'] {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+
+/*
+ * Stroke
+ */
+.sk-transition-stroke {
+  transition-duration: 3s;
+}
+
+/* Show */
+.sk-transition-stroke:hover,
+.sk-transition-stroke:focus,
+.sk-transition-stroke.sk-transition-active {
+  opacity: 1;
+  stroke-dashoffset: 0 !important;
+}
+
+/* Opacity modifier
+ @mixin ========================================================================= */
+.sk-transition-opaque {
+  opacity: 1;
+}
+
+/* Duration modifiers
+ @mixin ========================================================================= */
+.sk-transition-slow {
+  transition-duration: 0.7s;
+}
+
+/* ========================================================================
+   Component: Visibility
+ @mixin ========================================================================= */
+/*
+ * Hidden
+ * `hidden` attribute also set here to make it stronger
+ */
+[hidden],
+.sk-hidden {
+  display: none !important;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: 640px) {
+  .sk-hidden-s {
+    display: none !important;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .sk-hidden-m {
+    display: none !important;
+  }
+}
+
+/* Desktop and bigger */
+@media (min-width: 1200px) {
+  .sk-hidden-l {
+    display: none !important;
+  }
+}
+
+/* Large screen and bigger */
+@media (min-width: 1600px) {
+  .sk-hidden-xl {
+    display: none !important;
+  }
+}
+
+/*
+ * Visible
+ */
+/* Phone portrait and smaller */
+@media (max-width: 639px) {
+  .sk-visible-s {
+    display: none !important;
+  }
+}
+
+/* Phone landscape and smaller */
+@media (max-width: 959px) {
+  .sk-visible-m {
+    display: none !important;
+  }
+}
+
+/* Tablet landscape and smaller */
+@media (max-width: 1199px) {
+  .sk-visible-l {
+    display: none !important;
+  }
+}
+
+/* Desktop and smaller */
+@media (max-width: 1599px) {
+  .sk-visible-xl {
+    display: none !important;
+  }
+}
+
+/* Visibility
+ @mixin ========================================================================= */
+.sk-invisible {
+  visibility: hidden !important;
+}
+
+/* Toggle (Hover + Focus)
+ @mixin ========================================================================= */
+/*
+ * Hidden
+ * 1. The toggle is triggered on touch devices using `:focus` and tabindex
+ * 2. The target stays visible if any element within receives focus through keyboard
+ *    Doesn't work in Edge, yet.
+ * 3. Can't use `display: none` nor `visibility: hidden` because both are not focusable.
+ *
+ */
+/* 1 + 2 */
+.sk-visible-toggle:not(:hover):not(:focus) .sk-hidden-hover:not(:focus-within) {
+  /* 3 */
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+/*
+ * Invisible
+ */
+/* 1 + 2 */
+.sk-visible-toggle:not(:hover):not(:focus) .sk-invisible-hover:not(:focus-within) {
+  /* 3 */
+  opacity: 0 !important;
+}
+
+/*
+ * 1. Prevent tab highlighting on iOS.
+ */
+.sk-visible-toggle {
+  /* 1 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+ * Remove outline for `tabindex`
+ */
+.sk-visible-toggle:focus {
+  outline: none;
+}
+
+/* Touch
+ @mixin ========================================================================= */
+/*
+ * Hide if primary pointing device has limited accuracy, e.g. a touch screen.
+ * Works on mobile browsers: Safari, Chrome and Android browser
+ */
+@media (pointer: coarse) {
+  .sk-hidden-touch {
+    display: none !important;
+  }
+}
+
+/*
+ * Hide if primary pointing device is accurate, e.g. mouse.
+ * 1. Fallback for IE11 and Firefox, because `pointer` is not supported
+ * 2. Reset if supported
+ */
+/* 1 */
+.sk-hidden-notouch {
+  display: none !important;
+}
+
+@media (pointer: coarse) {
+  .sk-hidden-notouch {
+    display: block !important;
+  }
+}
+
+/* ========================================================================
+   Component: Cover
+ @mixin ========================================================================= */
+/*
+ * Works with iframes and embedded content
+ * 1. Reset responsiveness for embedded content
+ * 2. Center object
+ * Note: Percent values on the `top` property only works if this element
+ *       is absolute positioned or if the container has a height
+ */
+.sk-cover {
+  /* 1 */
+  max-width: none;
+  /* 2 */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+iframe.sk-cover {
+  pointer-events: none;
+}
+
+.sk-cover-container {
+  overflow: hidden;
+  position: relative;
+}
+
+/* ========================================================================
+   Component: Bottom player
+ @mixin ========================================================================= */
+.sk-player-bottom {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1300;
+  background: #fff;
+  box-shadow: 0 -28px 50px rgba(0, 0, 0, 0.16);
+}
+
+.sk-player-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sk-player-info {
+  flex: 1;
+  min-width: 1px;
+}
+
+.sk-player-player {
+  width: 40%;
+}
+
+.sk-player-tools {
+  flex: 1;
+  min-width: 1px;
+  text-align: right;
+}
+
+.sk-player-main-controls {
+  text-align: center;
+}
+
+/* ========================================================================
+   Component: Print
+ @mixin ========================================================================= */
+@media print {
+  *, *::before, *::after {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+/*# sourceMappingURL=skit.css.map */

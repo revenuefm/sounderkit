@@ -1,0 +1,238 @@
+// Name:            Position
+// Description:     Utilities to position content
+//
+// Component:       `sk-position-absolute`
+//                  `sk-position-relative`
+//                  `sk-position-z-index`
+//                  `sk-position-top`
+//                  `sk-position-bottom`
+//                  `sk-position-left`
+//                  `sk-position-right`
+//                  `sk-position-top-left`
+//                  `sk-position-top-center`
+//                  `sk-position-top-right`
+//                  `sk-position-bottom-left`
+//                  `sk-position-bottom-center`
+//                  `sk-position-bottom-right`
+//                  `sk-position-center`
+//                  `sk-position-center-left`
+//                  `sk-position-center-right`
+//                  `sk-position-cover`
+//
+// Modifiers:       `sk-position-small`
+//                  `sk-position-medium`
+//                  `sk-position-large`
+//
+// ========================================================================
+
+/* Directions
+ ========================================================================== */
+
+[class*='sk-position-top'],
+[class*='sk-position-bottom'],
+[class*='sk-position-left'],
+[class*='sk-position-right'],
+[class*='sk-position-center']
+  position: absolute !important
+
+/* Edges
+ ========================================================================== */
+
+/* Don't use `width: 100%` because it is wrong if the parent has padding. */
+.sk-position-top
+  top: 0
+  left: 0
+  right: 0
+
+.sk-position-bottom
+  bottom: 0
+  left: 0
+  right: 0
+
+.sk-position-left
+  top: 0
+  bottom: 0
+  left: 0
+
+.sk-position-right
+  top: 0
+  bottom: 0
+  right: 0
+
+
+/* Corners
+ ========================================================================== */
+
+.sk-position-top-left
+  top: 0
+  left: 0
+
+.sk-position-top-right 
+  top: 0
+  right: 0
+
+.sk-position-bottom-left
+  bottom: 0
+  left: 0
+
+
+.sk-position-bottom-right 
+  bottom: 0
+  right: 0
+
+/*
+ * Center
+ * 1. Fix text wrapping if content is larger than 50% of the container.
+ */
+
+.sk-position-center
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  /* 1 */
+  width: -moz-max-content
+  width: max-content
+  max-width: 100%
+  box-sizing: border-box
+
+/* Vertical */
+[class*='sk-position-center-left'],
+[class*='sk-position-center-right']
+  top: 50%
+  transform: translateY(-50%)
+
+.sk-position-center-left
+  left: 0
+.sk-position-center-right
+  right: 0
+
+.sk-position-center-left-out
+  right: 100%
+  width: -moz-max-content
+  width: max-content
+
+.sk-position-center-right-out
+  left: 100%
+  width: -moz-max-content
+  width: max-content
+
+/* Horizontal */
+.sk-position-top-center,
+.sk-position-bottom-center
+  left: 50%
+  transform: translateX(-50%)
+  /* 1 */
+  width: -moz-max-content
+  width: max-content
+  max-width: 100%
+  box-sizing: border-box
+
+.sk-position-top-center
+  top: 0
+.sk-position-bottom-center
+  bottom: 0
+
+
+/* Cover
+ ========================================================================== */
+
+.sk-position-cover
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+
+/* Utility
+ ========================================================================== */
+
+.sk-position-relative
+  position: relative !important
+
+.sk-position-absolute
+  position: absolute !important
+
+.sk-position-fixed
+  position: fixed !important
+
+.sk-position-z-index
+  z-index: 1
+
+
+/* Margin modifier
+ ========================================================================== */
+
+/*
+ * Small
+ */
+
+.sk-position-small
+  max-width: unquote('calc(100% - (#{$position-small-margin} * 2))')
+  margin: $position-small-margin
+
+.sk-position-small.sk-position-center
+  transform: translate(-50%, -50%) translate(-$position-small-margin, (-$position-small-margin))
+
+.sk-position-small[class*='sk-position-center-left'],
+.sk-position-small[class*='sk-position-center-right']
+  transform: translateY(-50%) translateY(-$position-small-margin)
+
+.sk-position-small.sk-position-top-center,
+.sk-position-small.sk-position-bottom-center
+  transform: translateX(-50%) translateX(-$position-small-margin)
+
+/*
+ * Medium
+ */
+
+.sk-position-medium
+  max-width: unquote('calc(100% - (#{$position-medium-margin} * 2))')
+  margin: $position-medium-margin
+
+.sk-position-medium.sk-position-center
+  transform: translate(-50%, -50%) translate(-$position-medium-margin, (-$position-medium-margin))
+
+.sk-position-medium[class*='sk-position-center-left'],
+.sk-position-medium[class*='sk-position-center-right']
+  transform: translateY(-50%) translateY(-$position-medium-margin)
+
+.sk-position-medium.sk-position-top-center,
+.sk-position-medium.sk-position-bottom-center
+  transform: translateX(-50%) translateX(-$position-medium-margin)
+
+/*
+ * Large
+ */
+
+.sk-position-large
+  max-width: unquote('calc(100% - (#{$position-large-margin} * 2))')
+  margin: $position-large-margin
+
+.sk-position-large.sk-position-center
+  transform: translate(-50%, -50%) translate(-$position-large-margin, (-$position-large-margin))
+
+.sk-position-large[class*='sk-position-center-left'],
+.sk-position-large[class*='sk-position-center-right']
+  transform: translateY(-50%) translateY(-$position-large-margin)
+
+.sk-position-large.sk-position-top-center,
+.sk-position-large.sk-position-bottom-center
+  transform: translateX(-50%) translateX(-$position-large-margin)
+
+/* Desktop and bigger */
+@media (min-width: $breakpoint-large)
+  .sk-position-large
+    max-width: unquote('calc(100% - (#{$position-large-margin-l} * 2))')
+    margin: $position-large-margin-l
+  
+  .sk-position-large.sk-position-center
+    transform: translate(-50%, -50%) translate(-$position-large-margin-l, (-$position-large-margin-l))
+  
+  .sk-position-large[class*='sk-position-center-left'],
+  .sk-position-large[class*='sk-position-center-right']
+    transform: translateY(-50%) translateY(-$position-large-margin-l)
+  
+  .sk-position-large.sk-position-top-center,
+  .sk-position-large.sk-position-bottom-center
+    transform: translateX(-50%) translateX(-$position-large-margin-l)

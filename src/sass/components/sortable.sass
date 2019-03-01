@@ -1,0 +1,63 @@
+// Name:            Sortable
+// Description:     Component to create sortable grids and lists
+//
+// Component:       `sk-sortable`
+//
+// Sub-objects:     `sk-sortable-drag`
+//                  `sk-sortable-placeholder`
+//                  `sk-sortable-handle`
+//
+// Modifiers:       `sk-sortable-empty`
+//
+// States:          `sk-drag`
+//
+// ========================================================================
+
+/* ========================================================================
+   Component: Sortable
+ ========================================================================== */
+
+.sk-sortable
+  position: relative
+/*
+ * Deactivate pointer-events on SVGs in Safari
+ */
+
+.sk-sortable svg
+  pointer-events: none
+
+/*
+ * Remove margin from the last-child
+ */
+
+.sk-sortable > :last-child
+  margin-bottom: 0
+
+/* Drag
+ ========================================================================== */
+
+.sk-sortable-drag
+  position: absolute !important
+  z-index: $sortable-dragged-z-index !important
+  pointer-events: none
+
+
+/* Placeholder
+ ========================================================================== */
+
+.sk-sortable-placeholder
+  opacity: $sortable-placeholder-opacity
+
+
+/* Empty modifier
+ ========================================================================== */
+
+.sk-sortable-empty
+  min-height: $sortable-empty-height
+
+/* Handle
+ ========================================================================== */
+
+/* Hover */
+.sk-sortable-handle:hover
+  cursor: move
